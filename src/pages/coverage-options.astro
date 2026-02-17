@@ -1,0 +1,311 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.svelte';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Mexico Coverage Options - Integrity Mexico Insurance"
+  description="U.S. insurance policies generally stop at the border. Choose a plan specifically designed to keep you legal and protected on Mexican roads.">
+  <Navigation client:load />
+
+  <!-- Hero Section -->
+  <section class="relative pt-16 pb-12 overflow-hidden">
+    <div class="absolute inset-0 opacity-50 pointer-events-none"
+      style="background-image: radial-gradient(rgba(17, 82, 212, 0.1) 1px, transparent 1px); background-size: 24px 24px;">
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary dark:text-blue-300 mb-6">
+        <span class="material-icons-outlined text-sm">verified</span>
+        <span class="text-sm font-semibold">Valid for all U.S. Drivers</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6">
+        Coverage Options Built for <span class="text-primary relative inline-block">
+          Your Trip
+          <svg class="absolute bottom-2 left-0 w-full h-3 -z-10 opacity-30" preserveAspectRatio="none"
+            viewBox="0 0 100 10">
+            <path class="text-blue-400" d="M0 5 Q 50 10 100 5" fill="transparent" stroke="currentColor"
+              stroke-width="8"></path>
+          </svg>
+        </span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+        U.S. insurance policies generally stop at the border. Choose a plan specifically designed to keep you legal and
+        protected on Mexican roads.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Grid Section -->
+  <section class="flex-grow pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+        <!-- Card 1: Liability -->
+        <div
+          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex flex-col h-full hover:border-primary/50 dark:hover:border-primary/50">
+          <div
+            class="absolute top-0 left-0 w-full h-1.5 bg-slate-400 rounded-t-2xl group-hover:bg-primary transition-colors">
+          </div>
+          <div class="mb-5 flex justify-between items-start">
+            <div
+              class="h-12 w-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-icons-outlined text-2xl">gavel</span>
+            </div>
+            <span
+              class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wide">Mandatory</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Liability Coverage</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Essential coverage required by Mexican federal law
+            for all drivers.</p>
+          <div
+            class="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 mb-6 border border-slate-100 dark:border-slate-700">
+            <div class="flex items-start gap-3">
+              <span class="material-icons-outlined text-primary text-xl mt-0.5">lightbulb</span>
+              <div>
+                <p class="text-xs font-bold text-primary dark:text-blue-300 mb-1 uppercase">Scenario</p>
+                <p class="text-sm text-slate-700 dark:text-slate-300 leading-snug">
+                  "I accidentally hit another car at a stop sign. This covers their repairs and medical bills."
+                </p>
+              </div>
+            </div>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">Third-party bodily injury</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">Property damage liability</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">Required for legal driving</span>
+            </li>
+          </ul>
+          <button
+            class="w-full py-3 rounded-xl bg-secondary-green hover:bg-secondary-green-hover text-white font-bold shadow-lg shadow-green-900/10 transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
+            Get Covered Now
+            <span class="material-icons-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+
+        <!-- Card 2: Full Coverage -->
+        <div
+          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-primary/20 dark:border-primary/40 ring-1 ring-primary/5 flex flex-col h-full transform hover:-translate-y-1">
+          <div
+            class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">
+            MOST POPULAR</div>
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-primary rounded-t-2xl"></div>
+          <div class="mb-5 flex justify-between items-start">
+            <div
+              class="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-icons-outlined text-2xl">directions_car</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Full Coverage</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Comprehensive protection for your vehicle, plus
+            theft coverage.</p>
+          <div
+            class="bg-blue-50/50 dark:bg-blue-900/10 rounded-lg p-4 mb-6 border border-blue-100 dark:border-blue-800/30">
+            <div class="flex items-start gap-3">
+              <span class="material-icons-outlined text-primary text-xl mt-0.5">lightbulb</span>
+              <div>
+                <p class="text-xs font-bold text-primary dark:text-blue-300 mb-1 uppercase">Scenario</p>
+                <p class="text-sm text-slate-700 dark:text-slate-300 leading-snug">
+                  "My car was stolen from the hotel parking lot. This helps replace my vehicle value."
+                </p>
+              </div>
+            </div>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">Physical damage to your car</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">Total theft coverage</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">Gap coverage available</span>
+            </li>
+          </ul>
+          <button
+            class="w-full py-3 rounded-xl bg-secondary-green hover:bg-secondary-green-hover text-white font-bold shadow-lg shadow-green-900/10 transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
+            Get Covered Now
+            <span class="material-icons-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+
+        <!-- Card 3: Legal Assistance -->
+        <div
+          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex flex-col h-full hover:border-primary/50 dark:hover:border-primary/50">
+          <div
+            class="absolute top-0 left-0 w-full h-1.5 bg-slate-400 rounded-t-2xl group-hover:bg-primary transition-colors">
+          </div>
+          <div class="mb-5 flex justify-between items-start">
+            <div
+              class="h-12 w-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-icons-outlined text-2xl">balance</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Legal & Bail Bond</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Crucial support if you are detained following a
+            serious accident.</p>
+          <div
+            class="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 mb-6 border border-slate-100 dark:border-slate-700">
+            <div class="flex items-start gap-3">
+              <span class="material-icons-outlined text-primary text-xl mt-0.5">lightbulb</span>
+              <div>
+                <p class="text-xs font-bold text-primary dark:text-blue-300 mb-1 uppercase">Scenario</p>
+                <p class="text-sm text-slate-700 dark:text-slate-300 leading-snug">
+                  "I was involved in a serious accident and detained. This pays for my legal defense and bail."
+                </p>
+              </div>
+            </div>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">Legal defense fees</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">Bail bond assistance</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">24/7 Bilingual attorney access</span>
+            </li>
+          </ul>
+          <button
+            class="w-full py-3 rounded-xl bg-secondary-green hover:bg-secondary-green-hover text-white font-bold shadow-lg shadow-green-900/10 transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
+            Get Covered Now
+            <span class="material-icons-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+
+        <!-- Card 4: Medical Payments -->
+        <div
+          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex flex-col h-full hover:border-primary/50 dark:hover:border-primary/50">
+          <div
+            class="absolute top-0 left-0 w-full h-1.5 bg-slate-400 rounded-t-2xl group-hover:bg-primary transition-colors">
+          </div>
+          <div class="mb-5 flex justify-between items-start">
+            <div
+              class="h-12 w-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-icons-outlined text-2xl">medical_services</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Medical Payments</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Coverage for injuries sustained by you and your
+            passengers.</p>
+          <div
+            class="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 mb-6 border border-slate-100 dark:border-slate-700">
+            <div class="flex items-start gap-3">
+              <span class="material-icons-outlined text-primary text-xl mt-0.5">lightbulb</span>
+              <div>
+                <p class="text-xs font-bold text-primary dark:text-blue-300 mb-1 uppercase">Scenario</p>
+                <p class="text-sm text-slate-700 dark:text-slate-300 leading-snug">
+                  "A passenger in my car needed an ambulance after a crash. This covers their ER visit."
+                </p>
+              </div>
+            </div>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">Driver & passenger injuries</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">Ambulance & hospital fees</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
+              <span class="text-sm text-slate-600 dark:text-slate-300">No deductible for medical</span>
+            </li>
+          </ul>
+          <button
+            class="w-full py-3 rounded-xl bg-secondary-green hover:bg-secondary-green-hover text-white font-bold shadow-lg shadow-green-900/10 transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
+            Get Covered Now
+            <span class="material-icons-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Trust Indicators -->
+      <!-- <div class="mt-16 border-t border-slate-200 dark:border-slate-800 pt-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="flex flex-col items-center">
+            <span class="material-icons-outlined text-3xl text-slate-400 mb-2">speed</span>
+            <h4 class="font-bold text-slate-700 dark:text-slate-200">Instant Delivery</h4>
+            <p class="text-sm text-slate-500">Policy emailed in minutes</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="material-icons-outlined text-3xl text-slate-400 mb-2">support_agent</span>
+            <h4 class="font-bold text-slate-700 dark:text-slate-200">24/7 Support</h4>
+            <p class="text-sm text-slate-500">Bilingual assistance anytime</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="material-icons-outlined text-3xl text-slate-400 mb-2">lock_clock</span>
+            <h4 class="font-bold text-slate-700 dark:text-slate-200">Secure Payments</h4>
+            <p class="text-sm text-slate-500">256-bit encrypted checkout</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="material-icons-outlined text-3xl text-slate-400 mb-2">star</span>
+            <h4 class="font-bold text-slate-700 dark:text-slate-200">Top Rated</h4>
+            <p class="text-sm text-slate-500">Trusted by 50k+ travelers</p>
+          </div>
+        </div>
+      </div>-->
+
+      <!-- FAQ Teaser / Additional CTA -->
+      <div class="mt-16 rounded-3xl bg-primary text-white p-8 md:p-12 relative overflow-hidden">
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none">
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl -ml-16 -mb-16 pointer-events-none">
+        </div>
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl md:text-3xl font-bold mb-3">Not sure what you need?</h2>
+            <p class="text-blue-100 text-lg">Our licensed agents can help you build the perfect policy for your vehicle
+              and destination.</p>
+          </div>
+          <div class="flex gap-4">
+            <button
+              class="bg-white text-primary hover:bg-blue-50 px-6 py-3 rounded-xl font-bold transition-colors shadow-lg">
+              Talk to an Agent
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  :global(.bg-secondary-green) {
+    background-color: #16a34a;
+  }
+
+  :global(.bg-secondary-green-hover):hover,
+  :global(.hover\:bg-secondary-green-hover):hover {
+    background-color: #15803d;
+  }
+
+  :global(.text-secondary-green) {
+    color: #16a34a;
+  }
+
+  :global(.shadow-green-900\/10) {
+    box-shadow: 0 10px 15px -3px rgba(20, 83, 45, 0.1);
+  }
+</style>

@@ -1,0 +1,284 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.svelte';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Integrity Mexico Insurance Home"
+  description="Driving to Mexico? Make sure you're properly covered. Your U.S. insurance policy stops at the border. Protect your family and vehicle with comprehensive Mexican liability coverage in minutes."
+>
+  <Navigation client:load />
+
+  <!-- Hero Section -->
+  <header class="relative pt-20 flex items-center min-h-[85vh]">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        alt="Family road trip" 
+        class="w-full h-full object-cover" 
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXMdzGPlG5XD4slxO3sfjbXhutyIb_9B8_VXl6RlY5Ct4NCo5a4EgRFNPKHyMbuEpa2S_pvZLrDhwZmAqppxo3jNRPZlpTFuRB3U7efI67N5rM5rdHDb4wj8yxsn7bFBUUcEy-7SqSHV37c9t-0zVzEYFUfY6tVHCe4E7_VGzDa-ze660ZJbwkFEf2OJ-UhY4zelFCBpm1RgxBRPF0Z8fyne_xS-JG6PGOmTDN1ALdpoZ3ebJhdBDuichqzAqKYSY1ZdMKAmUH_sFs"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 text-blue-100 text-sm font-medium mb-6">
+          <span class="material-icons text-sm">security</span>
+          Trusted by 50,000+ US Drivers
+        </div>
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+          Driving to Mexico? <br />
+          Make Sure You're <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">Properly Covered</span>
+        </h1>
+        <p class="text-xl text-slate-200 mb-8 font-light leading-relaxed max-w-lg">
+          Your U.S. insurance policy stops at the border. Protect your family and vehicle with comprehensive Mexican liability coverage in minutes.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a 
+            class="bg-cta-green hover:bg-cta-green-hover text-white text-lg px-8 py-4 rounded-lg font-bold transition-all shadow-xl shadow-cta-green/30 flex items-center justify-center gap-2 transform hover:-translate-y-1" 
+            href="/contact"
+          >
+            Get a Free Quote
+            <span class="material-icons">arrow_forward</span>
+          </a>
+          <a 
+            class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-lg px-8 py-4 rounded-lg font-semibold transition-all flex items-center justify-center" 
+            href="#validity"
+          >
+            Learn More
+          </a>
+        </div>
+        <div class="mt-8 flex items-center gap-4 text-sm text-slate-300">
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-slate-800 flex items-center justify-center text-xs text-slate-900 font-bold">A+</div>
+            <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-slate-800 flex items-center justify-center text-xs text-slate-900 font-bold">BBB</div>
+          </div>
+          <span>Rated Excellent for Claims Service</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Is Your Policy Valid Section -->
+  <section class="py-24 bg-white dark:bg-slate-900 relative overflow-hidden" id="validity">
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 translate-x-20"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+          <div class="absolute -top-10 -left-10 w-20 h-20 bg-red-100 rounded-full blur-2xl"></div>
+          <div class="relative bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600 dark:text-red-400">
+                <span class="material-icons text-2xl">warning</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Crucial Warning</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Most drivers don't know this.</p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-100 dark:border-slate-700 shadow-sm">
+                <span class="material-icons text-red-500 mt-0.5">highlight_off</span>
+                <p class="text-slate-600 dark:text-slate-300 text-sm"><strong>US Liability is Invalid:</strong> Mexican law does not recognize U.S. or Canadian liability insurance.</p>
+              </div>
+              <div class="flex items-start gap-3 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-100 dark:border-slate-700 shadow-sm">
+                <span class="material-icons text-red-500 mt-0.5">highlight_off</span>
+                <p class="text-slate-600 dark:text-slate-300 text-sm"><strong>Jurisdiction Issues:</strong> Accidents in Mexico are subject to Mexican law, not U.S. law.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-4">
+            Know the Facts
+          </div>
+          <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Is Your U.S. Policy Valid in Mexico?</h2>
+          <p class="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+            In short: <strong class="text-slate-900 dark:text-white">No, not for liability.</strong>
+          </p>
+          <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+            While some U.S. carriers may offer limited physical damage coverage within a few miles of the border, <strong>Mexican authorities do not recognize foreign insurance</strong> as proof of financial responsibility. Without a Mexican-issued policy, you could be held personally liable for damages and injuries.
+          </p>
+          <a class="text-primary font-bold flex items-center hover:gap-2 transition-all" href="/coverage-options">
+            Check your coverage requirements
+            <span class="material-icons text-sm ml-1">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Required by Law -->
+  <section class="py-24 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Why Mexican Liability is Required by Law</h2>
+        <p class="text-slate-600 dark:text-slate-400">Driving in Mexico without proper insurance isn't just risky—it's illegal. Here is what you need to know about the Federal Law.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border-t-4 border-primary">
+          <div class="w-14 h-14 bg-blue-50 dark:bg-slate-700 rounded-lg flex items-center justify-center mb-6">
+            <span class="material-icons text-3xl text-primary">gavel</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Federal Requirement</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Since 2019, federal law requires all vehicles on federal highways and bridges to have third-party liability insurance issued by a Mexican company.
+          </p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border-t-4 border-primary">
+          <div class="w-14 h-14 bg-blue-50 dark:bg-slate-700 rounded-lg flex items-center justify-center mb-6">
+            <span class="material-icons text-3xl text-primary">attach_money</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Financial Responsibility</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            In the event of an accident, you must demonstrate the ability to pay for damages immediately. A valid policy acts as your proof of solvency.
+          </p>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border-t-4 border-primary">
+          <div class="w-14 h-14 bg-blue-50 dark:bg-slate-700 rounded-lg flex items-center justify-center mb-6">
+            <span class="material-icons text-3xl text-primary">lock</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Avoiding Detention</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Under Napoleonic law (used in Mexico), you are "guilty until proven innocent." Accidents can lead to detention until ability to pay is proven.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Happens in an Accident -->
+  <section class="py-24 bg-primary text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">What Happens in an Accident?</h2>
+          <p class="text-blue-100 mb-8 text-lg">
+            We hope you never need it, but if the unexpected happens, Integrity Mexico ensures you aren't alone. Our streamlined process gets you help fast.
+          </p>
+          <a class="inline-flex items-center gap-2 bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors" href="/how-it-works">
+            View Claims Process
+            <span class="material-icons">arrow_forward</span>
+          </a>
+        </div>
+        <div class="space-y-6">
+          <!-- Step 1 -->
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-blue-400/30 border border-blue-300 flex items-center justify-center font-bold text-lg">1</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 flex-1">
+              <h4 class="font-bold text-lg mb-2">Call the Hotline</h4>
+              <p class="text-blue-100 text-sm">Dial the 24/7 bilingual claims number on your policy. Dispatch is available immediately to guide you.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-blue-400/30 border border-blue-300 flex items-center justify-center font-bold text-lg">2</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 flex-1">
+              <h4 class="font-bold text-lg mb-2">Adjuster Dispatched</h4>
+              <p class="text-blue-100 text-sm">A certified adjuster will meet you at the scene to assess damages and handle interactions with authorities.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-blue-400/30 border border-blue-300 flex items-center justify-center font-bold text-lg">3</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 flex-1">
+              <h4 class="font-bold text-lg mb-2">Legal Assistance</h4>
+              <p class="text-blue-100 text-sm">If needed, legal representation is provided to secure your release and resolve liability issues.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Integrity -->
+  <section class="py-24 bg-white dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-5 gap-12">
+        <div class="lg:col-span-2">
+          <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Why Choose Integrity Mexico?</h2>
+          <p class="text-slate-600 dark:text-slate-400 mb-8 text-lg">
+            We don't just sell insurance; we provide peace of mind for your journey across the border. We partner only with top-rated Mexican carriers.
+          </p>
+          <div class="aspect-video rounded-xl overflow-hidden shadow-2xl relative">
+            <img 
+              alt="Happy travelers" 
+              class="w-full h-full object-cover" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrxOwzmQY_P8olhxHPwi_xdASP8YvNp5AsdGTQFTkiuFqRtcd6GiQBygzjuS_T59uM2j0sd9YUQHB85M5YxctMG3L8Uu9aEuZMPlLMYhxVcrp5PKBsJD4i0dO7LI0hpTHF-3rU7p8M9AlmBYEF8hQPxm7fwOuJz_ifZwzzW42mtOkGR7ldfsnmaeJSK_xKDKQSN8XZ75UfFpWv-6dQ9_j3CtbaKAIuXVlZFcIwf_5yKZNAYjGjOU425_jTjih5oy0nVrMUHj3Qdzfe"
+            />
+            <div class="absolute inset-0 bg-primary/20"></div>
+          </div>
+        </div>
+        <div class="lg:col-span-3 grid sm:grid-cols-2 gap-6">
+          <div class="p-6 bg-background-light dark:bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="material-icons text-primary text-3xl mb-4">support_agent</span>
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">24/7 Bilingual Support</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">English-speaking agents ready to help you anytime, anywhere in Mexico.</p>
+          </div>
+          <div class="p-6 bg-background-light dark:bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="material-icons text-primary text-3xl mb-4">handshake</span>
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">A-Rated Carriers</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Policies backed by financially strong Mexican insurers like GNP and Quálitas.</p>
+          </div>
+          <div class="p-6 bg-background-light dark:bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="material-icons text-primary text-3xl mb-4">devices</span>
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Instant Online Quotes</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Get covered in less than 5 minutes. Print your policy instantly or save it to your phone.</p>
+          </div>
+          <div class="p-6 bg-background-light dark:bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800">
+            <span class="material-icons text-primary text-3xl mb-4">build</span>
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Repair in USA</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Options available to have your vehicle repaired in the U.S. if damaged in Mexico.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 bg-slate-900 relative">
+    <div class="absolute inset-0 opacity-20">
+      <img 
+        alt="Road background" 
+        class="w-full h-full object-cover grayscale" 
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgWlwaxuC1tI68iWYRS1VPzvF0pM-lyMKjCDLlsT056Yxpm2iWpBmcq7fg_sBCVGr-94SQauQjibCY5FflYZY5rcMt8-5hRD2mbtVDv8Y11m68o5SetGg-oYG5C5p3R9F__jU21YQaXMSsNSycnKtiT3SaSf7VKWglv7MibgJCDrLZ3a-hxPNPadkrWcHiiB-DevPBm-4B1D8-48IxEdYmVgAi6VpCmE8QYe2DQszaGIYHTHp-WiyItkM6mbxeF9-K88mBw6vXEy12"
+      />
+    </div>
+    <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready for your trip?</h2>
+      <p class="text-slate-300 text-lg mb-10">Don't risk your vehicle or your freedom. Get the right coverage today starting at just $5/day.</p>
+      <a class="inline-block bg-cta-green hover:bg-cta-green-hover text-white text-xl px-10 py-5 rounded-full font-bold transition-transform hover:scale-105 shadow-2xl" href="/contact">
+        Get a Free Quote Now
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Custom green CTA colors */
+  :global(.bg-cta-green) {
+    background-color: #16a34a;
+  }
+  :global(.bg-cta-green-hover):hover {
+    background-color: #15803d;
+  }
+  :global(.hover\:bg-cta-green-hover):hover {
+    background-color: #15803d;
+  }
+  :global(.shadow-cta-green\/30) {
+    box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.3);
+  }
+</style>

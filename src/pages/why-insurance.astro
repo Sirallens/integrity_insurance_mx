@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.svelte';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Why You Need Mexico Insurance - Integrity Mexico Insurance"
+  description="Driving south of the border? Your U.S. policy stops at the line. Understand the law, protect your journey, and travel with peace of mind."
+>
+  <Navigation client:load />
+
+  <!-- Hero Section -->
+  <header class="relative bg-background-dark overflow-hidden">
+    <div class="absolute inset-0">
+      <img 
+        alt="Scenic highway winding through Mexican landscape" 
+        class="w-full h-full object-cover opacity-40 mix-blend-overlay" 
+        data-alt="Scenic highway winding through Mexican landscape" 
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLjGjAHKyuD_pcgaYYt0ZOM4WQio92tZAULLLgc3iF-hNNccgwqW8IhVRq_wsuTgmobkWEy-bVb6TfqzpaowD9Eaz3AO3cFVyozZm5HJa65ft5ZNU_S9Xgc98WoILUP2QeScXhh8qJ-6VdpzauRF3efVTtPmv2esdEygYQ-eQMAkK8hmyYp2yysMV5rcH7ymCx1lA1jpEXgPLh-tj63LiQr16N0_A_pQxdKJK5f51JOzMUMMDuigOb-bef2TktV3PiEShQZp0Tl2gO"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-transparent"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-blue-200 border border-primary/30 mb-6">
+        Mandatory Legal Requirement
+      </span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 max-w-4xl">
+        Why You Need <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">Mexico Auto Insurance</span>
+      </h1>
+      <p class="mt-4 max-w-2xl text-xl text-slate-300">
+        Driving south of the border? Your U.S. policy stops at the line. Understand the law, protect your journey, and travel with peace of mind.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+    <!-- Section 1: Article 63 Bis / The Law -->
+    <section class="grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-7">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">The Law: Article 63 Bis Explained</h2>
+        <div class="prose prose-lg text-slate-600 dark:text-slate-300">
+          <p class="mb-4">
+            It is a common misconception that your domestic auto insurance policy will cover you in Mexico. While some U.S. policies may extend physical damage coverage (collision and theft) a certain distance into Mexico, <strong>they do not provide valid Liability coverage.</strong>
+          </p>
+          <p>
+            Under Mexican Federal Law, specifically <span class="font-semibold text-primary">Article 63 Bis of the Roads, Bridges, and Federal Transportation Law</span>, all drivers on federal highways must possess Third Party Liability insurance issued by a Mexican insurance company.
+          </p>
+        </div>
+        <div class="mt-8 flex gap-4">
+          <div class="flex items-start gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+            <span class="material-icons text-primary mt-1">gavel</span>
+            <div>
+              <h4 class="font-semibold text-slate-900 dark:text-white">Strictly Enforced</h4>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Mexican authorities do not recognize foreign insurance documents.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-5 relative">
+        <div class="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3"></div>
+        <div class="relative bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700">
+          <div class="flex items-center gap-3 mb-6 border-b border-slate-100 dark:border-slate-700 pb-4">
+            <span class="material-icons text-amber-500">warning</span>
+            <span class="font-bold text-lg text-slate-900 dark:text-white">Critical Requirement</span>
+          </div>
+          <blockquote class="text-lg italic text-slate-700 dark:text-slate-300 mb-6">
+            "Liability insurance must be issued by a company licensed in Mexico. U.S. liability policies have no legal standing in Mexican courts."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+              <span class="material-icons text-slate-500 text-sm">account_balance</span>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-slate-900 dark:text-white">Mexican Federal Government</div>
+              <div class="text-xs text-slate-500">Ministry of Communications and Transportation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Liability vs Physical Damage -->
+    <section>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Liability vs. Physical Damage</h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400">Understanding the difference is key to avoiding financial disaster. While your car matters, your legal standing matters more.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Card 1: Liability -->
+        <div class="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md">
+          <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <span class="material-icons text-9xl text-primary">groups</span>
+          </div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+              <span class="material-icons text-primary text-2xl">health_and_safety</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Civil Liability (Mandatory)</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              This covers bodily injury and property damage you cause to others. In Mexico, if you are at fault in an accident, you must prove financial responsibility immediately.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-green-500 text-base">check_circle</span>
+                Required by Law
+              </li>
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-green-500 text-base">check_circle</span>
+                Covers Third Parties
+              </li>
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-green-500 text-base">check_circle</span>
+                Must be Mexican Policy
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2: Physical Damage -->
+        <div class="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:border-amber-500/50 transition-all duration-300 shadow-sm hover:shadow-md">
+          <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <span class="material-icons text-9xl text-amber-500">directions_car</span>
+          </div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-6">
+              <span class="material-icons text-amber-600 text-2xl">car_crash</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Physical Damage (Optional)</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              This covers damage to your own vehicle from collision, theft, or vandalism. While crucial for protecting your asset, it does not satisfy the legal requirement for liability.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-slate-400 text-base">check_circle</span>
+                Optional but Recommended
+              </li>
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-slate-400 text-base">check_circle</span>
+                Protects Your Vehicle
+              </li>
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-amber-500 text-base">warning</span>
+                US Policy May Have Gaps
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Legal Consequences -->
+    <section class="bg-slate-50 dark:bg-slate-800/50 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <img 
+            alt="Abstract blue map of Mexico highway network" 
+            class="rounded-2xl shadow-lg border border-white dark:border-slate-700 w-full h-64 object-cover" 
+            data-alt="Abstract blue map of Mexico highway network" 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnwZ3CW20Z3MOqr3bWpi96tmExoQK9Q_THzIZ-z8eFKp8tn79_GPDCbQPy2nMA9AeNpuqZYxpT9-Z7w8JZqUX_KyR6YL2Oxb5EMJ7WkDWZOHeI4Na5il7a0CO2UntDtsh5C6_tEVDpyC7ZgpxZuN9-YExS3wMlo7TTEiMkEHCTvorKQ2Z3mmgOCcAsj6ewDn-90SqxC5GyoIfE9M-6XRWjO6hVZiOB5yEPrUbx1kcnzLlmvZ9Yqzwz8mR08tvTPnFBuO5YL-mJl6_X"
+          />
+        </div>
+        <div class="order-1 md:order-2">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">Consequences of Driving Uninsured</h2>
+          <p class="text-slate-600 dark:text-slate-300 mb-8">
+            The Mexican legal system operates differently than the U.S. system. Accidents are considered both civil and criminal matters. Without proof of ability to pay (insurance), the consequences are swift.
+          </p>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+                <span class="material-icons text-red-600 dark:text-red-400">front_hand</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white">Detention</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Drivers can be detained by authorities until financial responsibility is proven or guaranteed.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                <span class="material-icons text-amber-600 dark:text-amber-400">no_transfer</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white">Vehicle Impoundment</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Your vehicle may be impounded, and releasing it can be a lengthy, expensive administrative process.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                <span class="material-icons text-blue-600 dark:text-blue-400">payments</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white">Significant Fines</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Fines for driving without insurance are steep, often exceeding the cost of the policy itself.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom CTA -->
+  <section class="bg-primary text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Drive with Integrity. Drive Protected.</h2>
+      <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
+        Don't let a legal requirement ruin your trip. Our policies are 100% recognized by Mexican authorities and backed by top-rated insurers.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a class="inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-lg shadow-lg text-lg font-bold text-primary bg-white hover:bg-slate-50 transition-all transform hover:-translate-y-1" href="/contact">
+          Get Your Quote Now
+          <span class="material-icons ml-2">arrow_forward</span>
+        </a>
+        <a class="inline-flex items-center justify-center px-8 py-4 border border-white/30 rounded-lg text-lg font-medium text-white hover:bg-white/10 transition-all" href="/coverage-options">
+          View Coverage Plans
+        </a>
+      </div>
+      <p class="mt-8 text-sm text-blue-200">
+        Quotes in less than 2 minutes. Immediate policy delivery via email.
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

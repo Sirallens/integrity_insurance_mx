@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.svelte';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Contact & Bilingual Support - Integrity Mexico Insurance"
+  description="We're here to help in English & Spanish. Whether you have a question about your policy or need immediate assistance on the road, our bilingual team of licensed advisors is ready to support you."
+>
+  <Navigation client:load />
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header Section -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight">
+        We're Here to Help — <br class="hidden md:block" />
+        <span class="text-primary">In English & Spanish</span>
+      </h1>
+      <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+        Whether you have a question about your policy or need immediate assistance on the road, our bilingual team of licensed advisors is ready to support you.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <!-- Left Column: Contact Info & Emergency -->
+      <div class="lg:col-span-5 space-y-8">
+        <!-- Emergency Highlight Box -->
+        <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-sm">
+          <!-- Decorative element -->
+          <div class="absolute -right-6 -top-6 w-24 h-24 bg-blue-100 dark:bg-blue-800 rounded-full opacity-50 blur-xl"></div>
+          <div class="relative z-10">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 p-2 rounded-lg">
+                <span class="material-icons-outlined text-2xl">warning</span>
+              </div>
+              <h2 class="text-xl font-bold text-slate-900 dark:text-white">In Case of an Accident</h2>
+            </div>
+            <p class="text-slate-700 dark:text-slate-300 mb-6 text-sm leading-relaxed">
+              Your safety is our priority. Stay calm and follow these immediate steps if you are involved in an incident in Mexico.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="flex gap-3">
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-200 dark:bg-blue-700 text-blue-700 dark:text-blue-200 flex items-center justify-center text-xs font-bold">1</span>
+                <p class="text-sm text-slate-700 dark:text-slate-300 font-medium">Call 911 immediately if there are injuries.</p>
+              </div>
+              <div class="flex gap-3">
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-200 dark:bg-blue-700 text-blue-700 dark:text-blue-200 flex items-center justify-center text-xs font-bold">2</span>
+                <p class="text-sm text-slate-700 dark:text-slate-300 font-medium">Do not leave the scene or accept liability.</p>
+              </div>
+              <div class="flex gap-3">
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-200 dark:bg-blue-700 text-blue-700 dark:text-blue-200 flex items-center justify-center text-xs font-bold">3</span>
+                <p class="text-sm text-slate-700 dark:text-slate-300 font-medium">Have your policy number ready.</p>
+              </div>
+            </div>
+            <a class="block w-full bg-white dark:bg-slate-800 border border-blue-200 dark:border-blue-700 hover:border-blue-300 dark:hover:border-blue-600 text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-slate-700 font-bold py-3 px-4 rounded-xl text-center transition-colors shadow-sm" href="tel:+525512345678">
+              <span class="material-icons text-sm align-middle mr-1">phone_in_talk</span>
+              Call 24/7 Claims Hotline
+            </a>
+            <p class="text-xs text-center text-slate-500 dark:text-slate-400 mt-2">Available 24/7 • Bilingual Operators</p>
+          </div>
+        </div>
+
+        <!-- Direct Contact Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Phone Card -->
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+            <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+              <span class="material-icons-outlined">headset_mic</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Customer Support</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Mon-Fri, 8am - 6pm CST</p>
+            <a class="text-primary font-bold hover:underline text-lg flex items-center" href="tel:+18005550199">
+              (800) 555-0199
+            </a>
+          </div>
+
+          <!-- Email Card -->
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+            <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+              <span class="material-icons-outlined">mail</span>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Email Support</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Typically replies in 2 hrs</p>
+            <a class="text-primary font-bold hover:underline text-sm break-all flex items-center" href="mailto:support@integritymexico.com">
+              support@integritymexico.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Licensed Advisor CTA -->
+        <div class="bg-slate-900 dark:bg-slate-800 rounded-xl p-6 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg shadow-slate-900/20">
+          <div>
+            <h3 class="font-bold text-lg mb-1">Talk to an Advisor</h3>
+            <p class="text-slate-400 text-sm">Expert advice on cross-border coverage.</p>
+          </div>
+          <button class="whitespace-nowrap bg-primary hover:bg-blue-700 text-white px-5 py-3 rounded-lg font-semibold transition-colors flex items-center shadow-lg shadow-primary/25">
+            <span class="material-icons text-sm mr-2">calendar_today</span>
+            Schedule Call
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Inquiry Form -->
+      <div class="lg:col-span-7">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-8 lg:p-10 relative">
+          <div class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Send us a Message</h2>
+            <p class="text-slate-500 dark:text-slate-400">Have a general question about Mexico insurance? Fill out the form below and we'll get back to you shortly.</p>
+          </div>
+
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Name -->
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="name">Full Name</label>
+                <input class="w-full rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-700 shadow-sm focus:border-primary focus:ring focus:ring-primary/20 transition-all py-3 px-4 text-slate-900 dark:text-white placeholder-slate-400" id="name" placeholder="John Doe" type="text" />
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="email">Email Address</label>
+                <input class="w-full rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-700 shadow-sm focus:border-primary focus:ring focus:ring-primary/20 transition-all py-3 px-4 text-slate-900 dark:text-white placeholder-slate-400" id="email" placeholder="john@example.com" type="email" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Phone -->
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="phone">Phone Number</label>
+                <input class="w-full rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-700 shadow-sm focus:border-primary focus:ring focus:ring-primary/20 transition-all py-3 px-4 text-slate-900 dark:text-white placeholder-slate-400" id="phone" placeholder="(555) 000-0000" type="tel" />
+              </div>
+
+              <!-- Policy # (Optional) -->
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="policy">Policy Number <span class="text-slate-400 font-normal">(Optional)</span></label>
+                <input class="w-full rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-700 shadow-sm focus:border-primary focus:ring focus:ring-primary/20 transition-all py-3 px-4 text-slate-900 dark:text-white placeholder-slate-400" id="policy" placeholder="MX-12345" type="text" />
+              </div>
+            </div>
+
+            <!-- Topic Select -->
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="topic">What can we help you with?</label>
+              <select class="w-full rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-700 shadow-sm focus:border-primary focus:ring focus:ring-primary/20 transition-all py-3 px-4 text-slate-900 dark:text-white bg-white" id="topic">
+                <option>General Inquiry</option>
+                <option>Coverage Question</option>
+                <option>Policy Modification</option>
+                <option>Claims Assistance</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="message">Your Message</label>
+              <textarea class="w-full rounded-lg border-slate-300 dark:border-slate-600 dark:bg-slate-700 shadow-sm focus:border-primary focus:ring focus:ring-primary/20 transition-all py-3 px-4 text-slate-900 dark:text-white placeholder-slate-400" id="message" placeholder="How can we help you today?" rows="4"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-2">
+              <button class="w-full md:w-auto bg-primary hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-primary/30 transform transition hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center md:justify-start gap-2" type="button">
+                <span>Send Message</span>
+                <span class="material-icons text-sm">arrow_forward</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- FAQ Teaser -->
+        <div class="mt-8 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center">
+            <span class="material-icons-outlined text-primary mr-2">help_outline</span>
+            Common Questions
+          </h3>
+          <div class="space-y-3">
+            <details class="group">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-slate-700 dark:text-slate-300 hover:text-primary">
+                <span>Do you speak English and Spanish?</span>
+                <span class="transition group-open:rotate-180">
+                  <span class="material-icons text-slate-400">expand_more</span>
+                </span>
+              </summary>
+              <p class="text-slate-600 dark:text-slate-400 mt-3 group-open:animate-fadeIn text-sm leading-relaxed">
+                Yes, absolutely. Every member of our support team is fully bilingual in English and Spanish to assist you comfortably.
+              </p>
+            </details>
+            <div class="border-t border-slate-100 dark:border-slate-700"></div>
+            <details class="group">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-slate-700 dark:text-slate-300 hover:text-primary">
+                <span>What documents do I need for a claim?</span>
+                <span class="transition group-open:rotate-180">
+                  <span class="material-icons text-slate-400">expand_more</span>
+                </span>
+              </summary>
+              <p class="text-slate-600 dark:text-slate-400 mt-3 group-open:animate-fadeIn text-sm leading-relaxed">
+                Generally, you will need your policy number, a valid driver's license, and the police report from the incident scene.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Map & Location Section -->
+  <div class="w-full h-80 relative mt-16 bg-slate-100 dark:bg-slate-800 overflow-hidden">
+    <img 
+      alt="Overhead view of Mexico City streets and urban landscape" 
+      class="w-full h-full object-cover opacity-80" 
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjMfaG3GjS5vudSB5DV8VFSmm59BOw2HgxchEdYZgXbwAwlKg5pOePVk9krVGtrhiFZL67-zglFhWvOzcnmzW_7EhumoB6Xc_rW9HaYOXsVT8hJHGwrxA-3UGLizW4mjTOdX6Yg1aF_RptrCzxWoY3yZonn1N3sdnS7i9GoDzENvekhWI855pZhXk0LWL_Pu8CXTe6pvjrfI-5W9haGNBDba69MiaCPJb5aGiOpKkU7r4Ot1Gy2I5xI_3KQSZrKBhQbILgqdt6hBYc"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-8 text-center pb-12">
+      <div class="inline-flex items-center gap-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-5 py-2 rounded-full shadow-sm border border-white/50 dark:border-slate-700">
+        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+        <span class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">Serving US Drivers in Mexico</span>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+</BaseLayout>
