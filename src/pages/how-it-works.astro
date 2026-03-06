@@ -4,10 +4,8 @@ import Navigation from '../components/Navigation.svelte';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout
-  title="How It Works - Integrity Mexico Insurance"
-  description="From quote to border in minutes. We've streamlined the process of getting Mexican auto insurance so you can focus on your trip, not the paperwork."
->
+<BaseLayout title="How It Works - Integrity Mexico Insurance"
+  description="From quote to border in minutes. We've streamlined the process of getting Mexican auto insurance so you can focus on your trip, not the paperwork.">
   <Navigation client:load />
 
   <!-- Main Content -->
@@ -21,26 +19,32 @@ import Footer from '../components/Footer.astro';
         How It Works: <br class="hidden sm:block" /> From Quote to Border in Minutes
       </h1>
       <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-400">
-        We've streamlined the process of getting Mexican auto insurance so you can focus on your trip, not the paperwork.
+        We've streamlined the process of getting Mexican auto insurance so you can focus on your trip, not the
+        paperwork.
       </p>
     </div>
 
     <!-- Steps Section -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <!-- Visual Connector Line (Desktop Only) -->
-      <div class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gray-200 dark:bg-gray-800 -z-10"></div>
+      <div class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gray-200 dark:bg-gray-800 -z-10">
+      </div>
       <!-- Animated progress highlight -->
-      <div class="hidden lg:block absolute top-12 left-[10%] right-[60%] h-0.5 bg-gradient-to-r from-primary to-primary/40 -z-10"></div>
+      <div
+        class="hidden lg:block absolute top-12 left-[10%] right-[60%] h-0.5 bg-gradient-to-r from-primary to-primary/40 -z-10">
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
         <!-- Step 1 -->
         <div class="relative group">
           <div class="flex flex-col items-center text-center">
             <div class="relative mb-6">
-              <div class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300">
+              <div
+                class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300">
                 <span class="material-icons text-4xl text-primary">calculate</span>
               </div>
-              <div class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark">
+              <div
+                class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark">
                 1
               </div>
             </div>
@@ -55,10 +59,12 @@ import Footer from '../components/Footer.astro';
         <div class="relative group">
           <div class="flex flex-col items-center text-center">
             <div class="relative mb-6">
-              <div class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300">
+              <div
+                class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300">
                 <span class="material-icons text-4xl text-primary">playlist_add_check</span>
               </div>
-              <div class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark">
+              <div
+                class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark">
                 2
               </div>
             </div>
@@ -73,10 +79,12 @@ import Footer from '../components/Footer.astro';
         <div class="relative group">
           <div class="flex flex-col items-center text-center">
             <div class="relative mb-6">
-              <div class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300">
+              <div
+                class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300">
                 <span class="material-icons text-4xl text-primary">mark_email_read</span>
               </div>
-              <div class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark">
+              <div
+                class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark">
                 3
               </div>
             </div>
@@ -91,10 +99,12 @@ import Footer from '../components/Footer.astro';
         <div class="relative group">
           <div class="flex flex-col items-center text-center">
             <div class="relative mb-6">
-              <div class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300">
+              <div
+                class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300">
                 <span class="material-icons text-4xl text-primary">travel_explore</span>
               </div>
-              <div class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark">
+              <div
+                class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark">
                 4
               </div>
             </div>
@@ -109,7 +119,8 @@ import Footer from '../components/Footer.astro';
 
     <!-- Feature Spotlight / Context -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-      <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+      <div
+        class="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
         <div class="grid lg:grid-cols-2 gap-0">
           <div class="p-8 sm:p-12 lg:p-16 flex flex-col justify-center order-2 lg:order-1">
             <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">
@@ -122,7 +133,8 @@ import Footer from '../components/Footer.astro';
                 </div>
                 <div>
                   <h4 class="font-bold text-gray-900 dark:text-white text-lg">Instant Coverage</h4>
-                  <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">No waiting periods. Your policy is valid the moment your payment is processed.</p>
+                  <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">No waiting periods. Your policy is valid the
+                    moment your payment is processed.</p>
                 </div>
               </div>
               <div class="flex gap-4">
@@ -131,7 +143,8 @@ import Footer from '../components/Footer.astro';
                 </div>
                 <div>
                   <h4 class="font-bold text-gray-900 dark:text-white text-lg">Secure Data</h4>
-                  <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">We use bank-level encryption to protect your personal and payment information.</p>
+                  <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">We use bank-level encryption to protect your
+                    personal and payment information.</p>
                 </div>
               </div>
               <div class="flex gap-4">
@@ -140,19 +153,21 @@ import Footer from '../components/Footer.astro';
                 </div>
                 <div>
                   <h4 class="font-bold text-gray-900 dark:text-white text-lg">English Support</h4>
-                  <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">Need help? Our bilingual claims and support team is available 24/7.</p>
+                  <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">Need help? Our bilingual claims and support
+                    team is available 24/7.</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="bg-gray-100 dark:bg-gray-800 relative h-64 lg:h-auto order-1 lg:order-2">
             <!-- Abstract map background for visual interest -->
-            <div 
-              class="absolute inset-0 bg-cover bg-center opacity-80" 
-              data-alt="Close up of a map and travel documents representing a journey" 
+            <div class="absolute inset-0 bg-cover bg-center opacity-80"
+              data-alt="Close up of a map and travel documents representing a journey"
               style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUGMrvy2CIMxgxahcRLFpT28h4S7vPvdUbvlRlJt7XB-tlXawH5KPZPFRpjj8hZIX7RaJlDBJq_EbX2GpwRyqRL_Ii8v514-TF03wyMCrgMDUDwM6dmEMMrctfjuQY8DjNSs8AKlWCROBrCJXbxuFXtM1CiJjsKUbPX3z7RYPRatcgPLQGEnDcwQqyoEWGttJnQhRb7l2CBUXMK28Y6-Rjosu4DYyJDPwEdWNS9NszAVmvchAEtisAESxx9LV7O6t6V1rzuy3esmY8');">
             </div>
-            <div class="absolute inset-0 bg-gradient-to-l from-transparent to-white dark:to-gray-900 lg:bg-gradient-to-r lg:from-white lg:dark:from-gray-900 lg:to-transparent"></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-l from-transparent to-white dark:to-gray-900 lg:bg-gradient-to-r lg:from-white lg:dark:from-gray-900 lg:to-transparent">
+            </div>
           </div>
         </div>
       </div>
@@ -165,19 +180,18 @@ import Footer from '../components/Footer.astro';
         Don't get stopped at the border. Secure your Mexico auto insurance in minutes and enjoy your trip worry-free.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <button class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-blue-700 text-white font-bold rounded-lg shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+        <button
+          class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-blue-700 text-white font-bold rounded-lg shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
           Start Your Quote Now
           <span class="material-icons text-sm">arrow_forward</span>
         </button>
-        <div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm mt-4 sm:mt-0 sm:ml-6">
-          <span class="material-icons text-green-500 text-base">check_circle</span>
-          <span>100% Secure Checkout</span>
-        </div>
+
       </div>
 
       <!-- Trust Badges -->
-      <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-wrap justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-        <!-- Using generic shapes for partner logos to simulate payment processors/insurers -->
+      <div
+        class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-wrap justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+        <!-- Using generic shapes for partner logos to simulate payment processors/insurers 
         <div class="flex items-center gap-2">
           <div class="w-8 h-8 rounded bg-gray-300 dark:bg-gray-700"></div>
           <span class="font-bold text-gray-400">VISA</span>
@@ -194,8 +208,8 @@ import Footer from '../components/Footer.astro';
           <div class="w-8 h-8 rounded bg-gray-300 dark:bg-gray-700"></div>
           <span class="font-bold text-gray-400">GNP Seguros</span>
         </div>
+      </div> -->
       </div>
-    </div>
   </main>
 
   <Footer />
