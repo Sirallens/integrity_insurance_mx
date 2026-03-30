@@ -4,12 +4,14 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   server: {
-    host: true
+    host: true,
+    port: 4321
   },
   vite: {
     server: {
-      allowedHosts: 'all'
-    }
+      // Allows any ngrok-free.dev subdomain
+      allowedHosts: ['.ngrok-free.dev']
+    },
   },
   integrations: [
     svelte(),
@@ -18,4 +20,11 @@ export default defineConfig({
     }),
   ],
   output: 'static',
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "es"],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  }
 });

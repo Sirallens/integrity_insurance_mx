@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/Navigation.svelte';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Por Qué Necesita un Seguro para México - Integrity Mexico Seguros"
+  description="¿Manejando al sur de la frontera? Su póliza de EE. UU. no aplica en México. Entienda la ley, proteja su viaje y viaje con tranquilidad."
+>
+  <Navigation lang="es" client:load />
+
+  <!-- Hero Section -->
+  <header class="relative bg-background-dark overflow-hidden">
+    <div class="absolute inset-0">
+      <img 
+        alt="Carretera escénica que serpentea por el paisaje mexicano" 
+        class="w-full h-full object-cover opacity-40 mix-blend-overlay" 
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLjGjAHKyuD_pcgaYYt0ZOM4WQio92tZAULLLgc3iF-hNNccgwqW8IhVRq_wsuTgmobkWEy-bVb6TfqzpaowD9Eaz3AO3cFVyozZm5HJa65ft5ZNU_S9Xgc98WoILUP2QeScXhh8qJ-6VdpzauRF3efVTtPmv2esdEygYQ-eQMAkK8hmyYp2yysMV5rcH7ymCx1lA1jpEXgPLh-tj63LiQr16N0_A_pQxdKJK5f51JOzMUMMDuigOb-bef2TktV3PiEShQZp0Tl2gO"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-transparent"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-blue-200 border border-primary/30 mb-6">
+        Requisito Legal Obligatorio
+      </span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 max-w-4xl">
+        Por Qué Necesita <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">Seguro de Auto para México</span>
+      </h1>
+      <p class="mt-4 max-w-2xl text-xl text-slate-300">
+        ¿Manejando al sur de la frontera? Su póliza de EE. UU. no aplica en México. Entienda la ley, proteja su viaje y viaje con tranquilidad.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+    <!-- Section 1: Article 63 Bis / The Law -->
+    <section class="grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-7">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">La Ley: Artículo 63 Bis Explicado</h2>
+        <div class="prose prose-lg text-slate-600 dark:text-slate-300">
+          <p class="mb-4">
+            Es un error común creer que su póliza de seguro de auto doméstica le cubrirá en México. Aunque algunas pólizas de EE. UU. pueden extender la cobertura por daños físicos (colisión y robo) a cierta distancia hacia México, <strong>no proporcionan cobertura de Responsabilidad Civil válida.</strong>
+          </p>
+          <p>
+            Según la Ley Federal Mexicana, específicamente el <span class="font-semibold text-primary">Artículo 63 Bis de la Ley de Caminos, Puentes y Autotransporte Federal</span>, todos los conductores en carreteras federales deben contar con un seguro de Responsabilidad Civil ante Terceros emitido por una aseguradora mexicana.
+          </p>
+        </div>
+        <div class="mt-8 flex gap-4">
+          <div class="flex items-start gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+            <span class="material-icons text-primary mt-1">gavel</span>
+            <div>
+              <h4 class="font-semibold text-slate-900 dark:text-white">Aplicación Estricta</h4>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Las autoridades mexicanas no reconocen los documentos de seguro extranjeros.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-5 relative">
+        <div class="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3"></div>
+        <div class="relative bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700">
+          <div class="flex items-center gap-3 mb-6 border-b border-slate-100 dark:border-slate-700 pb-4">
+            <span class="material-icons text-amber-500">warning</span>
+            <span class="font-bold text-lg text-slate-900 dark:text-white">Requisito Crítico</span>
+          </div>
+          <blockquote class="text-lg italic text-slate-700 dark:text-slate-300 mb-6">
+            "El seguro de responsabilidad civil debe ser emitido por una compañía autorizada en México. Las pólizas de responsabilidad civil de EE. UU. no tienen validez legal ante los tribunales mexicanos."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+              <span class="material-icons text-slate-500 text-sm">account_balance</span>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-slate-900 dark:text-white">Gobierno Federal Mexicano</div>
+              <div class="text-xs text-slate-500">Secretaría de Comunicaciones y Transportes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Liability vs Physical Damage -->
+    <section>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Responsabilidad Civil vs. Daños Físicos</h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400">Entender la diferencia es clave para evitar un desastre financiero. Aunque su auto importa, su situación legal importa más.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Card 1: Liability -->
+        <div class="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md">
+          <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <span class="material-icons text-9xl text-primary">groups</span>
+          </div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+              <span class="material-icons text-primary text-2xl">health_and_safety</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Responsabilidad Civil (Obligatoria)</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              Cubre lesiones corporales y daños a la propiedad que cause a terceros. En México, si tiene la culpa en un accidente, debe demostrar responsabilidad financiera de inmediato.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-green-500 text-base">check_circle</span>
+                Requerida por Ley
+              </li>
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-green-500 text-base">check_circle</span>
+                Cubre a Terceros
+              </li>
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-green-500 text-base">check_circle</span>
+                Debe ser una Póliza Mexicana
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2: Physical Damage -->
+        <div class="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:border-amber-500/50 transition-all duration-300 shadow-sm hover:shadow-md">
+          <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <span class="material-icons text-9xl text-amber-500">directions_car</span>
+          </div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-6">
+              <span class="material-icons text-amber-600 text-2xl">car_crash</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Daños Físicos (Opcional)</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              Cubre daños a su propio vehículo por colisión, robo o vandalismo. Aunque es importante para proteger su activo, no cumple con el requisito legal de responsabilidad civil.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-slate-400 text-base">check_circle</span>
+                Opcional pero Recomendado
+              </li>
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-slate-400 text-base">check_circle</span>
+                Protege su Vehículo
+              </li>
+              <li class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span class="material-icons text-amber-500 text-base">warning</span>
+                Su Póliza de EE. UU. Puede Tener Vacíos
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Legal Consequences -->
+    <section class="bg-slate-50 dark:bg-slate-800/50 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <img 
+            alt="Mapa abstracto azul de la red de carreteras de México" 
+            class="rounded-2xl shadow-lg border border-white dark:border-slate-700 w-full h-64 object-cover" 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnwZ3CW20Z3MOqr3bWpi96tmExoQK9Q_THzIZ-z8eFKp8tn79_GPDCbQPy2nMA9AeNpuqZYxpT9-Z7w8JZqUX_KyR6YL2Oxb5EMJ7WkDWZOHeI4Na5il7a0CO2UntDtsh5C6_tEVDpyC7ZgpxZuN9-YExS3wMlo7TTEiMkEHCTvorKQ2Z3mmgOCcAsj6ewDn-90SqxC5GyoIfE9M-6XRWjO6hVZiOB5yEPrUbx1kcnzLlmvZ9Yqzwz8mR08tvTPnFBuO5YL-mJl6_X"
+          />
+        </div>
+        <div class="order-1 md:order-2">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">Consecuencias de Manejar Sin Seguro</h2>
+          <p class="text-slate-600 dark:text-slate-300 mb-8">
+            El sistema legal mexicano opera de manera diferente al de EE. UU. Los accidentes se consideran asuntos tanto civiles como penales. Sin prueba de capacidad de pago (seguro), las consecuencias son inmediatas.
+          </p>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+                <span class="material-icons text-red-600 dark:text-red-400">front_hand</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white">Detención</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Los conductores pueden ser detenidos por las autoridades hasta que se demuestre o garantice la responsabilidad financiera.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                <span class="material-icons text-amber-600 dark:text-amber-400">no_transfer</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white">Confiscación del Vehículo</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Su vehículo puede ser confiscado, y recuperarlo puede ser un proceso administrativo largo y costoso.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                <span class="material-icons text-blue-600 dark:text-blue-400">payments</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white">Multas Significativas</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Las multas por manejar sin seguro son altas, a menudo superando el costo de la póliza misma.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom CTA -->
+  <section class="bg-primary text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Maneje con Integridad. Maneje Protegido.</h2>
+      <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
+        No deje que un requisito legal arruine su viaje. Nuestras pólizas son reconocidas al 100% por las autoridades mexicanas y respaldadas por aseguradoras de primera categoría.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a class="inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-lg shadow-lg text-lg font-bold text-primary bg-white hover:bg-slate-50 transition-all transform hover:-translate-y-1" href="/es/contact">
+          Obtenga su Cotización Ahora
+          <span class="material-icons ml-2">arrow_forward</span>
+        </a>
+        <a class="inline-flex items-center justify-center px-8 py-4 border border-white/30 rounded-lg text-lg font-medium text-white hover:bg-white/10 transition-all" href="/es/coverage-options">
+          Ver Planes de Cobertura
+        </a>
+      </div>
+      <p class="mt-8 text-sm text-blue-200">
+        Cotizaciones en menos de 2 minutos. Entrega inmediata de la póliza por correo electrónico.
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

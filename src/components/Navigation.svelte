@@ -1,5 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { useTranslations, getRelativeLocaleUrl } from "../i18n/utils";
+  import type { ui } from "../i18n/ui";
+
+  let { lang = "en" }: { lang?: keyof typeof ui } = $props();
+
+  let t = $derived(useTranslations(lang));
+
+  // Create relative URL helper
+  let l = $derived((path: string) => getRelativeLocaleUrl(lang, path));
 
   let isMenuOpen = $state(false);
   let isDarkMode = $state(false);
@@ -30,23 +39,18 @@
 <nav
   class="sticky top-0 z-50 bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur shadow-sm border-b border-gray-200 dark:border-gray-800"
 >
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto py-5 px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-20 items-center">
       <!-- Logo -->
       <div class="flex-shrink-0 flex items-center gap-2">
         <a href="/" class="flex items-center gap-2">
-          <div class="h-10 w-10 relative">
+          <div class="h-20 w-60 relative">
             <img
               alt="Integrity Agente de Seguros Logo"
               class="h-full w-full object-contain"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqNRXOfCY-LgbKHF9NrDuFhTCFwuwyni4xhZbvO9RKclNDiBAT7Nop_C-gs1Rtkp15kLOp9iuHtoMn79H8P7gEYPay-77wwVHKkiN7iU-l84ocbuluxg65KIVTC2H1FrqljbdsozSb_06FvcAUUXM5Z6pH9XulmV6IcRTCNsOaNicZ_3_s9nFhVZBoyHUCf7oTsTGgqUxtvZEYHhYjxz_RFjAqZkFOlgCENxDUMTk58Qi3Rt58pB46FTcr6xS4TI4R9zo5tkrNTOpj"
+              src="/images/integrity-logoHorizontal.png"
             />
           </div>
-          <span
-            class="font-display font-bold text-xl text-primary tracking-wide hidden sm:block"
-          >
-            INTEGRITY
-          </span>
         </a>
       </div>
 
@@ -54,34 +58,62 @@
       <div class="hidden md:flex space-x-8 items-center">
         <a
           class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors"
-          href="/how-it-works"
+          href={l("/how-it-works")}
         >
-          How it works
+          {t("nav.howItWorks")}
         </a>
         <a
           class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors"
-          href="/why-insurance"
+          href={l("/why-insurance")}
         >
-          Why Insurance
+          {t("nav.whyInsurance")}
         </a>
         <a
           class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors"
-          href="/coverage-options"
+          href={l("/coverage-options")}
         >
-          Coverage options
+          {t("nav.coverageOptions")}
         </a>
         <a
           class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors"
-          href="/faq"
+          href={l("/faq")}
         >
-          FAQ
+          {t("nav.faq")}
         </a>
         <a
           class="bg-secondary hover:bg-green-700 text-white px-5 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-          href="/contact"
+          href={l("/contact")}
         >
-          Request Consultation
+          {t("nav.consultation")}
         </a>
+
+        <!-- Language Switcher -->
+        <div class="relative group ml-4">
+          <button
+            class="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-primary font-medium transition-colors"
+          >
+            {lang.toUpperCase()}
+            <span class="material-icons-outlined text-sm">expand_more</span>
+          </button>
+          <div
+            class="absolute right-0 top-full mt-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"
+          >
+            <a
+              href="/"
+              class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary transition-colors {lang ===
+              'en'
+                ? 'font-bold text-primary'
+                : ''}">English</a
+            >
+            <a
+              href="/es/"
+              class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary transition-colors {lang ===
+              'es'
+                ? 'font-bold text-primary'
+                : ''}">Español</a
+            >
+          </div>
+        </div>
 
         <!-- Dark Mode Toggle (Hidden by default - uncomment to enable) -->
         <!-- <button
@@ -116,34 +148,52 @@
         <div class="flex flex-col space-y-3">
           <a
             class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors py-2"
-            href="/why-insurance"
+            href={l("/why-insurance")}
           >
-            Why Insurance
+            {t("nav.whyInsurance")}
           </a>
           <a
             class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors py-2"
-            href="/faq"
+            href={l("/faq")}
           >
-            FAQ
+            {t("nav.faq")}
           </a>
           <a
             class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors py-2"
-            href="/how-it-works"
+            href={l("/how-it-works")}
           >
-            How it works
+            {t("nav.howItWorks")}
           </a>
           <a
             class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors py-2"
-            href="/coverage-options"
+            href={l("/coverage-options")}
           >
-            Coverage options
+            {t("nav.coverageOptions")}
           </a>
           <a
             class="bg-secondary hover:bg-green-700 text-white px-5 py-2.5 rounded-full font-semibold transition-all text-center"
-            href="/contact"
+            href={l("/contact")}
           >
-            Request Consultation
+            {t("nav.consultation")}
           </a>
+
+          <div
+            class="pt-4 border-t border-gray-200 dark:border-gray-800 flex justify-center space-x-4"
+          >
+            <a
+              href="/"
+              class="text-gray-700 dark:text-gray-300 font-medium {lang === 'en'
+                ? 'text-primary underline'
+                : ''}">EN</a
+            >
+            <span class="text-gray-300 dark:text-gray-700">|</span>
+            <a
+              href="/es/"
+              class="text-gray-700 dark:text-gray-300 font-medium {lang === 'es'
+                ? 'text-primary underline'
+                : ''}">ES</a
+            >
+          </div>
         </div>
       </div>
     {/if}
