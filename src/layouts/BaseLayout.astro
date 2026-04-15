@@ -1,7 +1,7 @@
 ---
-import SEO from '../components/SEO.astro';
-import '../styles/global.css';
-import { getLangFromUrl } from '../i18n/utils';
+import SEO from "../components/SEO.astro";
+import "../styles/global.css";
+import { getLangFromUrl } from "../i18n/utils";
 
 interface Props {
   title: string;
@@ -21,7 +21,7 @@ const lang = getLangFromUrl(Astro.url);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,26 +39,28 @@ const lang = getLangFromUrl(Astro.url);
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
     />
-    
-    <SEO 
+
+    <SEO
       title={title}
       description={description}
       image={image}
       canonicalURL={canonicalURL}
     />
-    
+
     <!-- Dark Mode Script (runs before body renders to prevent flash) -->
     <script is:inline>
       // Dark mode is disabled by default
       // Uncomment the following lines to enable dark mode functionality
-      
+
       // const theme = localStorage.getItem('theme') || 'light';
       // if (theme === 'dark') {
       //   document.documentElement.classList.add('dark');
       // }
     </script>
   </head>
-  <body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-body antialiased">
+  <body
+    class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-body antialiased"
+  >
     <slot />
   </body>
 </html>
