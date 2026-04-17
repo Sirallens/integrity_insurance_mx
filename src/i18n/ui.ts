@@ -12,6 +12,7 @@ export const ui = {
     'nav.coverageOptions': 'Coverage options',
     'nav.faq': 'FAQ',
     'nav.consultation': 'Request Consultation',
+    'nav.getQuote': 'Get a Free Quote',
     
     'footer.companyDescription': 'Providing trustworthy, independent insurance advice to protect what matters most to you and your family.',
     'footer.quickLinks': 'Quick Links',
@@ -27,6 +28,7 @@ export const ui = {
     'nav.coverageOptions': 'Opciones de cobertura',
     'nav.faq': 'Preguntas Frecuentes',
     'nav.consultation': 'Solicitar Asesoría',
+    'nav.getQuote': 'Cotizar Gratis',
     
     'footer.companyDescription': 'Brindando asesoría de seguros confiable e independiente para proteger lo que más le importa a usted y su familia.',
     'footer.quickLinks': 'Enlaces Rápidos',
