@@ -1,5 +1,6 @@
 ---
 import SEO from "../components/SEO.astro";
+import WhatsAppWidget from "../components/WhatsAppWidget.astro";
 import "../styles/global.css";
 import { getLangFromUrl } from "../i18n/utils";
 
@@ -50,6 +51,7 @@ const lang = getLangFromUrl(Astro.url);
 
 <body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-body antialiased">
   <slot />
+  <WhatsAppWidget />
 </body>
 
 </html>

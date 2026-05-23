@@ -20,7 +20,11 @@ export const ui = {
     'footer.whyInsurance': 'Why Insurance',
     'footer.partners': 'Partners',
     'footer.contact': 'Contact',
-    'footer.rights': 'All rights reserved.'
+    'footer.rights': 'All rights reserved.',
+
+    'whatsapp.tooltip': 'Chat with us on WhatsApp',
+    'whatsapp.ariaLabel': 'Open WhatsApp chat',
+    'whatsapp.bubble': 'Hi! 👋 Need help with your insurance?'
   },
   es: {
     'nav.howItWorks': 'Cómo funciona',
@@ -36,6 +40,10 @@ export const ui = {
     'footer.whyInsurance': 'Por qué un Seguro',
     'footer.partners': 'Socios',
     'footer.contact': 'Contacto',
-    'footer.rights': 'Todos los derechos reservados.'
+    'footer.rights': 'Todos los derechos reservados.',
+
+    'whatsapp.tooltip': 'Chatea con nosotros por WhatsApp',
+    'whatsapp.ariaLabel': 'Abrir chat de WhatsApp',
+    'whatsapp.bubble': '¡Hola! 👋 ¿Necesitas ayuda con tu seguro?'
   },
 } as const;

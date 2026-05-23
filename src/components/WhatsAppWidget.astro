@@ -1,0 +1,269 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+// ─────────────────────────────────────────────────────────────────────
+// 📱 MODULAR CONFIG — edit these variables to change number / messages
+// ─────────────────────────────────────────────────────────────────────
+const WHATSAPP_PHONE = "19566160306"; // Without + or spaces
+
+const WHATSAPP_MESSAGES = {
+  en: "Hello! I'm interested in getting a Mexico auto insurance quote.",
+  es: "¡Hola! Me interesa cotizar un seguro de auto para México.",
+};
+// ─────────────────────────────────────────────────────────────────────
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const message = WHATSAPP_MESSAGES[lang] ?? WHATSAPP_MESSAGES.en;
+const waHref = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+---
+
+<!-- WhatsApp Floating Widget -->
+<div class="wa-widget" id="wa-widget" aria-live="polite">
+  <!-- Bubble tooltip -->
+  <div class="wa-bubble" id="wa-bubble" role="tooltip">
+    <span class="wa-bubble__arrow"></span>
+    <p>{t("whatsapp.bubble")}</p>
+  </div>
+
+  <!-- Main button -->
+  <a
+    href={waHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="wa-btn"
+    id="wa-btn"
+    aria-label={t("whatsapp.ariaLabel")}
+    title={t("whatsapp.tooltip")}
+  >
+    <!-- Pulse rings -->
+    <span class="wa-pulse wa-pulse--1"></span>
+    <span class="wa-pulse wa-pulse--2"></span>
+
+    <!-- WhatsApp SVG Icon (official brand shape) -->
+    <svg
+      class="wa-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 48 48"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        fill="#fff"
+        d="M4.868 43.303l2.694-9.835a18.958 18.958 0 0 1-2.535-9.489C5.032 13.514 13.548 5 24.014 5c5.079.002 9.845 1.979 13.43 5.566a18.896 18.896 0 0 1 5.554 13.428c-.004 10.465-8.522 18.98-18.986 18.98a19.03 19.03 0 0 1-9.073-2.301z"
+      ></path>
+      <path
+        fill="#fff"
+        d="M4.868 43.803a.5.5 0 0 1-.484-.631l2.639-9.636a19.458 19.458 0 0 1-2.535-9.557C4.532 13.238 13.273 4.5 24.014 4.5c5.213.002 10.108 2.031 13.784 5.707A19.397 19.397 0 0 1 43.5 23.993c-.004 10.741-8.746 19.48-19.486 19.48a19.529 19.529 0 0 1-9.312-2.368L4.868 43.803z"
+        opacity=".5"
+      ></path>
+      <path
+        fill="#25D366"
+        d="M24.014 5C13.548 5 5.032 13.514 5.027 23.979a18.96 18.96 0 0 0 2.535 9.489L4.868 43.303l10.141-2.659a18.977 18.977 0 0 0 9.005 2.294h.008c10.465 0 18.982-8.516 18.986-18.98a18.9 18.9 0 0 0-5.554-13.428A18.904 18.904 0 0 0 24.014 5z"
+      ></path>
+      <path
+        fill="#fff"
+        d="M19.952 17.047c-.406-.902-.833-.92-1.22-.936-.316-.013-.678-.012-1.039-.012-.361 0-.947.136-1.443.678-.496.542-1.894 1.85-1.894 4.512s1.939 5.232 2.21 5.593c.271.361 3.762 5.999 9.26 8.167 4.577 1.807 5.508 1.449 6.503 1.359.994-.09 3.207-1.311 3.659-2.578.452-1.267.452-2.353.316-2.578-.136-.226-.497-.361-1.039-.632s-3.207-1.582-3.703-1.762c-.497-.181-.858-.271-1.219.271-.361.542-1.399 1.762-1.714 2.122-.316.361-.632.406-1.174.136-.542-.271-2.288-.844-4.361-2.69-1.612-1.437-2.7-3.212-3.016-3.754-.316-.542-.034-.835.237-1.104.244-.242.542-.632.813-.947.271-.316.361-.542.542-.903.181-.361.09-.678-.045-.949-.136-.27-1.187-2.945-1.673-4.013z"
+      ></path>
+    </svg>
+  </a>
+</div>
+
+<style>
+  /* ── Layout ───────────────────────────────────────────────── */
+  .wa-widget {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    /* entry animation */
+    animation: wa-slide-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: 1.2s;
+    opacity: 0;
+  }
+
+  @media (max-width: 640px) {
+    .wa-widget {
+      bottom: 18px;
+      right: 18px;
+    }
+  }
+
+  /* ── Button ───────────────────────────────────────────────── */
+  .wa-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    box-shadow:
+      0 4px 20px rgba(37, 211, 102, 0.45),
+      0 2px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition:
+      transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .wa-btn:hover,
+  .wa-btn:focus-visible {
+    transform: scale(1.1);
+    box-shadow:
+      0 6px 28px rgba(37, 211, 102, 0.6),
+      0 3px 10px rgba(0, 0, 0, 0.25);
+    outline: none;
+  }
+
+  .wa-btn:hover + .wa-bubble,
+  .wa-btn:focus-visible + .wa-bubble {
+    /* handled via JS class toggle */
+  }
+
+  .wa-icon {
+    width: 34px;
+    height: 34px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Pulse rings ──────────────────────────────────────────── */
+  .wa-pulse {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.35);
+    pointer-events: none;
+  }
+
+  .wa-pulse--1 {
+    inset: -6px;
+    animation: wa-pulse 2.2s ease-out infinite;
+  }
+
+  .wa-pulse--2 {
+    inset: -12px;
+    animation: wa-pulse 2.2s ease-out 0.55s infinite;
+  }
+
+  /* ── Bubble tooltip ───────────────────────────────────────── */
+  .wa-bubble {
+    position: relative;
+    background: #fff;
+    border-radius: 16px 16px 4px 16px;
+    padding: 10px 16px;
+    max-width: 220px;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.12),
+      0 2px 8px rgba(0, 0, 0, 0.08);
+    transform: translateY(6px) scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .wa-bubble.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .wa-bubble p {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .wa-bubble__arrow {
+    position: absolute;
+    bottom: -8px;
+    right: 16px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 0px solid transparent;
+    border-top: 8px solid #fff;
+  }
+
+  @media (max-width: 640px) {
+    .wa-bubble p {
+      white-space: normal;
+    }
+  }
+
+  /* ── Keyframes ────────────────────────────────────────────── */
+  @keyframes wa-pulse {
+    0% {
+      transform: scale(0.85);
+      opacity: 0.7;
+    }
+    70% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  @keyframes wa-slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(24px) scale(0.85);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
+
+<script>
+  // Show bubble automatically 3s after widget appears, then hide after 6s
+  // Also show/hide on hover
+  const widget = document.getElementById("wa-widget");
+  const bubble = document.getElementById("wa-bubble");
+  const btn = document.getElementById("wa-btn");
+
+  if (bubble && btn && widget) {
+    // Auto-show bubble after a delay, then auto-hide
+    const autoShow = setTimeout(() => {
+      bubble.classList.add("is-visible");
+      setTimeout(() => {
+        bubble.classList.remove("is-visible");
+      }, 5000);
+    }, 2800);
+
+    // Toggle bubble on hover (desktop)
+    btn.addEventListener("mouseenter", () => {
+      clearTimeout(autoShow);
+      bubble.classList.add("is-visible");
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      bubble.classList.remove("is-visible");
+    });
+
+    // Toggle bubble on focus (keyboard/mobile accessibility)
+    btn.addEventListener("focus", () => {
+      bubble.classList.add("is-visible");
+    });
+
+    btn.addEventListener("blur", () => {
+      bubble.classList.remove("is-visible");
+    });
+  }
+</script>
