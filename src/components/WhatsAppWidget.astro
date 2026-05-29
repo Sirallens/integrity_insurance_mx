@@ -1,10 +1,11 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { SITE_INFO } from "../consts";
 
 // ─────────────────────────────────────────────────────────────────────
 // 📱 MODULAR CONFIG — edit these variables to change number / messages
 // ─────────────────────────────────────────────────────────────────────
-const WHATSAPP_PHONE = "19566160306"; // Without + or spaces
+const WHATSAPP_PHONE = SITE_INFO.phone.replace(/^\+/, ""); // Without + or spaces
 
 const WHATSAPP_MESSAGES = {
   en: "Hello! I'm interested in getting a Mexico auto insurance quote.",
