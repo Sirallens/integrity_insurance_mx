@@ -19,7 +19,7 @@
     email: "",
     phone: "",
     policy: "",
-    topic: "General Inquiry",
+    topic: t.topicGeneral ?? "General Inquiry",
     message: "",
   });
 
