@@ -1,7 +1,7 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Navigation from '../../components/Navigation.svelte';
-import Footer from '../../components/Footer.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.svelte";
+import Footer from "../../components/Footer.astro";
 ---
 
 <BaseLayout
@@ -12,32 +12,58 @@ import Footer from '../../components/Footer.astro';
 
   <main class="flex-grow">
     <!-- Hero Section with Search -->
-    <div class="relative bg-primary/5 dark:bg-primary/10 pt-16 pb-24 border-b border-slate-200 dark:border-slate-800">
+    <div
+      class="relative bg-primary/5 dark:bg-primary/10 pt-16 pb-16 border-b border-slate-200 dark:border-slate-800 align-center"
+    >
       <!-- Decorative Background Element -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-        <div class="absolute top-1/2 -left-24 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
+        <div
+          class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+        >
+        </div>
+        <div
+          class="absolute top-1/2 -left-24 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"
+        >
+        </div>
       </div>
 
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4 border border-primary/20">Centro de Ayuda</span>
-        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Preguntas Frecuentes</h1>
-        <p class="text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-2xl mx-auto">
-          Todo lo que necesita saber sobre conducir en México de manera segura. Encuentre respuestas sobre cobertura, cruce fronterizo y reclamaciones.
+        <span
+          class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4 border border-primary/20"
+          >Centro de Ayuda</span
+        >
+        <h1
+          class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6"
+        >
+          Preguntas Frecuentes
+        </h1>
+        <p
+          class="text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-2xl mx-auto"
+        >
+          Todo lo que necesita saber sobre conducir en México de manera segura.
+          Encuentre respuestas sobre cobertura, cruce fronterizo y
+          reclamaciones.
         </p>
 
         <!-- Search Bar -->
-        <div class="relative max-w-2xl mx-auto group">
-          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-            <span class="material-icons text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+        <div class="relative max-w-2xl mx-auto group hidden">
+          <div
+            class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+          >
+            <span
+              class="material-icons text-slate-400 group-focus-within:text-primary transition-colors"
+              >search</span
+            >
           </div>
-          <input 
-            class="block w-full pl-12 pr-4 py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm" 
-            placeholder="Buscar respuestas (ej. reclamaciones, cruce fronterizo)..." 
+          <input
+            class="block w-full pl-12 pr-4 py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm"
+            placeholder="Buscar respuestas (ej. reclamaciones, cruce fronterizo)..."
             type="text"
           />
           <div class="absolute inset-y-0 right-2 flex items-center">
-            <button class="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+            <button
+              class="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+            >
               Buscar
             </button>
           </div>
@@ -46,33 +72,55 @@ import Footer from '../../components/Footer.astro';
     </div>
 
     <!-- FAQ Content Section -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 -mt-12 relative z-10">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 -mt-12 relative z-10"
+    >
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <!-- Sidebar Categories -->
         <div class="lg:col-span-3">
-          <div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-2 sticky top-24">
+          <div
+            class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-2 sticky top-24"
+          >
             <nav class="space-y-1">
-              <a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-lg font-medium transition-colors" href="#general">
+              <a
+                class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-lg font-medium transition-colors"
+                href="#general"
+              >
                 <span class="material-icons text-sm">verified_user</span>
                 Preguntas Generales
               </a>
-              <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white rounded-lg font-medium transition-colors" href="#coverage">
+              <a
+                class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white rounded-lg font-medium transition-colors"
+                href="#coverage"
+              >
                 <span class="material-icons text-sm">shield</span>
                 Preguntas de Cobertura
               </a>
-              <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white rounded-lg font-medium transition-colors" href="#vehicle">
+              <a
+                class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white rounded-lg font-medium transition-colors"
+                href="#vehicle"
+              >
                 <span class="material-icons text-sm">directions_car</span>
                 Vehículo y Conductor
               </a>
-              <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white rounded-lg font-medium transition-colors" href="#travel">
+              <a
+                class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white rounded-lg font-medium transition-colors"
+                href="#travel"
+              >
                 <span class="material-icons text-sm">map</span>
                 Preguntas de Viaje
               </a>
-              <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white rounded-lg font-medium transition-colors" href="#purchasing">
+              <a
+                class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white rounded-lg font-medium transition-colors"
+                href="#purchasing"
+              >
                 <span class="material-icons text-sm">shopping_cart</span>
                 Preguntas de Compra
               </a>
-              <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white rounded-lg font-medium transition-colors" href="#claims">
+              <a
+                class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white rounded-lg font-medium transition-colors"
+                href="#claims"
+              >
                 <span class="material-icons text-sm">support_agent</span>
                 Reclamaciones y Asistencia
               </a>
@@ -84,8 +132,13 @@ import Footer from '../../components/Footer.astro';
                 <span class="material-icons">support_agent</span>
                 <span class="font-bold">¿Necesita asistencia?</span>
               </div>
-              <p class="text-sm text-blue-100 mb-3">Nuestros agentes bilingües están listos para ayudarlo 24/7.</p>
-              <a class="inline-block w-full text-center bg-white text-primary text-sm font-bold py-2 rounded shadow hover:bg-blue-50 transition-colors" href="/es/contact">
+              <p class="text-sm text-blue-100 mb-3">
+                Nuestros agentes bilingües están listos para ayudarlo 24/7.
+              </p>
+              <a
+                class="inline-block w-full text-center bg-white text-primary text-sm font-bold py-2 rounded shadow hover:bg-blue-50 transition-colors"
+                href="/es/contact"
+              >
                 Contactar Soporte
               </a>
             </div>
@@ -96,47 +149,122 @@ import Footer from '../../components/Footer.astro';
         <div class="lg:col-span-9 space-y-8">
           <!-- Section: General Questions -->
           <div id="general">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-              <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center">
+            <h2
+              class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2"
+            >
+              <span
+                class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center"
+              >
                 <span class="material-icons text-lg">verified_user</span>
               </span>
               Preguntas Generales
             </h2>
             <div class="space-y-4">
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md" open>
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Qué es el Seguro de Auto Turista para México?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+                open
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Qué es el Seguro de Auto Turista para México?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>El Seguro de Auto Turista para México es una póliza de seguro temporal que proporciona cobertura de responsabilidad civil y daños físicos para vehículos que se conducen desde los Estados Unidos o Canadá hacia México.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    El Seguro de Auto Turista para México es una póliza de
+                    seguro temporal que proporciona cobertura de responsabilidad
+                    civil y daños físicos para vehículos que se conducen desde
+                    los Estados Unidos o Canadá hacia México.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Necesito seguro mexicano si ya tengo seguro de auto de EE. UU.?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Necesito seguro mexicano si ya tengo seguro de auto de EE.
+                    UU.?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Sí. Las pólizas de seguro de auto de EE. UU. y Canadá no son reconocidas legalmente en México. La ley mexicana exige cobertura de responsabilidad civil emitida por una aseguradora mexicana.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Sí. Las pólizas de seguro de auto de EE. UU. y Canadá no son
+                    reconocidas legalmente en México. La ley mexicana exige
+                    cobertura de responsabilidad civil emitida por una
+                    aseguradora mexicana.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Es el Seguro Turista para México obligatorio por ley?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Es el Seguro Turista para México obligatorio por ley?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Sí. La ley federal mexicana exige que los conductores lleven seguro de responsabilidad civil de una aseguradora mexicana cuando manejan en carreteras y caminos federales.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Sí. La ley federal mexicana exige que los conductores lleven
+                    seguro de responsabilidad civil de una aseguradora mexicana
+                    cuando manejan en carreteras y caminos federales.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Cuánto tiempo puede durar una póliza de seguro de auto turista para México?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Cuánto tiempo puede durar una póliza de seguro de auto
+                    turista para México?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p class="mb-2">Las pólizas generalmente se pueden adquirir por:</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p class="mb-2">
+                    Las pólizas generalmente se pueden adquirir por:
+                  </p>
                   <ul class="list-disc pl-5 space-y-1">
                     <li>1 día</li>
                     <li>3 días</li>
@@ -148,13 +276,30 @@ import Footer from '../../components/Footer.astro';
                   </ul>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Quién puede comprar una póliza de Seguro de Auto Turista para México?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Quién puede comprar una póliza de Seguro de Auto Turista
+                    para México?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Cualquier persona que conduzca un vehículo con placas de EE. UU. o Canadá hacia México puede adquirir una póliza.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Cualquier persona que conduzca un vehículo con placas de EE.
+                    UU. o Canadá hacia México puede adquirir una póliza.
+                  </p>
                 </div>
               </details>
             </div>
@@ -162,19 +307,36 @@ import Footer from '../../components/Footer.astro';
 
           <!-- Section: Coverage Questions -->
           <div id="coverage">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pt-4">
-              <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center">
+            <h2
+              class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pt-4"
+            >
+              <span
+                class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center"
+              >
                 <span class="material-icons text-lg">shield</span>
               </span>
               Preguntas de Cobertura
             </h2>
             <div class="space-y-4">
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Qué cubre el Seguro de Auto Turista para México?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Qué cubre el Seguro de Auto Turista para México?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
                   <p class="mb-2">La cobertura puede incluir:</p>
                   <ul class="list-disc pl-5 space-y-1">
                     <li>Responsabilidad civil (requerida por ley)</li>
@@ -186,40 +348,106 @@ import Footer from '../../components/Footer.astro';
                   </ul>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Qué es la cobertura de responsabilidad civil en México?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Qué es la cobertura de responsabilidad civil en México?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>El seguro de responsabilidad civil cubre los daños o lesiones que cause a terceros. Esta cobertura es obligatoria en México.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    El seguro de responsabilidad civil cubre los daños o
+                    lesiones que cause a terceros. Esta cobertura es obligatoria
+                    en México.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿La póliza cubre el robo de mi vehículo?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿La póliza cubre el robo de mi vehículo?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Sí, si contrata cobertura amplia que incluye protección contra robo.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Sí, si contrata cobertura amplia que incluye protección
+                    contra robo.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿La póliza cubre gastos médicos?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿La póliza cubre gastos médicos?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>La mayoría de las pólizas incluyen cobertura de gastos médicos para el conductor y los pasajeros.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    La mayoría de las pólizas incluyen cobertura de gastos
+                    médicos para el conductor y los pasajeros.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿La póliza incluye asistencia legal?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿La póliza incluye asistencia legal?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Sí. Muchas pólizas incluyen representación legal y cobertura de fianza, lo cual es muy importante en caso de accidente en México.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Sí. Muchas pólizas incluyen representación legal y cobertura
+                    de fianza, lo cual es muy importante en caso de accidente en
+                    México.
+                  </p>
                 </div>
               </details>
             </div>
@@ -227,19 +455,36 @@ import Footer from '../../components/Footer.astro';
 
           <!-- Section: Vehicle & Driver Questions -->
           <div id="vehicle">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pt-4">
-              <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center">
+            <h2
+              class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pt-4"
+            >
+              <span
+                class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center"
+              >
                 <span class="material-icons text-lg">directions_car</span>
               </span>
               Vehículo y Conductor
             </h2>
             <div class="space-y-4">
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Qué vehículos se pueden asegurar?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Qué vehículos se pueden asegurar?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
                   <p class="mb-2">La mayoría de las pólizas turistas cubren:</p>
                   <ul class="list-disc pl-5 space-y-1 mb-4">
                     <li>Automóviles</li>
@@ -247,16 +492,36 @@ import Footer from '../../components/Footer.astro';
                     <li>Camionetas pick-up</li>
                     <li>Casas rodantes</li>
                   </ul>
-                  <p>Ciertos vehículos como camiones comerciales o vehículos de lujo pueden requerir pólizas especiales.</p>
+                  <p>
+                    Ciertos vehículos como camiones comerciales o vehículos de
+                    lujo pueden requerir pólizas especiales.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Se pueden incluir múltiples conductores?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Se pueden incluir múltiples conductores?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Sí. La mayoría de las pólizas permiten conductores adicionales siempre que tengan una licencia de conducir válida.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Sí. La mayoría de las pólizas permiten conductores
+                    adicionales siempre que tengan una licencia de conducir
+                    válida.
+                  </p>
                 </div>
               </details>
             </div>
@@ -264,53 +529,122 @@ import Footer from '../../components/Footer.astro';
 
           <!-- Section: Travel Questions -->
           <div id="travel">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pt-4">
-              <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center">
+            <h2
+              class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pt-4"
+            >
+              <span
+                class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center"
+              >
                 <span class="material-icons text-lg">map</span>
               </span>
               Preguntas de Viaje
             </h2>
             <div class="space-y-4">
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Necesito seguro si solo manejo cerca de la frontera?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Necesito seguro si solo manejo cerca de la frontera?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Sí. Incluso en zonas fronterizas, la ley mexicana exige un seguro de responsabilidad civil emitido por una compañía mexicana.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Sí. Incluso en zonas fronterizas, la ley mexicana exige un
+                    seguro de responsabilidad civil emitido por una compañía
+                    mexicana.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿El seguro funciona en cualquier parte de México?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿El seguro funciona en cualquier parte de México?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Sí. Las pólizas de auto turista le cubren en todo México, dependiendo de la cobertura que elija.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Sí. Las pólizas de auto turista le cubren en todo México,
+                    dependiendo de la cobertura que elija.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Qué hago si tengo un accidente en México?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Qué hago si tengo un accidente en México?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Llame de inmediato al número de reclamaciones de la aseguradora. Un ajustador será enviado al lugar del accidente para asistirle.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Llame de inmediato al número de reclamaciones de la
+                    aseguradora. Un ajustador será enviado al lugar del
+                    accidente para asistirle.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Qué documentos debo llevar al manejar en México?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Qué documentos debo llevar al manejar en México?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
                   <p class="mb-2">Siempre debe llevar consigo:</p>
                   <ul class="list-disc pl-5 space-y-1">
                     <li>Su póliza de seguro</li>
                     <li>Licencia de conducir vigente</li>
                     <li>Tarjeta de circulación del vehículo</li>
                     <li>Pasaporte o documentos de viaje</li>
-                    <li>Permiso de Importación Temporal de Vehículo para México</li>
+                    <li>
+                      Permiso de Importación Temporal de Vehículo para México
+                    </li>
                   </ul>
                 </div>
               </details>
@@ -319,28 +653,61 @@ import Footer from '../../components/Footer.astro';
 
           <!-- Section: Purchasing Questions -->
           <div id="purchasing">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pt-4">
-              <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center">
+            <h2
+              class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pt-4"
+            >
+              <span
+                class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center"
+              >
                 <span class="material-icons text-lg">shopping_cart</span>
               </span>
               Preguntas de Compra
             </h2>
             <div class="space-y-4">
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Puedo comprar el Seguro Turista para México en línea?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Puedo comprar el Seguro Turista para México en línea?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Sí. Puede adquirir su póliza en línea en minutos y recibir los documentos por correo electrónico.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Sí. Puede adquirir su póliza en línea en minutos y recibir
+                    los documentos por correo electrónico.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Cuánto cuesta el Seguro de Auto Turista para México?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Cuánto cuesta el Seguro de Auto Turista para México?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
                   <p class="mb-2">Los precios varían según:</p>
                   <ul class="list-disc pl-5 space-y-1">
                     <li>Valor del vehículo</li>
@@ -349,22 +716,55 @@ import Footer from '../../components/Footer.astro';
                   </ul>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Cuándo debo comprar la póliza?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Cuándo debo comprar la póliza?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Puede comprarla antes de cruzar la frontera o incluso el mismo día que viaja.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Puede comprarla antes de cruzar la frontera o incluso el
+                    mismo día que viaja.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Puedo cancelar mi póliza?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Puedo cancelar mi póliza?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Muchas pólizas pueden cancelarse antes de la fecha de inicio para obtener un reembolso, según las condiciones del proveedor.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Muchas pólizas pueden cancelarse antes de la fecha de inicio
+                    para obtener un reembolso, según las condiciones del
+                    proveedor.
+                  </p>
                 </div>
               </details>
             </div>
@@ -372,38 +772,90 @@ import Footer from '../../components/Footer.astro';
 
           <!-- Section: Claims & Assistance -->
           <div id="claims">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pt-4">
-              <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center">
+            <h2
+              class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pt-4"
+            >
+              <span
+                class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center"
+              >
                 <span class="material-icons text-lg">support_agent</span>
               </span>
               Reclamaciones y Asistencia
             </h2>
             <div class="space-y-4">
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Qué hago si mi vehículo se descompone en México?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Qué hago si mi vehículo se descompone en México?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>La mayoría de las pólizas incluyen asistencia en carretera, que puede ayudar con remolque, cambio de llanta o problemas mecánicos.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    La mayoría de las pólizas incluyen asistencia en carretera
+                    que puede ayudar con servicio de remolque.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Tengo que pagar algo si presento una reclamación?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Tengo que pagar algo si presento una reclamación?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Si tiene cobertura de daños físicos, puede haber un deducible según las condiciones de la póliza.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Si tiene cobertura de daños físicos, puede haber un
+                    deducible según las condiciones de la póliza.
+                  </p>
                 </div>
               </details>
-              <details class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">¿Hay asistencia disponible en inglés?</h3>
-                  <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <details
+                class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <summary
+                  class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors"
+                >
+                  <h3
+                    class="text-lg font-semibold text-slate-900 dark:text-white pr-4"
+                  >
+                    ¿Hay asistencia disponible en inglés?
+                  </h3>
+                  <span
+                    class="material-icons text-primary transition-transform duration-300 group-open:rotate-180"
+                    >expand_more</span
+                  >
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                  <p>Sí. La mayoría de los proveedores de seguro de auto turista ofrecen asistencia bilingüe disponible 24/7.</p>
+                <div
+                  class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4"
+                >
+                  <p>
+                    Sí. La mayoría de los proveedores de seguro de auto turista
+                    ofrecen asistencia bilingüe disponible 24/7.
+                  </p>
                 </div>
               </details>
             </div>
@@ -413,20 +865,33 @@ import Footer from '../../components/Footer.astro';
     </div>
 
     <!-- Still Need Help Section -->
-    <div class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-16 py-16">
+    <div
+      class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-16 py-16"
+    >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-primary/5 dark:bg-slate-800 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/10">
+        <div
+          class="bg-primary/5 dark:bg-slate-800 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/10"
+        >
           <div class="flex-1">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">¿Aún tiene preguntas?</h2>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+              ¿Aún tiene preguntas?
+            </h2>
             <p class="text-slate-600 dark:text-slate-300 mb-6 max-w-lg">
-              ¿No encuentra la respuesta que busca? Hable con nuestro amable equipo. Estamos aquí para ayudarle a manejar con confianza.
+              ¿No encuentra la respuesta que busca? Hable con nuestro amable
+              equipo. Estamos aquí para ayudarle a manejar con confianza.
             </p>
             <div class="flex flex-wrap gap-4">
-              <a class="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors" href="/es/contact">
+              <a
+                class="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                href="/es/contact"
+              >
                 <span class="material-icons text-sm">chat</span>
                 Iniciar Chat en Vivo
               </a>
-              <a class="inline-flex items-center gap-2 bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-700 dark:text-white border border-slate-200 dark:border-slate-600 px-6 py-3 rounded-lg font-semibold transition-colors" href="/es/contact">
+              <a
+                class="inline-flex items-center gap-2 bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-700 dark:text-white border border-slate-200 dark:border-slate-600 px-6 py-3 rounded-lg font-semibold transition-colors"
+                href="/es/contact"
+              >
                 <span class="material-icons text-sm">email</span>
                 Envíenos un Correo
               </a>
@@ -434,13 +899,17 @@ import Footer from '../../components/Footer.astro';
           </div>
 
           <!-- Illustrative Image -->
-          <div class="relative w-full md:w-1/3 aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
-            <img 
-              alt="Agente de soporte al cliente sonriendo y hablando con auriculares" 
-              class="w-full h-full object-cover" 
+          <div
+            class="relative w-full md:w-1/3 aspect-[4/3] rounded-xl overflow-hidden shadow-lg"
+          >
+            <img
+              alt="Agente de soporte al cliente sonriendo y hablando con auriculares"
+              class="w-full h-full object-cover"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZFiQN001vMh4wZs0i_muxW5Xw8pM4rMAGPis6d8Uka9BoLrStvgIK4BBY4e7225y9WETE0Qi_gkkZ1SUGG81zhAqVeTHOUrrqI6iQ7zTHfxNJlN7fRRpWBe1X-c6r75s2U2ZbOmvuNdj2QIV7l5WnCqmirEPqkssqmIuYRwlsXkcw2lQ0z22qijohcJtaTX1o_ijyOX3osDJx1Afy7aiPrAYg0PVnoUPYmX92qjsfpghOJrwCxO-dGw294uM37VA3IbmSL6oRTxjE"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6"
+            >
               <div class="text-white">
                 <p class="font-bold text-lg">Estamos aquí para usted</p>
                 <p class="text-sm opacity-90">Lun-Vie, 9am - 6pm EST</p>
@@ -464,10 +933,16 @@ import Footer from '../../components/Footer.astro';
     display: none;
   }
   details[open] summary ~ * {
-    animation: sweep .3s ease-in-out;
+    animation: sweep 0.3s ease-in-out;
   }
   @keyframes sweep {
-    0%    {opacity: 0; transform: translateY(-10px)}
-    100%  {opacity: 1; transform: translateY(0)}
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
