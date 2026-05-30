@@ -1,0 +1,9 @@
+{
+  // Cloudflare Pages deployment configuration
+  // Docs: https://developers.cloudflare.com/pages/
+  "name": "integrity-insurance-mx",
+  "compatibility_date": "2026-05-30",
+  "assets": {
+    "directory": "./dist"
+  }
+}

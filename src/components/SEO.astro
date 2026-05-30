@@ -8,8 +8,9 @@ interface Props {
 
 const { title, description, image, canonicalURL } = Astro.props;
 
-const siteURL = Astro.site || 'https://yourusername.github.io';
-const fullCanonicalURL = canonicalURL || new URL(Astro.url.pathname, siteURL).toString();
+const siteURL = Astro.site || "https://www.integrityinsurance.mx";
+const fullCanonicalURL =
+  canonicalURL || new URL(Astro.url.pathname, siteURL).toString();
 const defaultImage = `${siteURL}/images/og-default.jpg`;
 const ogImage = image || defaultImage;
 ---

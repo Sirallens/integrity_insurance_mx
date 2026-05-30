@@ -5,6 +5,7 @@ import {
   getRelativeLocaleUrl,
 } from "../i18n/utils";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { SITE_INFO } from "../consts";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -76,16 +77,15 @@ const l = (path: string) => getRelativeLocaleUrl(lang, path);
         <ul class="space-y-2 text-sm">
           <li class="flex items-center gap-2">
             <i class="fa-brands fa-whatsapp text-2xl"></i>
-            +1 (956) 6160-0306
+            {SITE_INFO.phoneFormatted}
           </li>
           <li class="flex items-center gap-2">
             <i class="fa-regular fa-envelope text-2xl"></i>
-            contact@integrityseguros.com
+            {SITE_INFO.email}
           </li>
           <li class="flex items-center gap-2">
             <i class="fa-solid fa-map-location-dot text-xl"></i>
-            Blvd Las Fuentes 426 Col Las Fuentes Secc Lomas, Reynosa, Tamaulipas,
-            Mexico 88703
+            {SITE_INFO.address}
           </li>
         </ul>
       </div>
@@ -101,7 +101,7 @@ const l = (path: string) => getRelativeLocaleUrl(lang, path);
       <div class="flex space-x-4 mt-4 md:mt-0">
         <a
           class="text-gray-400 hover:text-white transition-colors"
-          href="https://www.facebook.com/integrityagentedeseguros"
+          href={SITE_INFO.facebook}
           aria-label="Facebook"
         >
           <span class="sr-only">Facebook</span>
@@ -109,7 +109,7 @@ const l = (path: string) => getRelativeLocaleUrl(lang, path);
         </a>
         <a
           class="text-gray-400 hover:text-white transition-colors"
-          href="https://www.instagram.com/integrity.agentes/"
+          href={SITE_INFO.instagram}
           aria-label="Instagram"
         >
           <span class="sr-only">Instagram</span>

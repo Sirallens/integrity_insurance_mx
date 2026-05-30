@@ -1,13 +1,14 @@
 ---
 import SEO from "../components/SEO.astro";
+import WhatsAppWidget from "../components/WhatsAppWidget.astro";
 import "../styles/global.css";
 import { getLangFromUrl } from "../i18n/utils";
 
 interface Props {
-  title: string;
-  description: string;
-  image?: string;
-  canonicalURL?: string;
+title: string;
+description: string;
+image?: string;
+canonicalURL?: string;
 }
 
 const { title, description, image, canonicalURL } = Astro.props;
@@ -16,51 +17,41 @@ const lang = getLangFromUrl(Astro.url);
 
 <!doctype html>
 <html lang={lang}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Material Icons (regular) for new pages -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!-- Material Icons Outlined for existing components -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <meta name="generator" content={Astro.generator} />
 
-    <SEO
-      title={title}
-      description={description}
-      image={image}
-      canonicalURL={canonicalURL}
-    />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <!-- Material Icons (regular) for new pages -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Material Icons Outlined for existing components -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
 
-    <!-- Dark Mode Script (runs before body renders to prevent flash) -->
-    <script is:inline>
-      // Dark mode is disabled by default
-      // Uncomment the following lines to enable dark mode functionality
+  <SEO title={title} description={description} image={image} canonicalURL={canonicalURL} />
 
-      // const theme = localStorage.getItem('theme') || 'light';
-      // if (theme === 'dark') {
-      //   document.documentElement.classList.add('dark');
-      // }
-    </script>
-  </head>
-  <body
-    class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-body antialiased"
-  >
-    <slot />
-  </body>
+  <!-- Dark Mode Script (runs before body renders to prevent flash) -->
+  <script is:inline>
+    // Dark mode is disabled by default
+    // Uncomment the following lines to enable dark mode functionality
+
+    // const theme = localStorage.getItem('theme') || 'light';
+    // if (theme === 'dark') {
+    //   document.documentElement.classList.add('dark');
+    // }
+  </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-body antialiased">
+  <slot />
+  <WhatsAppWidget />
+</body>
+
 </html>

@@ -1,37 +1,57 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Navigation from '../components/Navigation.svelte';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navigation from "../components/Navigation.svelte";
+import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout title="Mexico Coverage Options - Integrity Mexico Insurance"
-  description="U.S. insurance policies generally stop at the border. Choose a plan specifically designed to keep you legal and protected on Mexican roads.">
+<BaseLayout
+  title="Mexico Coverage Options - Integrity Mexico Insurance"
+  description="U.S. insurance policies generally stop at the border. Choose a plan specifically designed to keep you legal and protected on Mexican roads."
+>
   <Navigation client:load />
 
   <!-- Hero Section -->
   <section class="relative pt-16 pb-12 overflow-hidden">
-    <div class="absolute inset-0 opacity-50 pointer-events-none"
-      style="background-image: radial-gradient(rgba(17, 82, 212, 0.1) 1px, transparent 1px); background-size: 24px 24px;">
+    <div
+      class="absolute inset-0 opacity-50 pointer-events-none"
+      style="background-image: radial-gradient(rgba(17, 82, 212, 0.1) 1px, transparent 1px); background-size: 24px 24px;"
+    >
     </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+    >
       <div
-        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary dark:text-blue-300 mb-6">
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary dark:text-blue-300 mb-6"
+      >
         <span class="material-icons-outlined text-sm">verified</span>
         <span class="text-sm font-semibold">Valid for all U.S. Drivers</span>
       </div>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6">
-        Coverage Options Built for <span class="text-primary relative inline-block">
+      <h1
+        class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6"
+      >
+        Coverage Options Built for <span
+          class="text-primary relative inline-block"
+        >
           Your Trip
-          <svg class="absolute bottom-2 left-0 w-full h-3 -z-10 opacity-30" preserveAspectRatio="none"
-            viewBox="0 0 100 10">
-            <path class="text-blue-400" d="M0 5 Q 50 10 100 5" fill="transparent" stroke="currentColor"
+          <svg
+            class="absolute bottom-2 left-0 w-full h-3 -z-10 opacity-30"
+            preserveAspectRatio="none"
+            viewBox="0 0 100 10"
+          >
+            <path
+              class="text-blue-400"
+              d="M0 5 Q 50 10 100 5"
+              fill="transparent"
+              stroke="currentColor"
               stroke-width="8"></path>
           </svg>
         </span>
       </h1>
-      <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-        U.S. insurance policies generally stop at the border. Choose a plan specifically designed to keep you legal and
-        protected on Mexican roads.
+      <p
+        class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed"
+      >
+        U.S. insurance policies generally stop at the border. Choose a plan
+        specifically designed to keep you legal and protected on Mexican roads.
       </p>
     </div>
   </section>
@@ -40,24 +60,34 @@ import Footer from '../components/Footer.astro';
   <section class="flex-grow pb-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Grid Layout -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6"
+      >
         <!-- Card 1: Liability -->
         <div
-          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex flex-col h-full hover:border-primary/50 dark:hover:border-primary/50">
+          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex flex-col h-full hover:border-primary/50 dark:hover:border-primary/50"
+        >
           <div
-            class="absolute top-0 left-0 w-full h-1.5 bg-slate-400 rounded-t-2xl group-hover:bg-primary transition-colors">
+            class="absolute top-0 left-0 w-full h-1.5 bg-slate-400 rounded-t-2xl group-hover:bg-primary transition-colors"
+          >
           </div>
           <div class="mb-5 flex justify-between items-start">
             <div
-              class="h-12 w-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+              class="h-12 w-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform duration-300"
+            >
               <span class="material-icons-outlined text-2xl">gavel</span>
             </div>
             <span
-              class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wide">Mandatory</span>
+              class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wide"
+              >Mandatory</span
+            >
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Liability</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Essential coverage required by Mexican federal law
-            for all drivers.</p>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            Liability
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">
+            Essential coverage required by Mexican federal law for all drivers.
+          </p>
           <!--<div
             class="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 mb-6 border border-slate-100 dark:border-slate-700">
             <div class="flex items-start gap-3">
@@ -74,20 +104,36 @@ import Footer from '../components/Footer.astro';
           -->
           <ul class="space-y-3 mb-8 flex-grow">
             <li class="flex items-start gap-2.5">
-              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
-              <span class="text-sm text-slate-600 dark:text-slate-300">Third-party bodily injury</span>
+              <span
+                class="material-icons-outlined text-secondary-green text-lg shrink-0"
+                >check_circle</span
+              >
+              <span class="text-sm text-slate-600 dark:text-slate-300"
+                >Third-party bodily injury</span
+              >
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
-              <span class="text-sm text-slate-600 dark:text-slate-300">Property damage liability</span>
+              <span
+                class="material-icons-outlined text-secondary-green text-lg shrink-0"
+                >check_circle</span
+              >
+              <span class="text-sm text-slate-600 dark:text-slate-300"
+                >Property damage liability</span
+              >
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
-              <span class="text-sm text-slate-600 dark:text-slate-300">Required for legal driving</span>
+              <span
+                class="material-icons-outlined text-secondary-green text-lg shrink-0"
+                >check_circle</span
+              >
+              <span class="text-sm text-slate-600 dark:text-slate-300"
+                >Required for legal driving</span
+              >
             </li>
           </ul>
           <button
-            class="w-full py-3 rounded-xl bg-secondary-green hover:bg-secondary-green-hover text-white font-bold shadow-lg shadow-green-900/10 transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
+            class="w-full py-3 rounded-xl bg-secondary-green hover:bg-secondary-green-hover text-white font-bold shadow-lg shadow-green-900/10 transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]"
+          >
             Get Covered Now
             <span class="material-icons-outlined text-sm">arrow_forward</span>
           </button>
@@ -95,37 +141,65 @@ import Footer from '../components/Footer.astro';
 
         <!-- Card 2: Full Coverage -->
         <div
-          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-primary/20 dark:border-primary/40 ring-1 ring-primary/5 flex flex-col h-full transform hover:-translate-y-1">
+          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-primary/20 dark:border-primary/40 ring-1 ring-primary/5 flex flex-col h-full transform hover:-translate-y-1"
+        >
           <div
-            class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">
-            MOST POPULAR</div>
-          <div class="absolute top-0 left-0 w-full h-1.5 bg-primary rounded-t-2xl"></div>
+            class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl"
+          >
+            MOST POPULAR
+          </div>
+          <div
+            class="absolute top-0 left-0 w-full h-1.5 bg-primary rounded-t-2xl"
+          >
+          </div>
           <div class="mb-5 flex justify-between items-start">
             <div
-              class="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
-              <span class="material-icons-outlined text-2xl">directions_car</span>
+              class="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform duration-300"
+            >
+              <span class="material-icons-outlined text-2xl"
+                >directions_car</span
+              >
             </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Full Coverage</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Comprehensive protection for your vehicle, plus
-            theft coverage.</p>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            Full Coverage
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">
+            Comprehensive protection for your vehicle, plus theft coverage.
+          </p>
 
           <ul class="space-y-3 mb-8 flex-grow">
             <li class="flex items-start gap-2.5">
-              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
-              <span class="text-sm text-slate-600 dark:text-slate-300">Physical damage to your car</span>
+              <span
+                class="material-icons-outlined text-secondary-green text-lg shrink-0"
+                >check_circle</span
+              >
+              <span class="text-sm text-slate-600 dark:text-slate-300"
+                >Physical damage to your car</span
+              >
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
-              <span class="text-sm text-slate-600 dark:text-slate-300">Total theft coverage</span>
+              <span
+                class="material-icons-outlined text-secondary-green text-lg shrink-0"
+                >check_circle</span
+              >
+              <span class="text-sm text-slate-600 dark:text-slate-300"
+                >Total theft coverage</span
+              >
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
-              <span class="text-sm text-slate-600 dark:text-slate-300">Gap coverage available</span>
+              <span
+                class="material-icons-outlined text-secondary-green text-lg shrink-0"
+                >check_circle</span
+              >
+              <span class="text-sm text-slate-600 dark:text-slate-300"
+                >Plus Liability coverage</span
+              >
             </li>
           </ul>
           <button
-            class="w-full py-3 rounded-xl bg-secondary-green hover:bg-secondary-green-hover text-white font-bold shadow-lg shadow-green-900/10 transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
+            class="w-full py-3 rounded-xl bg-secondary-green hover:bg-secondary-green-hover text-white font-bold shadow-lg shadow-green-900/10 transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]"
+          >
             Get Covered Now
             <span class="material-icons-outlined text-sm">arrow_forward</span>
           </button>
@@ -133,41 +207,62 @@ import Footer from '../components/Footer.astro';
 
         <!-- Card 3: Full  -->
         <div
-          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex flex-col h-full hover:border-primary/50 dark:hover:border-primary/50">
+          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex flex-col h-full hover:border-primary/50 dark:hover:border-primary/50"
+        >
           <div
-            class="absolute top-0 left-0 w-full h-1.5 bg-slate-400 rounded-t-2xl group-hover:bg-primary transition-colors">
+            class="absolute top-0 left-0 w-full h-1.5 bg-slate-400 rounded-t-2xl group-hover:bg-primary transition-colors"
+          >
           </div>
           <div class="mb-5 flex justify-between items-start">
             <div
-              class="h-12 w-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+              class="h-12 w-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform duration-300"
+            >
               <span class="material-icons-outlined text-2xl">balance</span>
             </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Full Coverage Elite</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Crucial support if you are detained following a
-            serious accident.</p>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            Full Coverage Elite
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">
+            Crucial support if you are detained following a serious accident.
+          </p>
 
           <ul class="space-y-3 mb-8 flex-grow">
             <li class="flex items-start gap-2.5">
-              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
-              <span class="text-sm text-slate-600 dark:text-slate-300">Legal defense fees</span>
+              <span
+                class="material-icons-outlined text-secondary-green text-lg shrink-0"
+                >check_circle</span
+              >
+              <span class="text-sm text-slate-600 dark:text-slate-300"
+                >Liability Package</span
+              >
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
-              <span class="text-sm text-slate-600 dark:text-slate-300">Bail bond assistance</span>
+              <span
+                class="material-icons-outlined text-secondary-green text-lg shrink-0"
+                >check_circle</span
+              >
+              <span class="text-sm text-slate-600 dark:text-slate-300"
+                >Full Coverage Package</span
+              >
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="material-icons-outlined text-secondary-green text-lg shrink-0">check_circle</span>
-              <span class="text-sm text-slate-600 dark:text-slate-300">24/7 Bilingual attorney access</span>
+              <span
+                class="material-icons-outlined text-secondary-green text-lg shrink-0"
+                >check_circle</span
+              >
+              <span class="text-sm text-slate-600 dark:text-slate-300"
+                >Vandalism and Partial Theft</span
+              >
             </li>
           </ul>
           <button
-            class="w-full py-3 rounded-xl bg-secondary-green hover:bg-secondary-green-hover text-white font-bold shadow-lg shadow-green-900/10 transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
+            class="w-full py-3 rounded-xl bg-secondary-green hover:bg-secondary-green-hover text-white font-bold shadow-lg shadow-green-900/10 transition-all flex items-center justify-center gap-2 group-hover:translate-y-[-2px]"
+          >
             Get Covered Now
             <span class="material-icons-outlined text-sm">arrow_forward</span>
           </button>
         </div>
-
       </div>
 
       <!-- Trust Indicators -->
@@ -197,22 +292,33 @@ import Footer from '../components/Footer.astro';
       </div>-->
 
       <!-- FAQ Teaser / Additional CTA -->
-      <div class="mt-16 rounded-3xl bg-primary text-white p-8 md:p-12 relative overflow-hidden">
+      <div
+        class="mt-16 rounded-3xl bg-primary text-white p-8 md:p-12 relative overflow-hidden"
+      >
         <div
-          class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none">
+          class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"
+        >
         </div>
         <div
-          class="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl -ml-16 -mb-16 pointer-events-none">
+          class="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl -ml-16 -mb-16 pointer-events-none"
+        >
         </div>
-        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div
+          class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8"
+        >
           <div class="max-w-2xl">
-            <h2 class="text-2xl md:text-3xl font-bold mb-3">Not sure what you need?</h2>
-            <p class="text-blue-100 text-lg">Our licensed agents can help you build the perfect policy for your vehicle
-              and destination.</p>
+            <h2 class="text-2xl md:text-3xl font-bold mb-3">
+              Not sure what you need?
+            </h2>
+            <p class="text-blue-100 text-lg">
+              Our licensed agents can help you build the perfect policy for your
+              vehicle and destination.
+            </p>
           </div>
           <div class="flex gap-4">
             <button
-              class="bg-white text-primary hover:bg-blue-50 px-6 py-3 rounded-xl font-bold transition-colors shadow-lg">
+              class="bg-white text-primary hover:bg-blue-50 px-6 py-3 rounded-xl font-bold transition-colors shadow-lg"
+            >
               Talk to an Agent
             </button>
           </div>
