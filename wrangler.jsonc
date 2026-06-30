@@ -1,9 +1,25 @@
 {
-  // Cloudflare Pages deployment configuration
-  // Docs: https://developers.cloudflare.com/pages/
+  // Cloudflare Workers + Static Assets configuration
+  // Docs: https://developers.cloudflare.com/workers/static-assets/
   "name": "integrity-insurance-mx",
   "compatibility_date": "2026-05-30",
+
+  // Worker entry point — handles /api/* routes; all other requests
+  // fall through to the static ./dist assets via the ASSETS binding.
+  "main": "worker.ts",
+
   "assets": {
-    "directory": "./dist"
-  }
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+
+  // Email Workers binding.
+  // No destination_address → allows delivery to any verified address.
+  // Sender domain (integritymexicoinsurance.com) must have Cloudflare
+  // Email Routing enabled before this binding is usable at runtime.
+  "send_email": [
+    {
+      "name": "SEND_EMAIL"
+    }
+  ]
 }
