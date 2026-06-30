@@ -1,48 +1,10 @@
 ---
-// Component extracted from changes/form-quote.html
-// Rendered inside a sandboxed iframe to isolate third-party scripts and styles.
-const srcdoc = `<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/touristsquote_styles.css" rel="stylesheet" type="text/css" media="all">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/tablas_cotizador.css" rel="stylesheet">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/botones_cotizador.css" rel="stylesheet">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/font-awesome.min.css" rel="stylesheet">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/fonts.css" rel="stylesheet" type="text/css" media="all">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/nav-right.css" rel="stylesheet" type="text/css" media="all">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/default.css" rel="stylesheet" type="text/css" media="all">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/fixed-1024.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 1024px) and (max-width: 90000px)">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/fixed-768.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 768px) and (max-width: 1023px)">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/fixed-480.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 480px) and (max-width: 767px)">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/fixed-320.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 0px) and (max-width: 479px)">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/Responsivo/stack.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 0px) and (max-width: 479px)">
-<link href="https://auto-insurance-ana.com/Turistas/Styles/blitzer/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-</head>
-<body style="margin:0;padding:0;">
-<div id="PnlTuristas"></div>
-<script src="https://auto-insurance-ana.com/Turistas/Scripts/jQuery/jquery-1.9.1.js"><\/script>
-<script src="https://auto-insurance-ana.com/Turistas/Scripts/jQuery/jquery-ui-1.10.3.custom.js"><\/script>
-<script src="https://auto-insurance-ana.com/Turistas/Scripts/ASHT/jQuery.ASHT_CORE.js"><\/script>
-<script src="https://auto-insurance-ana.com/Turistas/Scripts/TopZindex/jquery.topzindex.js"><\/script>
-<script src="https://auto-insurance-ana.com/Turistas/Scripts/Turistas/Script.js"><\/script>
-<script src="https://auto-insurance-ana.com/Turistas/Scripts/Turistas/Turistas.js"><\/script>
-<script>
-$(document).ready(function(){
-  Login.Parametros.name='PnlTuristas';
-  Login.Parametros.Negocio='6031706372614d9791a776c30cc7afa0';
-  Login.Iniciar();
-});
-<\/script>
-</body>
-</html>`;
+// The ANA Seguros quote form is served as a standalone HTML file from public/
+// and loaded via iframe src (not srcdoc) so it has a real document.location.
 ---
 
 <iframe
-  srcdoc={srcdoc}
-  sandbox="allow-scripts allow-forms allow-same-origin"
+  src="/form-quote.html"
   style="width:100%;min-height:800px;border:none;"
   title="Get a Quote"
-  loading="lazy"
-></iframe>
+  loading="lazy"></iframe>

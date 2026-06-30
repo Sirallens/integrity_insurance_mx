@@ -12,9 +12,20 @@
 
   let isMenuOpen = $state(false);
   let isDarkMode = $state(false);
+  let isLangOpen = $state(false);
+  let currentPath = $state("/");
+
+  // Derived URLs for language switching
+  let enHref = $derived(currentPath);
+  let esHref = $derived(currentPath === "/" ? "/es/" : `/es${currentPath}`);
 
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
+  }
+
+  function toggleLang(e: Event) {
+    e.stopPropagation();
+    isLangOpen = !isLangOpen;
   }
 
   function toggleDarkMode() {
@@ -29,10 +40,23 @@
   }
 
   onMount(() => {
+    // Compute current path without locale prefix
+    const path = window.location.pathname;
+    const clean = path.replace(/^\/es(\/|$)/, "/");
+    currentPath = clean || "/";
+
+    // Close language dropdown on click outside
+    const handleClickOutside = () => { isLangOpen = false; };
+    document.addEventListener("click", handleClickOutside);
+
     // Dark mode is disabled by default
     // Uncomment to enable:
     // const savedTheme = localStorage.getItem('theme');
     // isDarkMode = savedTheme === 'dark';
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
   });
 </script>
 
@@ -88,31 +112,37 @@
         </a>
 
         <!-- Language Switcher -->
-        <div class="relative group ml-4">
+        <div class="relative ml-4">
           <button
+            onclick={toggleLang}
             class="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-primary font-medium transition-colors"
           >
             {lang.toUpperCase()}
-            <span class="material-icons-outlined text-sm">expand_more</span>
+            <span
+              class="material-icons-outlined text-sm transition-transform duration-200"
+              class:rotate-180={isLangOpen}
+            >expand_more</span>
           </button>
-          <div
-            class="absolute right-0 top-full mt-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"
-          >
-            <a
-              href="/"
-              class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary transition-colors {lang ===
-              'en'
-                ? 'font-bold text-primary'
-                : ''}">English</a
+          {#if isLangOpen}
+            <div
+              class="absolute right-0 top-full mt-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50 animate-fade-in-up"
             >
-            <a
-              href="/es/"
-              class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary transition-colors {lang ===
-              'es'
-                ? 'font-bold text-primary'
-                : ''}">Español</a
-            >
-          </div>
+              <a
+                href={enHref}
+                class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary transition-colors {lang ===
+                'en'
+                  ? 'font-bold text-primary'
+                  : ''}">English</a
+              >
+              <a
+                href={esHref}
+                class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary transition-colors {lang ===
+                'es'
+                  ? 'font-bold text-primary'
+                  : ''}">Español</a
+              >
+            </div>
+          {/if}
         </div>
 
         <!-- Dark Mode Toggle (Hidden by default - uncomment to enable) -->
@@ -181,14 +211,14 @@
             class="pt-4 border-t border-gray-200 dark:border-gray-800 flex justify-center space-x-4"
           >
             <a
-              href="/"
+              href={enHref}
               class="text-gray-700 dark:text-gray-300 font-medium {lang === 'en'
                 ? 'text-primary underline'
                 : ''}">EN</a
             >
             <span class="text-gray-300 dark:text-gray-700">|</span>
             <a
-              href="/es/"
+              href={esHref}
               class="text-gray-700 dark:text-gray-300 font-medium {lang === 'es'
                 ? 'text-primary underline'
                 : ''}">ES</a
