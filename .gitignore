@@ -144,3 +144,4 @@ dist
 .wrangler/state/v3/cache/miniflare-CacheObject/metadata.sqlite-shm
 .wrangler/state/v3/cache/miniflare-CacheObject/metadata.sqlite
 .astro/settings.json
+/.astro
