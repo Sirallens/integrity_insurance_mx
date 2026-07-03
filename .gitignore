@@ -79,6 +79,9 @@ web_modules/
 .env.production.local
 .env.local
 
+# Cloudflare Workers local dev secrets (wrangler dev)
+.dev.vars
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
@@ -138,4 +141,8 @@ dist
 
 
 .changes
+<<<<<<< HEAD
 .dev.vars
+=======
+.astro/settings.json
+>>>>>>> main

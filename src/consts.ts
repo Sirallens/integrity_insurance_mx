@@ -4,7 +4,7 @@
  */
 export const SITE_INFO = {
   name: "Integrity Agente de Seguros",
-  email: "support@integritymexico.com",
+  email: "contact@integritymexicoinsurance.com",
   phone: "+19566160306",
   phoneFormatted: "+1 (956) 6160-0306",
   address:
