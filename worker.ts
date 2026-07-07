@@ -128,22 +128,31 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
   const toHeader = recipients.join(", ");
   const rawMime = buildMimeMessage(SENDER_ADDRESS, SENDER_NAME, toHeader, subject, safe);
 
-  // 8. Send one EmailMessage per recipient (Cloudflare delivers per-address)
-  try {
-    await Promise.all(
-      recipients.map((recipient) => {
-        const stream = new ReadableStream({
-          start(controller) {
-            controller.enqueue(new TextEncoder().encode(rawMime));
-            controller.close();
-          },
-        });
-        const message = new EmailMessage(SENDER_ADDRESS, recipient, stream);
-        return env.SEND_EMAIL.send(message);
-      })
-    );
-  } catch (err) {
-    console.error("Email send failed:", err);
+  // 8. Send one EmailMessage per recipient (Cloudflare delivers per-address) using Promise.allSettled for resilience
+  const results = await Promise.allSettled(
+    recipients.map(async (recipient) => {
+      const stream = new ReadableStream({
+        start(controller) {
+          controller.enqueue(new TextEncoder().encode(rawMime));
+          controller.close();
+        },
+      });
+      const message = new EmailMessage(SENDER_ADDRESS, recipient, stream);
+      await env.SEND_EMAIL.send(message);
+      return recipient;
+    })
+  );
+
+  const successes = results.filter((res) => res.status === "fulfilled") as PromiseFulfilledResult<string>[];
+  const failures = results.filter((res) => res.status === "rejected") as PromiseRejectedResult[];
+
+  failures.forEach((fail) => {
+    console.error("Failed to dispatch email to a recipient:", fail.reason);
+  });
+
+  // Only fail the user-facing request if ALL recipients failed to receive the email
+  if (successes.length === 0 && recipients.length > 0) {
+    console.error("All email dispatches failed.");
     return jsonResponse({ ok: false, error: "Failed to send email. Please try again." }, 500);
   }
 
@@ -196,6 +205,7 @@ function buildMimeMessage(
 ): string {
   const boundary = `boundary_${generateBoundaryId()}`;
   const now = new Date().toUTCString();
+  const messageId = `<${generateBoundaryId()}@integritymexicoinsurance.com>`;
 
   const textBody = buildPlainText(payload);
   const htmlBody = buildHtml(payload);
@@ -203,6 +213,7 @@ function buildMimeMessage(
   const parts = [
     `MIME-Version: 1.0`,
     `Date: ${now}`,
+    `Message-ID: ${messageId}`,
     `From: ${fromName} <${from}>`,
     `To: ${toHeader}`,
     `Subject: ${subject}`,

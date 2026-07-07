@@ -1,0 +1,469 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.svelte";
+import Footer from "../../components/Footer.astro";
+import { getRelativeLocaleUrl } from "../../i18n/utils";
+import { defaultLang, languages } from "../../i18n/ui";
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang: lang === defaultLang ? undefined : lang },
+    props: { lang: lang as "en" | "es" },
+  }));
+}
+
+const { lang } = Astro.props as { lang: "en" | "es" };
+const l = (path: string) => getRelativeLocaleUrl(lang, path);
+
+const content = {
+  en: {
+    title: "Why You Need Mexico Insurance - Integrity Mexico Insurance",
+    description:
+      "Driving south of the border? Your U.S. policy stops at the line. Understand the law, protect your journey, and travel with peace of mind.",
+    badge: "Mandatory Legal Requirement",
+    heroTitleHtml:
+      'Why You Need <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">Mexico Auto Insurance</span>',
+    heroSubtitle:
+      "Driving south of the border? Your U.S. policy stops at the line. Understand the law, protect your journey, and travel with peace of mind.",
+    lawTitle: "The Law: Article 63 Bis Explained",
+    lawP1Html:
+      "It is a common misconception that your domestic auto insurance policy will cover you in Mexico. While some U.S. policies may extend physical damage coverage (collision and theft) a certain distance into Mexico, <strong>they do not provide valid Liability coverage.</strong>",
+    lawP2Html:
+      'Under Mexican Federal Law, specifically <span class="font-semibold text-primary">Article 63 Bis of the Roads, Bridges, and Federal Transportation Law</span>, all drivers on federal highways must possess Third Party Liability insurance issued by a Mexican insurance company.',
+    lawFeatureTitle: "Strictly Enforced",
+    lawFeatureDesc:
+      "Mexican authorities do not recognize foreign insurance documents.",
+    quoteBadge: "Critical Requirement",
+    quoteText:
+      '"Liability insurance must be issued by a company licensed in Mexico. U.S. liability policies have no legal standing in Mexican courts."',
+    quoteAuthor: "Mexican Federal Government",
+    quoteSubAuthor: "Ministry of Communications and Transportation",
+    diffTitle: "Liability vs. Physical Damage",
+    diffSubtitle:
+      "Understanding the difference is key to avoiding financial disaster. While your car matters, your legal standing matters more.",
+    card1Title: "Civil Liability (Mandatory)",
+    card1Desc:
+      "This covers bodily injury and property damage you cause to others. In Mexico, if you are at fault in an accident, you must prove financial responsibility immediately.",
+    card1Li1: "Required by Law",
+    card1Li2: "Covers Third Parties",
+    card1Li3: "Must be Mexican Policy",
+    card2Title: "Physical Damage (Optional)",
+    card2Desc:
+      "This covers damage to your own vehicle from collision, theft, or vandalism. While crucial for protecting your asset, it does not satisfy the legal requirement for liability.",
+    card2Li1: "Optional but Recommended",
+    card2Li2: "Protects Your Vehicle",
+    card2Li3: "US Policy May Have Gaps",
+    consequencesTitle: "Consequences of Driving Uninsured",
+    consequencesDesc:
+      "The Mexican legal system operates differently than the U.S. system. Accidents are considered both civil and criminal matters. Without proof of ability to pay (insurance), the consequences are swift.",
+    consequence1Title: "Detention",
+    consequence1Desc:
+      "Drivers can be detained by authorities until financial responsibility is proven or guaranteed.",
+    consequence2Title: "Vehicle Impoundment",
+    consequence2Desc:
+      "Your vehicle may be impounded, and releasing it can be a lengthy, expensive administrative process.",
+    consequence3Title: "Significant Fines",
+    consequence3Desc:
+      "Fines for driving without insurance are steep, often exceeding the cost of the policy itself.",
+    bottomCtaTitle: "Drive with Integrity. Drive Protected.",
+    bottomCtaDesc:
+      "Don't let a legal requirement ruin your trip. Our policies are 100% recognized by Mexican authorities and backed by top-rated insurers.",
+    bottomCtaButtonQuote: "Get Your Quote Now",
+    bottomCtaButtonPlans: "View Coverage Plans",
+    bottomCtaFooter:
+      "Quotes in less than 2 minutes. Immediate policy delivery via email.",
+  },
+  es: {
+    title: "Por Qué Necesita un Seguro para México - Integrity Mexico Seguros",
+    description:
+      "¿Manejando al sur de la frontera? Su póliza de EE. UU. no aplica en México. Entienda la ley, proteja su viaje y viaje con tranquilidad.",
+    badge: "Requisito Legal Obligatorio",
+    heroTitleHtml:
+      'Por Qué Necesita <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">Seguro de Auto para México</span>',
+    heroSubtitle:
+      "¿Manejando al sur de la frontera? Su póliza de EE. UU. no aplica en México. Entienda la ley, proteja su viaje y viaje con tranquilidad.",
+    lawTitle: "La Ley: Artículo 63 Bis Explicado",
+    lawP1Html:
+      "Es un error común creer que su póliza de seguro de auto doméstica le cubrirá en México. Aunque algunas pólizas de EE. UU. pueden extender la cobertura por daños físicos (colisión y robo) a cierta distancia hacia México, <strong>no proporcionan cobertura de Responsabilidad Civil válida.</strong>",
+    lawP2Html:
+      'Según la Ley Federal Mexicana, específicamente el <span class="font-semibold text-primary">Artículo 63 Bis de la Ley de Caminos, Puentes y Autotransporte Federal</span>, todos los conductores en carreteras federales deben contar con un seguro de Responsabilidad Civil ante Terceros emitido por una aseguradora mexicana.',
+    lawFeatureTitle: "Aplicación Estricta",
+    lawFeatureDesc:
+      "Las autoridades mexicanas no reconocen los documentos de seguro extranjeros.",
+    quoteBadge: "Requisito Crítico",
+    quoteText:
+      '"El seguro de responsabilidad civil debe ser emitido por una compañía autorizada en México. Las pólizas de responsabilidad civil de EE. UU. no tienen validez legal ante los tribunales mexicanos."',
+    quoteAuthor: "Gobierno Federal Mexicano",
+    quoteSubAuthor: "Secretaría de Comunicaciones y Transportes",
+    diffTitle: "Responsabilidad Civil vs. Daños Físicos",
+    diffSubtitle:
+      "Entender la diferencia es clave para evitar un desastre financiero. Aunque su auto importa, su situación legal importa más.",
+    card1Title: "Responsabilidad Civil (Obligatoria)",
+    card1Desc:
+      "Cubre lesiones corporales y daños a la propiedad que cause a terceros. En México, si tiene la culpa en un accidente, debe demostrar responsabilidad financiera de inmediato.",
+    card1Li1: "Requerida por Ley",
+    card1Li2: "Cubre a Terceros",
+    card1Li3: "Debe ser una Póliza Mexicana",
+    card2Title: "Daños Físicos (Opcional)",
+    card2Desc:
+      "Cubre daños a su propio vehículo por colisión, robo o vandalismo. Aunque es importante para proteger su activo, no cumple con el requisito legal de responsabilidad civil.",
+    card2Li1: "Opcional pero Recomendado",
+    card2Li2: "Protege su Vehículo",
+    card2Li3: "Su Póliza de EE. UU. Puede Tener Vacíos",
+    consequencesTitle: "Consecuencias de Manejar Sin Seguro",
+    consequencesDesc:
+      "El sistema legal mexicano opera de manera diferente al de EE. UU. Los accidentes se consideran asuntos tanto civiles como penales. Sin prueba de capacidad de pago (seguro), las consecuencias son inmediatas.",
+    consequence1Title: "Detention",
+    consequence1Desc:
+      "Los conductores pueden ser detenidos por las autoridades hasta que se demuestre o garantice la responsabilidad financiera.",
+    consequence2Title: "Confiscación del Vehículo",
+    consequence2Desc:
+      "Su vehículo puede ser confiscado, y recuperarlo puede ser un proceso administrativo largo y costoso.",
+    consequence3Title: "Multas Significativas",
+    consequence3Desc:
+      "Las multas por manejar sin seguro son altas, a menudo superando el costo de la póliza misma.",
+    bottomCtaTitle: "Maneje con Integridad. Maneje Protegido.",
+    bottomCtaDesc:
+      "No deje que un requisito legal arruine su viaje. Nuestras pólizas son reconocidas al 100% por las autoridades mexicanas y respaldadas por aseguradoras de primera categoría.",
+    bottomCtaButtonQuote: "Obtenga su Cotización Ahora",
+    bottomCtaButtonPlans: "Ver Planes de Cobertura",
+    bottomCtaFooter:
+      "Cotizaciones en menos de 2 minutos. Entrega inmediata de la póliza por correo electrónico.",
+  },
+};
+
+const t = content[lang];
+---
+
+<BaseLayout title={t.title} description={t.description}>
+  <Navigation lang={lang} client:load pathname={Astro.url.pathname} />
+
+  <!-- Hero Section -->
+  <header class="relative bg-background-dark overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        alt={lang === "es"
+          ? "Carretera escénica que serpentea por el paisaje mexicano"
+          : "Scenic highway winding through Mexican landscape"}
+        class="w-full h-full object-cover opacity-40 mix-blend-overlay"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLjGjAHKyuD_pcgaYYt0ZOM4WQio92tZAULLLgc3iF-hNNccgwqW8IhVRq_wsuTgmobkWEy-bVb6TfqzpaowD9Eaz3AO3cFVyozZm5HJa65ft5ZNU_S9Xgc98WoILUP2QeScXhh8qJ-6VdpzauRF3efVTtPmv2esdEygYQ-eQMAkK8hmyYp2yysMV5rcH7ymCx1lA1jpEXgPLh-tj63LiQr16N0_A_pQxdKJK5f51JOzMUMMDuigOb-bef2TktV3PiEShQZp0Tl2gO"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-transparent"
+      >
+      </div>
+    </div>
+    <div
+      class="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center"
+    >
+      <span
+        class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-blue-200 border border-primary/30 mb-6"
+      >
+        {t.badge}
+      </span>
+      <h1
+        class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 max-w-4xl"
+        set:html={t.heroTitleHtml}
+      />
+      <p class="mt-4 max-w-2xl text-xl text-slate-300">
+        {t.heroSubtitle}
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+    <!-- Section 1: Article 63 Bis / The Law -->
+    <section class="grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-7">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+          {t.lawTitle}
+        </h2>
+        <div class="prose prose-lg text-slate-600 dark:text-slate-300">
+          <p class="mb-4" set:html={t.lawP1Html} />
+          <p set:html={t.lawP2Html} />
+        </div>
+        <div class="mt-8 flex gap-4">
+          <div
+            class="flex items-start gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm"
+          >
+            <span class="material-icons text-primary mt-1">gavel</span>
+            <div>
+              <h4 class="font-semibold text-slate-900 dark:text-white">
+                {t.lawFeatureTitle}
+              </h4>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                {t.lawFeatureDesc}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-5 relative">
+        <div
+          class="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3"
+        >
+        </div>
+        <div
+          class="relative bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700"
+        >
+          <div
+            class="flex items-center gap-3 mb-6 border-b border-slate-100 dark:border-slate-700 pb-4"
+          >
+            <span class="material-icons text-amber-500">warning</span>
+            <span class="font-bold text-lg text-slate-900 dark:text-white"
+              >{t.quoteBadge}</span
+            >
+          </div>
+          <blockquote
+            class="text-lg italic text-slate-700 dark:text-slate-300 mb-6"
+          >
+            {t.quoteText}
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div
+              class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center"
+            >
+              <span class="material-icons text-slate-500 text-sm"
+                >account_balance</span
+              >
+            </div>
+            <div>
+              <div class="text-sm font-bold text-slate-900 dark:text-white">
+                {t.quoteAuthor}
+              </div>
+              <div class="text-xs text-slate-500">{t.quoteSubAuthor}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Liability vs Physical Damage -->
+    <section>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+          {t.diffTitle}
+        </h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400">
+          {t.diffSubtitle}
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Card 1: Liability -->
+        <div
+          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md"
+        >
+          <div
+            class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+          >
+            <span class="material-icons text-9xl text-primary">groups</span>
+          </div>
+          <div class="relative z-10">
+            <div
+              class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6"
+            >
+              <span class="material-icons text-primary text-2xl"
+                >health_and_safety</span
+              >
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
+              {t.card1Title}
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              {t.card1Desc}
+            </p>
+            <ul class="space-y-3">
+              <li
+                class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300"
+              >
+                <span class="material-icons text-green-500 text-base"
+                  >check_circle</span
+                >
+                {t.card1Li1}
+              </li>
+              <li
+                class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300"
+              >
+                <span class="material-icons text-green-500 text-base"
+                  >check_circle</span
+                >
+                {t.card1Li2}
+              </li>
+              <li
+                class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300"
+              >
+                <span class="material-icons text-green-500 text-base"
+                  >check_circle</span
+                >
+                {t.card1Li3}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2: Physical Damage -->
+        <div
+          class="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:border-amber-500/50 transition-all duration-300 shadow-sm hover:shadow-md"
+        >
+          <div
+            class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+          >
+            <span class="material-icons text-9xl text-amber-500"
+              >directions_car</span
+            >
+          </div>
+          <div class="relative z-10">
+            <div
+              class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-6"
+            >
+              <span class="material-icons text-amber-600 text-2xl"
+                >car_crash</span
+              >
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
+              {t.card2Title}
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              {t.card2Desc}
+            </p>
+            <ul class="space-y-3">
+              <li
+                class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300"
+              >
+                <span class="material-icons text-slate-400 text-base"
+                  >check_circle</span
+                >
+                {t.card2Li1}
+              </li>
+              <li
+                class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300"
+              >
+                <span class="material-icons text-slate-400 text-base"
+                  >check_circle</span
+                >
+                {t.card2Li2}
+              </li>
+              <li
+                class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300"
+              >
+                <span class="material-icons text-amber-500 text-base"
+                  >warning</span
+                >
+                {t.card2Li3}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Legal Consequences -->
+    <section
+      class="bg-slate-50 dark:bg-slate-800/50 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800"
+    >
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <img
+            alt={lang === "es"
+              ? "Mapa abstracto azul de la red de carreteras de México"
+              : "Abstract blue map of Mexico highway network"}
+            class="rounded-2xl shadow-lg border border-white dark:border-slate-700 w-full h-64 object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnwZ3CW20Z3MOqr3bWpi96tmExoQK9Q_THzIZ-z8eFKp8tn79_GPDCbQPy2nMA9AeNpuqZYxpT9-Z7w8JZqUX_KyR6YL2Oxb5EMJ7WkDWZOHeI4Na5il7a0CO2UntDtsh5C6_tEVDpyC7ZgpxZuN9-YExS3wMlo7TTEiMkEHCTvorKQ2Z3mmgOCcAsj6ewDn-90SqxC5GyoIfE9M-6XRWjO6hVZiOB5yEPrUbx1kcnzLlmvZ9Yqzwz8mR08tvTPnFBuO5YL-mJl6_X"
+          />
+        </div>
+        <div class="order-1 md:order-2">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+            {t.consequencesTitle}
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 mb-8">
+            {t.consequencesDesc}
+          </p>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center"
+              >
+                <span class="material-icons text-red-600 dark:text-red-400"
+                  >front_hand</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white">
+                  {t.consequence1Title}
+                </h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400">
+                  {t.consequence1Desc}
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center"
+              >
+                <span class="material-icons text-amber-600 dark:text-amber-400"
+                  >no_transfer</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white">
+                  {t.consequence2Title}
+                </h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400">
+                  {t.consequence2Desc}
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center"
+              >
+                <span class="material-icons text-blue-600 dark:text-blue-400"
+                  >payments</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white">
+                  {t.consequence3Title}
+                </h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400">
+                  {t.consequence3Desc}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom CTA -->
+  <section class="bg-primary text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">{t.bottomCtaTitle}</h2>
+      <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
+        {t.bottomCtaDesc}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          class="inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-lg shadow-lg text-lg font-bold text-primary bg-white hover:bg-slate-50 transition-all transform hover:-translate-y-1"
+          href={l("/get-a-quote")}
+        >
+          {t.bottomCtaButtonQuote}
+          <span class="material-icons ml-2">arrow_forward</span>
+        </a>
+        <a
+          class="inline-flex items-center justify-center px-8 py-4 border border-white/30 rounded-lg text-lg font-medium text-white hover:bg-white/10 transition-all"
+          href={l("/coverage-options")}
+        >
+          {t.bottomCtaButtonPlans}
+        </a>
+      </div>
+      <p class="mt-8 text-sm text-blue-200">
+        {t.bottomCtaFooter}
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

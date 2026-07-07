@@ -3,27 +3,68 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navigation from "../../components/Navigation.svelte";
 import Footer from "../../components/Footer.astro";
 import QuoteForm from "../../components/QuoteForm.astro";
+import { defaultLang, languages } from "../../i18n/ui";
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang: lang === defaultLang ? undefined : lang },
+    props: { lang: lang as "en" | "es" },
+  }));
+}
+
+const { lang } = Astro.props as { lang: "en" | "es" };
+
+const content = {
+  en: {
+    title: "Get a Free Mexico Auto Insurance Quote - Integrity Mexico",
+    description:
+      "Get your free Mexico auto insurance quote in minutes. We provide trusted liability and full coverage for US drivers traveling to Mexico.",
+    heroTitleHtml:
+      'Get Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">Free Quote</span>',
+    heroSubtitle:
+      "In just a few minutes, you'll have the comprehensive coverage you need to drive in Mexico safely and legally.",
+    card1Title: "A-Rated Carriers",
+    card1Desc:
+      "Backed by financially strong Mexican insurers like GNP and Quálitas.",
+    card2Title: "24/7 Bilingual Support",
+    card2Desc: "English-speaking agents ready to help you anytime, anywhere.",
+    card3Title: "Legally Compliant",
+    card3Desc: "Satisfies all Mexican federal laws for liability coverage.",
+  },
+  es: {
+    title: "Cotiza tu Seguro de Auto para México Gratis - Integrity Mexico",
+    description:
+      "Obtén tu cotización de seguro de auto para México en minutos. Ofrecemos cobertura amplia y de responsabilidad civil de confianza para conductores de EE.UU.",
+    heroTitleHtml:
+      'Obtén tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">Cotización Gratis</span>',
+    heroSubtitle:
+      "En solo unos minutos, tendrás la cobertura integral que necesitas para conducir en México de forma segura y legal.",
+    card1Title: "Aseguradoras con Calificación A",
+    card1Desc:
+      "Respaldado por aseguradoras mexicanas sólidas financieramente como GNP y Quálitas.",
+    card2Title: "Soporte Bilingüe 24/7",
+    card2Desc:
+      "Agentes listos para atenderte en inglés y español, en cualquier momento y lugar.",
+    card3Title: "Legalmente Válido",
+    card3Desc:
+      "Cumple con todas las leyes federales de México sobre responsabilidad civil.",
+  },
+};
+
+const t = content[lang];
 ---
 
-<BaseLayout
-  title="Cotiza tu Seguro de Auto para México Gratis - Integrity Mexico"
-  description="Obtén tu cotización de seguro de auto para México en minutos. Ofrecemos cobertura amplia y de responsabilidad civil de confianza para conductores de EE.UU."
->
-  <Navigation lang="es" client:load />
+<BaseLayout title={t.title} description={t.description}>
+  <Navigation lang={lang} client:load pathname={Astro.url.pathname} />
 
   <main class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="text-center max-w-3xl mx-auto mb-12">
       <h1
         class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight"
-      >
-        Obtén tu <span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500"
-          >Cotización Gratis</span
-        >
-      </h1>
+        set:html={t.heroTitleHtml}
+      />
       <p class="text-lg text-slate-600 dark:text-slate-300">
-        En solo unos minutos, tendrás la cobertura integral que necesitas para
-        conducir en México de forma segura y legal.
+        {t.heroSubtitle}
       </p>
     </div>
 
@@ -45,11 +86,10 @@ import QuoteForm from "../../components/QuoteForm.astro";
           <span class="material-icons text-3xl">gpp_good</span>
         </div>
         <h4 class="font-bold text-slate-900 dark:text-white mb-2">
-          Aseguradoras con Calificación A
+          {t.card1Title}
         </h4>
         <p class="text-slate-600 dark:text-slate-400 text-sm">
-          Respaldado por aseguradoras mexicanas sólidas financieramente como GNP
-          y Quálitas.
+          {t.card1Desc}
         </p>
       </div>
 
@@ -62,11 +102,10 @@ import QuoteForm from "../../components/QuoteForm.astro";
           <span class="material-icons text-3xl">support_agent</span>
         </div>
         <h4 class="font-bold text-slate-900 dark:text-white mb-2">
-          Soporte Bilingüe 24/7
+          {t.card2Title}
         </h4>
         <p class="text-slate-600 dark:text-slate-400 text-sm">
-          Agentes listos para atenderte en inglés y español, en cualquier
-          momento y lugar.
+          {t.card2Desc}
         </p>
       </div>
 
@@ -79,15 +118,14 @@ import QuoteForm from "../../components/QuoteForm.astro";
           <span class="material-icons text-3xl">verified</span>
         </div>
         <h4 class="font-bold text-slate-900 dark:text-white mb-2">
-          Legalmente Válido
+          {t.card3Title}
         </h4>
         <p class="text-slate-600 dark:text-slate-400 text-sm">
-          Cumple con todas las leyes federales de México sobre responsabilidad
-          civil.
+          {t.card3Desc}
         </p>
       </div>
     </div>
   </main>
 
-  <Footer lang="es" />
+  <Footer />
 </BaseLayout>

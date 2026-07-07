@@ -1,0 +1,356 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.svelte";
+import Footer from "../../components/Footer.astro";
+import { getRelativeLocaleUrl } from "../../i18n/utils";
+import { defaultLang, languages } from "../../i18n/ui";
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang: lang === defaultLang ? undefined : lang },
+    props: { lang: lang as "en" | "es" },
+  }));
+}
+
+const { lang } = Astro.props as { lang: "en" | "es" };
+const l = (path: string) => getRelativeLocaleUrl(lang, path);
+
+const content = {
+  en: {
+    title: "How It Works - Integrity Mexico Insurance",
+    description:
+      "From quote to border in minutes. We've streamlined the process of getting Mexican auto insurance so you can focus on your trip, not the paperwork.",
+    badge: "Simple & Secure",
+    heroTitleHtml:
+      'How It Works: <br class="hidden sm:block" /> From Quote to Border in Minutes',
+    heroSubtitle:
+      "We've streamlined the process of getting Mexican auto insurance so you can focus on your trip, not the paperwork.",
+    step1Title: "Get a Quote",
+    step1Desc:
+      "Enter your trip details and vehicle info in seconds. Our smart form makes it quick and effortless.",
+    step2Title: "Choose Coverage",
+    step2Desc:
+      "Compare top-rated Mexican insurers side-by-side and pick the plan that fits your budget and needs.",
+    step3Title: "Receive Policy Instantly",
+    step3Desc:
+      "Pay securely and get your official proof of insurance delivered directly to your email inbox immediately.",
+    step4Title: "Travel with Peace of Mind",
+    step4Desc:
+      "Cross the border knowing you are fully protected, compliant with Mexican law, and supported 24/7.",
+    trustTitle: "Why travelers trust us with their journey",
+    trustFeature1Title: "Instant Coverage",
+    trustFeature1Desc:
+      "No waiting periods. Your policy is valid the moment your payment is processed.",
+    trustFeature2Title: "Secure Data",
+    trustFeature2Desc:
+      "We use bank-level encryption to protect your personal and payment information.",
+    trustFeature3Title: "English Support",
+    trustFeature3Desc:
+      "Need help? Our bilingual claims and support team is available 24/7.",
+    ctaTitle: "Ready to hit the road?",
+    ctaDesc:
+      "Don't get stopped at the border. Secure your Mexico auto insurance in minutes and enjoy your trip worry-free.",
+    ctaButton: "Start Your Quote Now",
+  },
+  es: {
+    title: "Cómo Funciona - Integrity Mexico Seguros",
+    description:
+      "De la cotización a la frontera en minutos. Hemos simplificado el proceso para obtener un seguro de auto mexicano para que pueda concentrarse en su viaje, no en el papeleo.",
+    badge: "Simple y Seguro",
+    heroTitleHtml:
+      'Cómo Funciona: <br class="hidden sm:block" /> De la Cotización a la Frontera en Minutos',
+    heroSubtitle:
+      "Hemos simplificado el proceso de obtención de un seguro de auto mexicano para que pueda concentrarse en su viaje, no en el papeleo.",
+    step1Title: "Obtenga una Cotización",
+    step1Desc:
+      "Ingrese los detalles de su viaje y la información de su vehículo en segundos. Nuestro formulario inteligente lo hace rápido y sin complicaciones.",
+    step2Title: "Elija su Cobertura",
+    step2Desc:
+      "Compare las mejores aseguradoras mexicanas lado a lado y elija el plan que se adapte a su presupuesto y necesidades.",
+    step3Title: "Reciba su Póliza al Instante",
+    step3Desc:
+      "Pague de forma segura y reciba su comprobante oficial de seguro directamente en su correo electrónico de inmediato.",
+    step4Title: "Viaje con Tranquilidad",
+    step4Desc:
+      "Cruce la frontera sabiendo que está completamente protegido, en cumplimiento con la ley mexicana y con soporte 24/7.",
+    trustTitle: "Por qué los viajeros confían en nosotros para su travesía",
+    trustFeature1Title: "Cobertura Instantánea",
+    trustFeature1Desc:
+      "Sin períodos de espera. Su póliza es válida desde el momento en que se procesa su pago.",
+    trustFeature2Title: "Datos Seguros",
+    trustFeature2Desc:
+      "Utilizamos cifrado de nivel bancario para proteger su información personal y de pago.",
+    trustFeature3Title: "Soporte Bilingüe",
+    trustFeature3Desc:
+      "¿Necesita ayuda? Nuestro equipo bilingüe de reclamaciones y soporte está disponible 24/7.",
+    ctaTitle: "¿Listo para partir?",
+    ctaDesc:
+      "No se detenga en la frontera. Obtenga su seguro de auto para México en minutos y disfrute su viaje sin preocupaciones.",
+    ctaButton: "Inicie su Cotización Ahora",
+  },
+};
+
+const t = content[lang];
+---
+
+<BaseLayout title={t.title} description={t.description}>
+  <Navigation lang={lang} client:load pathname={Astro.url.pathname} />
+
+  <!-- Main Content -->
+  <main class="py-16 sm:py-24">
+    <!-- Header Section -->
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 sm:mb-24"
+    >
+      <span
+        class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary mb-6"
+      >
+        {t.badge}
+      </span>
+      <h1
+        class="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6"
+        set:html={t.heroTitleHtml}
+      />
+      <p
+        class="mt-4 max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-400"
+      >
+        {t.heroSubtitle}
+      </p>
+    </div>
+
+    <!-- Steps Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Visual Connector Line (Desktop Only) -->
+      <div
+        class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gray-200 dark:bg-gray-800 -z-10"
+      >
+      </div>
+      <!-- Animated progress highlight -->
+      <div
+        class="hidden lg:block absolute top-12 left-[10%] right-[60%] h-0.5 bg-gradient-to-r from-primary to-primary/40 -z-10"
+      >
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
+      >
+        <!-- Step 1 -->
+        <div class="relative group">
+          <div class="flex flex-col items-center text-center">
+            <div class="relative mb-6">
+              <div
+                class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300"
+              >
+                <span class="material-icons text-4xl text-primary"
+                  >calculate</span
+                >
+              </div>
+              <div
+                class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark"
+              >
+                1
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              {t.step1Title}
+            </h3>
+            <p
+              class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed px-2"
+            >
+              {t.step1Desc}
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative group">
+          <div class="flex flex-col items-center text-center">
+            <div class="relative mb-6">
+              <div
+                class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300"
+              >
+                <span class="material-icons text-4xl text-primary"
+                  >playlist_add_check</span
+                >
+              </div>
+              <div
+                class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark"
+              >
+                2
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              {t.step2Title}
+            </h3>
+            <p
+              class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed px-2"
+            >
+              {t.step2Desc}
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative group">
+          <div class="flex flex-col items-center text-center">
+            <div class="relative mb-6">
+              <div
+                class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300"
+              >
+                <span class="material-icons text-4xl text-primary"
+                  >mark_email_read</span
+                >
+              </div>
+              <div
+                class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark"
+              >
+                3
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              {t.step3Title}
+            </h3>
+            <p
+              class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed px-2"
+            >
+              {t.step3Desc}
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative group">
+          <div class="flex flex-col items-center text-center">
+            <div class="relative mb-6">
+              <div
+                class="w-24 h-24 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none flex items-center justify-center border border-gray-100 dark:border-gray-700 group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300"
+              >
+                <span class="material-icons text-4xl text-primary"
+                  >travel_explore</span
+                >
+              </div>
+              <div
+                class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-background-light dark:border-background-dark"
+              >
+                4
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              {t.step4Title}
+            </h3>
+            <p
+              class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed px-2"
+            >
+              {t.step4Desc}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Spotlight / Context -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+      <div
+        class="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden"
+      >
+        <div class="grid lg:grid-cols-2 gap-0">
+          <div
+            class="p-8 sm:p-12 lg:p-16 flex flex-col justify-center order-2 lg:order-1"
+          >
+            <h3
+              class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6"
+            >
+              {t.trustTitle}
+            </h3>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                >
+                  <span class="material-icons text-primary">timer</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900 dark:text-white text-lg">
+                    {t.trustFeature1Title}
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">
+                    {t.trustFeature1Desc}
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                >
+                  <span class="material-icons text-primary">lock_person</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900 dark:text-white text-lg">
+                    {t.trustFeature2Title}
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">
+                    {t.trustFeature2Desc}
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                >
+                  <span class="material-icons text-primary">support_agent</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900 dark:text-white text-lg">
+                    {t.trustFeature3Title}
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">
+                    {t.trustFeature3Desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-gray-100 dark:bg-gray-800 relative h-64 lg:h-auto order-1 lg:order-2"
+          >
+            <!-- Abstract map background for visual interest -->
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-80"
+              style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUGMrvy2CIMxgxahcRLFpT28h4S7vPvdUbvlRlJt7XB-tlXawH5KPZPFRpjj8hZIX7RaJlDBJq_EbX2GpwRyqRL_Ii8v514-TF03wyMCrgMDUDwM6dmEMMrctfjuQY8DjNSs8AKlWCROBrCJXbxuFXtM1CiJjsKUbPX3z7RYPRatcgPLQGEnDcwQqyoEWGttJnQhRb7l2CBUXMK28Y6-Rjosu4DYyJDPwEdWNS9NszAVmvchAEtisAESxx9LV7O6t6V1rzuy3esmY8');"
+            >
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-l from-transparent to-white dark:to-gray-900 lg:bg-gradient-to-r lg:from-white lg:dark:from-gray-900 lg:to-transparent"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div
+      class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 sm:mt-32 text-center"
+    >
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+        {t.ctaTitle}
+      </h2>
+      <p
+        class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto"
+      >
+        {t.ctaDesc}
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href={l("/contact")}
+          class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-blue-700 text-white font-bold rounded-lg shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
+        >
+          {t.ctaButton}
+          <span class="material-icons text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,508 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.svelte";
+import Footer from "../../components/Footer.astro";
+import { getRelativeLocaleUrl } from "../../i18n/utils";
+import { defaultLang, languages } from "../../i18n/ui";
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang: lang === defaultLang ? undefined : lang },
+    props: { lang: lang as "en" | "es" },
+  }));
+}
+
+const { lang } = Astro.props as { lang: "en" | "es" };
+const l = (path: string) => getRelativeLocaleUrl(lang, path);
+
+const content = {
+  en: {
+    title: "Integrity Mexico Insurance - Frequently Asked Questions",
+    description:
+      "Everything you need to know about driving in Mexico safely. Find answers about coverage, border crossing, and claims.",
+    badge: "Help Center",
+    heroTitle: "Frequently Asked Questions",
+    heroSubtitle:
+      "Everything you need to know about driving in Mexico safely. Find answers about coverage, border crossing, and claims.",
+    sidebar: {
+      general: "General Questions",
+      coverage: "Coverage Questions",
+      vehicle: "Vehicle & Driver Questions",
+      travel: "Travel Questions",
+      purchasing: "Purchasing Questions",
+      claims: "Claims & Assistance",
+    },
+    quickHelpTitle: "Need assistance?",
+    quickHelpDesc: "Our bilingual agents are ready to help you 24/7.",
+    quickHelpCta: "Contact Support",
+    stillTitle: "Still have questions?",
+    stillDesc:
+      "Can't find the answer you're looking for? Please chat to our friendly team. We're here to help you drive with confidence.",
+    stillChat: "Start Live Chat",
+    stillEmail: "Email Us",
+    weAreHere: "We're here for you",
+    weAreHereTime: "Mon-Fri, 9am - 6pm EST",
+    faqs: {
+      general: [
+        {
+          q: "What is Mexico Tourist Auto Insurance?",
+          a: "Mexico Tourist Auto Insurance is a temporary auto insurance policy that provides liability and physical damage coverage for vehicles driven from the United States or Canada into Mexico.",
+        },
+        {
+          q: "Do I need Mexican insurance if I already have U.S. auto insurance?",
+          a: "Yes. U.S. and Canadian auto insurance policies are not legally recognized in Mexico. Mexican law requires liability coverage issued by a Mexican insurance company.",
+        },
+        {
+          q: "Is Mexico Tourist Insurance required by law?",
+          a: "Yes. Mexican federal law requires drivers to carry liability insurance from a Mexican insurer when driving on federal highways and roads.",
+        },
+        {
+          q: "How long can a Mexico tourist auto insurance policy last?",
+          a: "Policies can typically be purchased for: 1 day, 3 days, 7 days, 15 days, 30 days, 6 months, or 1 year.",
+        },
+        {
+          q: "Who can buy a Mexico Tourist Insurance policy?",
+          a: "Anyone driving a U.S. or Canadian plated vehicle into Mexico can purchase a policy.",
+        },
+      ],
+      coverage: [
+        {
+          q: "What does Mexico Tourist Auto Insurance cover?",
+          a: "Coverage may include Liability (required by law), physical damage (collision & theft), medical payments, legal assistance, roadside assistance, and bail bond coverage.",
+        },
+        {
+          q: "What is liability coverage in Mexico?",
+          a: "Liability insurance covers damage or injury you cause to third parties. This coverage is mandatory in Mexico.",
+        },
+        {
+          q: "Does the policy cover theft of my vehicle?",
+          a: "Yes, if you purchase full coverage which includes theft protection.",
+        },
+        {
+          q: "Does the policy cover medical expenses?",
+          a: "Most policies include medical payments coverage for the driver and passengers.",
+        },
+        {
+          q: "Does the policy include legal assistance?",
+          a: "Yes. Many policies include legal representation and bail bond coverage, which is very important in case of an accident in Mexico.",
+        },
+      ],
+      vehicle: [
+        {
+          q: "What vehicles can be insured?",
+          a: "Most tourist policies cover cars, SUVs, pickup trucks, and motorhomes. Certain vehicles such as commercial trucks or exotic vehicles may require special policies.",
+        },
+        {
+          q: "Can multiple drivers be covered?",
+          a: "Yes. Most policies allow additional drivers as long as they have a valid driver’s license.",
+        },
+      ],
+      travel: [
+        {
+          q: "Do I need insurance if I only drive near the border?",
+          a: "Yes. Even in border zones, Mexican law requires liability insurance issued by a Mexican company.",
+        },
+        {
+          q: "Does the insurance work anywhere in Mexico?",
+          a: "Yes. Tourist auto policies cover you throughout Mexico, depending on the coverage you choose.",
+        },
+        {
+          q: "What happens if I have an accident in Mexico?",
+          a: "Call the insurance company’s claims number immediately. An adjuster will be sent to the accident location to assist you.",
+        },
+        {
+          q: "What documents should I carry when driving in Mexico?",
+          a: "You should always carry: your insurance policy, valid driver’s license, vehicle registration, passport or travel documents, and a Temporary Vehicle Import Permit for Mexico.",
+        },
+      ],
+      purchasing: [
+        {
+          q: "Can I buy Mexico Tourist Insurance online?",
+          a: "Yes. You can purchase your policy online in minutes and receive the documents by email.",
+        },
+        {
+          q: "How much does Mexico Tourist Auto Insurance cost?",
+          a: "Prices vary based on vehicle value, coverage selected, and length of trip.",
+        },
+        {
+          q: "When should I purchase the policy?",
+          a: "You can purchase it before crossing the border or even the same day you travel.",
+        },
+        {
+          q: "Can I cancel my policy?",
+          a: "Many policies can be canceled before the start date for a refund depending on the provider.",
+        },
+      ],
+      claims: [
+        {
+          q: "What should I do if my car breaks down in Mexico?",
+          a: "Most policies include roadside assistance which may help with towing service.",
+        },
+        {
+          q: "Do I have to pay anything if I have a claim?",
+          a: "If you have physical damage coverage, you may have a deductible depending on the policy.",
+        },
+        {
+          q: "Is assistance available in English?",
+          a: "Yes. Most tourist auto insurance providers offer 24/7 bilingual assistance.",
+        },
+      ],
+    },
+  },
+  es: {
+    title: "Integrity Mexico Seguros - Preguntas Frecuentes",
+    description:
+      "Todo lo que necesita saber sobre conducir en México de manera segura. Encuentre respuestas sobre cobertura, cruce fronterizo y reclamaciones.",
+    badge: "Centro de Ayuda",
+    heroTitle: "Preguntas Frecuentes",
+    heroSubtitle:
+      "Todo lo que necesita saber sobre conducir en México de manera segura. Encuentre respuestas sobre cobertura, cruce fronterizo y reclamaciones.",
+    sidebar: {
+      general: "Preguntas Generales",
+      coverage: "Preguntas de Cobertura",
+      vehicle: "Vehículo y Conductor",
+      travel: "Preguntas de Viaje",
+      purchasing: "Preguntas de Compra",
+      claims: "Reclamaciones y Asistencia",
+    },
+    quickHelpTitle: "¿Necesita asistencia?",
+    quickHelpDesc:
+      "Nuestros agentes bilingües están listos para ayudarlo 24/7.",
+    quickHelpCta: "Contactar Soporte",
+    stillTitle: "¿Aún tiene preguntas?",
+    stillDesc:
+      "¿No encuentra la respuesta que busca? Hable con nuestro amable equipo. Estamos aquí para ayudarle a manejar con confianza.",
+    stillChat: "Iniciar Chat en Vivo",
+    stillEmail: "Envíenos un Correo",
+    weAreHere: "Estamos aquí para usted",
+    weAreHereTime: "Lun-Vie, 9am - 6pm EST",
+    faqs: {
+      general: [
+        {
+          q: "¿Qué es el Seguro de Auto Turista para México?",
+          a: "El Seguro de Auto Turista para México es una póliza de seguro temporal que proporciona cobertura de responsabilidad civil y daños físicos para vehículos que se conducen desde los Estados Unidos o Canadá hacia México.",
+        },
+        {
+          q: "¿Necesito seguro mexicano si ya tengo seguro de auto de EE. UU.?",
+          a: "Sí. Las pólizas de seguro de auto de EE. UU. y Canadá no son reconocidas legalmente en México. La ley mexicana exige cobertura de responsabilidad civil emitida por una aseguradora mexicana.",
+        },
+        {
+          q: "¿Es el Seguro Turista para México obligatorio por ley?",
+          a: "Sí. La ley federal mexicana exige que los conductores lleven seguro de responsabilidad civil de una aseguradora mexicana cuando manejan en carreteras y caminos federales.",
+        },
+        {
+          q: "¿Cuánto tiempo puede durar una póliza de seguro de auto turista para México?",
+          a: "Las pólizas generalmente se pueden adquirir por: 1 día, 3 días, 7 días, 15 días, 30 días, 6 meses, o 1 año.",
+        },
+        {
+          q: "¿Quién puede comprar una póliza de Seguro de Auto Turista para México?",
+          a: "Cualquier persona que conduzca un vehículo con placas de EE. UU. o Canadá hacia México puede adquirir una póliza.",
+        },
+      ],
+      coverage: [
+        {
+          q: "¿Qué cubre el Seguro de Auto Turista para México?",
+          a: "La cobertura puede incluir responsabilidad civil (requerida por ley), daños físicos (colisión y robo), gastos médicos, asistencia legal, asistencia en carretera y cobertura de fianza.",
+        },
+        {
+          q: "¿Qué es la cobertura de responsabilidad civil en México?",
+          a: "El seguro de responsabilidad civil cubre los daños o lesiones que cause a terceros. Esta cobertura es obligatoria en México.",
+        },
+        {
+          q: "¿La póliza cubre el robo de mi vehículo?",
+          a: "Sí, si contrata cobertura amplia que incluye protección contra robo.",
+        },
+        {
+          q: "¿La póliza cubre gastos médicos?",
+          a: "La mayoría de las pólizas incluyen cobertura de gastos médicos para el conductor y los pasajeros.",
+        },
+        {
+          q: "¿La póliza incluye asistencia legal?",
+          a: "Sí. Muchas pólizas incluyen representación legal y cobertura de fianza, lo cual es muy importante en caso de accidente en México.",
+        },
+      ],
+      vehicle: [
+        {
+          q: "¿Qué vehículos se pueden asegurar?",
+          a: "La mayoría de las pólizas turistas cubren automóviles, SUVs, camionetas pick-up y casas rodantes. Ciertos vehículos como camiones comerciales o vehículos de lujo pueden requerir pólizas especiales.",
+        },
+        {
+          q: "¿Se pueden incluir múltiples conductores?",
+          a: "Sí. La mayoría de las pólizas permiten conductores adicionales siempre que tengan una licencia de conducir válida.",
+        },
+      ],
+      travel: [
+        {
+          q: "¿Necesito seguro si solo manejo cerca de la frontera?",
+          a: "Sí. Incluso en zonas fronterizas, la ley mexicana exige un seguro de responsabilidad civil emitido por una compañía mexicana.",
+        },
+        {
+          q: "¿El seguro funciona en cualquier parte de México?",
+          a: "Sí. Las pólizas de auto turista le cubren en todo México, dependiendo de la cobertura que elija.",
+        },
+        {
+          q: "¿Qué hago si tengo un accidente en México?",
+          a: "Llame de inmediato al número de reclamaciones de la aseguradora. Un ajustador será enviado al lugar del accidente para asistirle.",
+        },
+        {
+          q: "¿Qué documentos debo llevar al manejar en México?",
+          a: "Siempre debe llevar consigo: su póliza de seguro, licencia de conducir vigente, tarjeta de circulación del vehículo, pasaporte o documentos de viaje, y el Permiso de Importación Temporal de Vehículo para México.",
+        },
+      ],
+      purchasing: [
+        {
+          q: "¿Puedo comprar el Seguro Turista para México en línea?",
+          a: "Sí. Puede adquirir su póliza en línea en minutos y recibir los documentos por correo electrónico.",
+        },
+        {
+          q: "¿Cuánto cuesta el Seguro de Auto Turista para México?",
+          a: "Los precios varían según el valor del vehículo, la cobertura seleccionada y la duración del viaje.",
+        },
+        {
+          q: "¿Cuándo debo comprar la póliza?",
+          a: "Puede comprarla antes de cruzar la frontera o incluso el mismo día que viaja.",
+        },
+        {
+          q: "¿Puedo cancelar mi póliza?",
+          a: "Muchas pólizas pueden cancelarse antes de la fecha de inicio para obtener un reembolso, según las condiciones del proveedor.",
+        },
+      ],
+      claims: [
+        {
+          q: "¿Qué hago si mi vehículo se descompone en México?",
+          a: "La mayoría de las pólizas incluyen asistencia en carretera que puede ayudar con servicio de remolque.",
+        },
+        {
+          q: "¿Tengo que pagar algo si presento una reclamación?",
+          a: "Si tiene cobertura de daños físicos, puede haber un deducible según las condiciones de la póliza.",
+        },
+        {
+          q: "¿Hay asistencia disponible en inglés?",
+          a: "Sí. La mayoría de los proveedores de seguro de auto turista ofrecen asistencia bilingüe disponible 24/7.",
+        },
+      ],
+    },
+  },
+};
+
+const t = content[lang];
+
+const categories = [
+  { id: "general", icon: "verified_user", name: t.sidebar.general },
+  { id: "coverage", icon: "shield", name: t.sidebar.coverage },
+  { id: "vehicle", icon: "directions_car", name: t.sidebar.vehicle },
+  { id: "travel", icon: "map", name: t.sidebar.travel },
+  { id: "purchasing", icon: "shopping_cart", name: t.sidebar.purchasing },
+  { id: "claims", icon: "support_agent", name: t.sidebar.claims },
+];
+---
+
+<BaseLayout title={t.title} description={t.description}>
+  <Navigation lang={lang} client:load pathname={Astro.url.pathname} />
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <div
+      class="relative bg-primary/5 dark:bg-primary/10 pt-16 pb-16 border-b border-slate-200 dark:border-slate-800"
+    >
+      <!-- Decorative Background Element -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+        >
+        </div>
+        <div
+          class="absolute top-1/2 -left-24 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"
+        >
+        </div>
+      </div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span
+          class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4 border border-primary/20"
+        >
+          {t.badge}
+        </span>
+        <h1
+          class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6"
+        >
+          {t.heroTitle}
+        </h1>
+        <p
+          class="text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-2xl mx-auto"
+        >
+          {t.heroSubtitle}
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ Content Section -->
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 -mt-12 relative z-10"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Sidebar Categories -->
+        <div class="lg:col-span-3">
+          <div
+            class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-2 sticky top-24"
+          >
+            <nav class="space-y-1">
+              {
+                categories.map((cat, idx) => (
+                  <a
+                    class={`flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors ${
+                      idx === 0
+                        ? "bg-primary/10 text-primary"
+                        : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
+                    }`}
+                    href={`#${cat.id}`}
+                  >
+                    <span class="material-icons text-sm">{cat.icon}</span>
+                    {cat.name}
+                  </a>
+                ))
+              }
+            </nav>
+
+            <!-- Quick Help Card -->
+            <div class="mt-6 p-4 bg-primary rounded-lg text-white mx-2 mb-2">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="material-icons">support_agent</span>
+                <span class="font-bold">{t.quickHelpTitle}</span>
+              </div>
+              <p class="text-sm text-blue-100 mb-3">
+                {t.quickHelpDesc}
+              </p>
+              <a
+                class="inline-block w-full text-center bg-white text-primary text-sm font-bold py-2 rounded shadow hover:bg-blue-50 transition-colors"
+                href={l("/contact")}
+              >
+                {t.quickHelpCta}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Content -->
+        <div class="lg:col-span-9 space-y-8">
+          {
+            categories.map((cat) => (
+              <div id={cat.id}>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pt-4">
+                  <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center">
+                    <span class="material-icons text-lg">{cat.icon}</span>
+                  </span>
+                  {cat.name}
+                </h2>
+                <div class="space-y-4">
+                  {t.faqs[cat.id as keyof typeof t.faqs].map(
+                    (faq: { q: string; a: string }, idx: number) => (
+                      <details
+                        class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+                        open={cat.id === "general" && idx === 0}
+                      >
+                        <summary class="flex items-center justify-between p-6 cursor-pointer bg-white dark:bg-slate-900 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/50 transition-colors">
+                          <h3 class="text-lg font-semibold text-slate-900 dark:text-white pr-4">
+                            {faq.q}
+                          </h3>
+                          <span class="material-icons text-primary transition-transform duration-300 group-open:rotate-180">
+                            expand_more
+                          </span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
+                          <p>{faq.a}</p>
+                        </div>
+                      </details>
+                    ),
+                  )}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Still Need Help Section -->
+    <div
+      class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-16 py-16"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="bg-primary/5 dark:bg-slate-800 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/10"
+        >
+          <div class="flex-1">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+              {t.stillTitle}
+            </h2>
+            <p class="text-slate-600 dark:text-slate-300 mb-6 max-w-lg">
+              {t.stillDesc}
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                class="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                href="https://wa.me/19566160306"
+              >
+                <span class="material-icons text-sm">chat</span>
+                {t.stillChat}
+              </a>
+              <a
+                class="inline-flex items-center gap-2 bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-700 dark:text-white border border-slate-200 dark:border-slate-600 px-6 py-3 rounded-lg font-semibold transition-colors"
+                href="mailto:contact@integrityseguros.com"
+              >
+                <span class="material-icons text-sm">email</span>
+                {t.stillEmail}
+              </a>
+            </div>
+          </div>
+
+          <!-- Illustrative Image -->
+          <div
+            class="relative w-full md:w-1/3 aspect-[4/3] rounded-xl overflow-hidden shadow-lg"
+          >
+            <img
+              alt={lang === "es"
+                ? "Agente de soporte al cliente sonriendo"
+                : "Customer support team member smiling"}
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZFiQN001vMh4wZs0i_muxW5Xw8pM4rMAGPis6d8Uka9BoLrStvgIK4BBY4e7225y9WETE0Qi_gkkZ1SUGG81zhAqVeTHOUrrqI6iQ7zTHfxNJlN7fRRpWBe1X-c6r75s2U2ZbOmvuNdj2QIV7l5WnCqmirEPqkssqmIuYRwlsXkcw2lQ0z22qijohcJtaTX1o_ijyOX3osDJx1Afy7aiPrAYg0PVnoUPYmX92qjsfpghOJrwCxO-dGw294uM37VA3IbmSL6oRTxjE"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6"
+            >
+              <div class="text-white">
+                <p class="font-bold text-lg">{t.weAreHere}</p>
+                <p class="text-sm opacity-90">{t.weAreHereTime}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Smooth accordion transitions */
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] summary ~ * {
+    animation: sweep 0.3s ease-in-out;
+  }
+  @keyframes sweep {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

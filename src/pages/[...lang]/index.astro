@@ -1,21 +1,178 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Navigation from "../components/Navigation.svelte";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.svelte";
+import Footer from "../../components/Footer.astro";
+import { getRelativeLocaleUrl } from "../../i18n/utils";
+import { defaultLang, languages } from "../../i18n/ui";
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang: lang === defaultLang ? undefined : lang },
+    props: { lang: lang as "en" | "es" },
+  }));
+}
+
+const { lang } = Astro.props as { lang: "en" | "es" };
+const l = (path: string) => getRelativeLocaleUrl(lang, path);
+
+const content = {
+  en: {
+    title: "Integrity Mexico Insurance Home",
+    description:
+      "Driving to Mexico? Make sure you're properly covered. Your U.S. insurance policy stops at the border. Protect your family and vehicle with comprehensive Mexican liability coverage in minutes.",
+    trustBadge: "Trusted by 50,000+ US Drivers",
+    heroTitleHtml:
+      'Driving to Mexico? <br /> Make Sure You\'re <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">Properly Covered</span>',
+    heroSubtitle:
+      "Your U.S. insurance policy stops at the border. Protect your family and vehicle with comprehensive Mexican liability coverage in minutes.",
+    ctaQuote: "Get a Free Quote",
+    ctaLearnMore: "Learn More",
+    warningTitle: "Crucial Warning",
+    warningSubtitle: "Most drivers don't know this.",
+    warningLi1Html:
+      "<strong>US Liability is Invalid:</strong> Mexican law does not recognize U.S. or Canadian liability insurance.",
+    warningLi2Html:
+      "<strong>Jurisdiction Issues:</strong> Accidents in Mexico are subject to Mexican law, not U.S. law.",
+    factsBadge: "Know the Facts",
+    factsTitleHtml: "Is Your U.S. Policy Valid in Mexico?",
+    factsIntroHtml:
+      'In short: <strong class="text-slate-900 dark:text-white">No, not for liability.</strong>',
+    factsBody:
+      "While some U.S. carriers may offer limited physical damage coverage within a few miles of the border, Mexican authorities do not recognize foreign insurance as proof of financial responsibility. Without a Mexican-issued policy, you could be held personally liable for damages and injuries.",
+    factsCta: "Check your coverage requirements",
+    whyLawTitle: "Why Mexican Liability is Required by Law",
+    whyLawSubtitle:
+      "Driving in Mexico without proper insurance isn't just risky—it's illegal. Here is what you need to know about the Federal Law.",
+    whyLawCard1Title: "Federal Requirement",
+    whyLawCard1Desc:
+      "Since 2019, federal law requires all vehicles on federal highways and bridges to have third-party liability insurance issued by a Mexican company.",
+    whyLawCard2Title: "Financial Responsibility",
+    whyLawCard2Desc:
+      "In the event of an accident, you must demonstrate the ability to pay for damages immediately. A valid policy acts as your proof of solvency.",
+    whyLawCard3Title: "Avoiding Detention",
+    whyLawCard3Desc:
+      'Under Mexico\'s Law, you are "guilty until proven innocent." Accidents can lead to detention until ability to pay is proven.',
+    accidentTitle: "What Happens in an Accident?",
+    accidentSubtitle:
+      "We hope you never need it, but if the unexpected happens, Integrity Mexico ensures you aren't alone. Our streamlined process gets you help fast.",
+    accidentCta: "View Claims Process",
+    accidentStep1Title: "Call the Hotline",
+    accidentStep1Desc:
+      "Dial the 24/7 bilingual claims number on your policy. Dispatch is available immediately to guide you.",
+    accidentStep2Title: "Adjuster Dispatched",
+    accidentStep2Desc:
+      "A certified adjuster will meet you at the scene to assess damages and handle interactions with authorities.",
+    accidentStep3Title: "Legal Assistance",
+    accidentStep3Desc:
+      "If needed, legal representation is provided to secure your release and resolve liability issues.",
+    accidentStep4Title: "Notify Authorities",
+    accidentStep4Desc:
+      "If the situation requires it, notify emergency services or local authorities to ensure safety, document the incident, and support the claims process properly.",
+    whyChooseTitle: "Why Choose Integrity Mexico?",
+    whyChooseSubtitle:
+      "We don't just sell insurance; we provide peace of mind for your journey across the border. We partner only with top-rated Mexican carriers.",
+    whyChooseCard1Title: "24/7 Bilingual Support",
+    whyChooseCard1Desc:
+      "English-speaking agents ready to help you anytime, anywhere in Mexico.",
+    whyChooseCard2Title: "ANA SEGUROS",
+    whyChooseCard2Desc:
+      "Policies backed by ANA SEGUROS, one of the top insurers in Mexico.",
+    whyChooseCard3Title: "Instant Online Quotes",
+    whyChooseCard3Desc:
+      "Get covered in less than 5 minutes. Print your policy instantly or save it to your phone.",
+    whyChooseCard4Title: "Repair in USA",
+    whyChooseCard4Desc:
+      "Options available to have your vehicle repaired in the U.S. if damaged in Mexico.",
+    finalCtaTitle: "Ready for your trip?",
+    finalCtaDesc: "Don't risk your vehicle or your freedom.",
+    finalCtaButton: "Get a Free Quote Now",
+  },
+  es: {
+    title: "Integrity Mexico Seguros - Inicio",
+    description:
+      "¿Manejando a México? Asegúrese de estar bien cubierto. Su póliza de seguro de EE. UU. no aplica en México. Proteja a su familia y vehículo con cobertura de responsabilidad civil mexicana en minutos.",
+    trustBadge: "Más de 50,000 conductores de EE. UU. confían en nosotros",
+    heroTitleHtml:
+      '¿Manejando a México? <br /> Asegúrese de estar <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">Correctamente Cubierto</span>',
+    heroSubtitle:
+      "Su póliza de seguro de EE. UU. no aplica en México. Proteja a su familia y vehículo con cobertura de responsabilidad civil mexicana en minutos.",
+    ctaQuote: "Obtener Cotización Gratis",
+    ctaLearnMore: "Saber Más",
+    warningTitle: "Crucial Advertencia",
+    warningSubtitle: "La mayoría de los conductores no saben esto.",
+    warningLi1Html:
+      "<strong>Responsabilidad Civil de EE.UU. Inválida:</strong> La ley mexicana no reconoce el seguro de responsabilidad civil de EE. UU. o Canadá.",
+    warningLi2Html:
+      "<strong>Problemas de Jurisdicción:</strong> Los accidentes en México están sujetos a la ley mexicana, no a la de EE. UU.",
+    factsBadge: "Conozca los Hechos",
+    factsTitleHtml: "¿Es Válida su Póliza de EE. UU. en México?",
+    factsIntroHtml:
+      'En resumen: <strong class="text-slate-900 dark:text-white">No, no para responsabilidad civil.</strong>',
+    factsBody:
+      "Aunque algunas aseguradoras de EE. UU. pueden ofrecer cobertura limitada de daños físicos dentro de unas pocas millas de la frontera, las autoridades mexicanas no reconocen el seguro extranjero como prueba de responsabilidad financiera. Sin una póliza emitida en México, usted podría ser considerado personalmente responsable de los daños y lesiones.",
+    factsCta: "Verifique sus requisitos de cobertura",
+    whyLawTitle:
+      "Por Qué la Responsabilidad Civil Mexicana es Obligatoria por Ley",
+    whyLawSubtitle:
+      "Conducir en México sin el seguro adecuado no es solo riesgoso—es ilegal. Esto es lo que necesita saber sobre la Ley Federal.",
+    whyLawCard1Title: "Requisito Federal",
+    whyLawCard1Desc:
+      "Desde 2019, la ley federal exige que todos los vehículos en vías y puentes federales cuenten con un seguro de responsabilidad civil ante terceros emitido por una compañía mexicana.",
+    whyLawCard2Title: "Responsabilidad Financiera",
+    whyLawCard2Desc:
+      "En caso de accidente, debe demostrar la capacidad de pagar los daños de inmediato. Una póliza válida actúa como su prueba de solvencia.",
+    whyLawCard3Title: "Evitar la Detención",
+    whyLawCard3Desc:
+      'Bajo la ley mexicana, se es "culpable hasta que se demuestre lo contrario". Los accidentes pueden llevar a la detención hasta que se demuestre la solvencia.',
+    accidentTitle: "¿Qué Pasa en un Accidente?",
+    accidentSubtitle:
+      "Esperamos que nunca lo necesite, pero si ocurre lo inesperado, Integrity México se asegura de que no esté solo. Nuestro proceso optimizado le brinda ayuda rápido.",
+    accidentCta: "Ver Proceso de Reclamaciones",
+    accidentStep1Title: "Llamar a la Línea Directa",
+    accidentStep1Desc:
+      "Marque el número de reclamaciones bilingüe 24/7 que aparece en su póliza. La asistencia está disponible de inmediato para guiarle.",
+    accidentStep2Title: "Ajustador Enviado",
+    accidentStep2Desc:
+      "Un ajustador certificado se reunirá con usted en el lugar de los hechos para evaluar los daños y gestionar la interacción con las autoridades.",
+    accidentStep3Title: "Asistencia Legal",
+    accidentStep3Desc:
+      "Si es necesario, se proporciona representación legal para asegurar su liberación y resolver problemas de responsabilidad.",
+    accidentStep4Title: "Notificar a las Autoridades",
+    accidentStep4Desc:
+      "Si la situación lo requiere, notifique a los servicios de emergencia o a las autoridades locales para garantizar la seguridad, documentar el incidente y respaldar adecuadamente el proceso de reclamaciones.",
+    whyChooseTitle: "¿Por Qué Elegir Integrity México?",
+    whyChooseSubtitle:
+      "No solo vendemos seguros; brindamos tranquilidad para su viaje al otro lado de la frontera. Nos asociamos únicamente con aseguradoras mexicanas de primer nivel.",
+    whyChooseCard1Title: "Soporte Bilingüe 24/7",
+    whyChooseCard1Desc:
+      "Agentes de habla inglesa listos para ayudarle en cualquier momento y en cualquier lugar de México.",
+    whyChooseCard2Title: "ANA SEGUROS",
+    whyChooseCard2Desc:
+      "Pólizas respaldadas por ANA SEGUROS, una de las principales aseguradoras de México.",
+    whyChooseCard3Title: "Cotizaciones en Línea al Instante",
+    whyChooseCard3Desc:
+      "Obtenga cobertura en menos de 5 minutos. Imprima su póliza al instante o guárdela en su teléfono.",
+    whyChooseCard4Title: "Reparación en EE. UU.",
+    whyChooseCard4Desc:
+      "Opciones disponibles para reparar su vehículo en los EE. UU. si sufre daños en México.",
+    finalCtaTitle: "¿Listo para su viaje?",
+    finalCtaDesc: "No arriesgue su vehículo ni su libertad.",
+    finalCtaButton: "Obtenga su Cotización Gratis Ahora",
+  },
+};
+
+const t = content[lang];
 ---
 
-<BaseLayout
-  title="Integrity Mexico Insurance Home"
-  description="Driving to Mexico? Make sure you're properly covered. Your U.S. insurance policy stops at the border. Protect your family and vehicle with comprehensive Mexican liability coverage in minutes."
->
-  <Navigation client:load />
+<BaseLayout title={t.title} description={t.description}>
+  <Navigation lang={lang} client:load pathname={Astro.url.pathname} />
 
   <!-- Hero Section -->
   <header class="relative pt-20 flex items-center min-h-[85vh]">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
       <img
-        alt="Family road trip"
+        alt={lang === "es" ? "Viaje familiar en carretera" : "Family road trip"}
         class="w-full h-full object-cover"
         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXMdzGPlG5XD4slxO3sfjbXhutyIb_9B8_VXl6RlY5Ct4NCo5a4EgRFNPKHyMbuEpa2S_pvZLrDhwZmAqppxo3jNRPZlpTFuRB3U7efI67N5rM5rdHDb4wj8yxsn7bFBUUcEy-7SqSHV37c9t-0zVzEYFUfY6tVHCe4E7_VGzDa-ze660ZJbwkFEf2OJ-UhY4zelFCBpm1RgxBRPF0Z8fyne_xS-JG6PGOmTDN1ALdpoZ3ebJhdBDuichqzAqKYSY1ZdMKAmUH_sFs"
       />
@@ -32,52 +189,31 @@ import Footer from "../components/Footer.astro";
           class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 text-blue-100 text-sm font-medium mb-6"
         >
           <span class="material-icons text-sm">security</span>
-          Trusted by 50,000+ US Drivers
+          {t.trustBadge}
         </div>
         <h1
           class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6"
-        >
-          Driving to Mexico? <br />
-          Make Sure You're <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200"
-            >Properly Covered</span
-          >
-        </h1>
+          set:html={t.heroTitleHtml}
+        />
         <p
           class="text-xl text-slate-200 mb-8 font-light leading-relaxed max-w-lg"
         >
-          Your U.S. insurance policy stops at the border. Protect your family
-          and vehicle with comprehensive Mexican liability coverage in minutes.
+          {t.heroSubtitle}
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a
             class="bg-cta-green hover:bg-cta-green-hover text-white text-lg px-8 py-4 rounded-lg font-bold transition-all shadow-xl shadow-cta-green/30 flex items-center justify-center gap-2 transform hover:-translate-y-1"
-            href="/get-a-quote"
+            href={l("/get-a-quote")}
           >
-            Get a Free Quote
+            {t.ctaQuote}
             <span class="material-icons">arrow_forward</span>
           </a>
           <a
             class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-lg px-8 py-4 rounded-lg font-semibold transition-all flex items-center justify-center"
             href="#validity"
           >
-            Learn More
+            {t.ctaLearnMore}
           </a>
-        </div>
-        <div class="mt-8 flex items-center gap-4 text-sm text-slate-300 hidden">
-          <div class="flex -space-x-2">
-            <div
-              class="w-8 h-8 rounded-full bg-slate-200 border-2 border-slate-800 flex items-center justify-center text-xs text-slate-900 font-bold"
-            >
-              A+
-            </div>
-            <div
-              class="w-8 h-8 rounded-full bg-slate-300 border-2 border-slate-800 flex items-center justify-center text-xs text-slate-900 font-bold"
-            >
-              BBB
-            </div>
-          </div>
-          <span>Rated Excellent for Claims Service</span>
         </div>
       </div>
     </div>
@@ -110,10 +246,10 @@ import Footer from "../components/Footer.astro";
               </div>
               <div>
                 <h3 class="text-xl font-bold text-slate-900 dark:text-white">
-                  Crucial Warning
+                  {t.warningTitle}
                 </h3>
                 <p class="text-sm text-slate-500 dark:text-slate-400">
-                  Most drivers don't know this.
+                  {t.warningSubtitle}
                 </p>
               </div>
             </div>
@@ -124,10 +260,10 @@ import Footer from "../components/Footer.astro";
                 <span class="material-icons text-red-500 mt-0.5"
                   >highlight_off</span
                 >
-                <p class="text-slate-600 dark:text-slate-300 text-sm">
-                  <strong>US Liability is Invalid:</strong> Mexican law does not recognize
-                  U.S. or Canadian liability insurance.
-                </p>
+                <p
+                  class="text-slate-600 dark:text-slate-300 text-sm"
+                  set:html={t.warningLi1Html}
+                />
               </div>
               <div
                 class="flex items-start gap-3 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-100 dark:border-slate-700 shadow-sm"
@@ -135,10 +271,10 @@ import Footer from "../components/Footer.astro";
                 <span class="material-icons text-red-500 mt-0.5"
                   >highlight_off</span
                 >
-                <p class="text-slate-600 dark:text-slate-300 text-sm">
-                  <strong>Jurisdiction Issues:</strong> Accidents in Mexico are subject
-                  to Mexican law, not U.S. law.
-                </p>
+                <p
+                  class="text-slate-600 dark:text-slate-300 text-sm"
+                  set:html={t.warningLi2Html}
+                />
               </div>
             </div>
           </div>
@@ -147,30 +283,24 @@ import Footer from "../components/Footer.astro";
           <div
             class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-4"
           >
-            Know the Facts
+            {t.factsBadge}
           </div>
-          <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">
-            Is Your U.S. Policy Valid in Mexico?
-          </h2>
+          <h2
+            class="text-4xl font-bold text-slate-900 dark:text-white mb-6"
+            set:html={t.factsTitleHtml}
+          />
           <p
             class="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed"
-          >
-            In short: <strong class="text-slate-900 dark:text-white"
-              >No, not for liability.</strong
-            >
-          </p>
+            set:html={t.factsIntroHtml}
+          />
           <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-            While some U.S. carriers may offer limited physical damage coverage
-            within a few miles of the border, <strong
-              >Mexican authorities do not recognize foreign insurance</strong
-            > as proof of financial responsibility. Without a Mexican-issued policy,
-            you could be held personally liable for damages and injuries.
+            {t.factsBody}
           </p>
           <a
             class="text-primary font-bold flex items-center hover:gap-2 transition-all"
-            href="/coverage-options"
+            href={l("/coverage-options")}
           >
-            Check your coverage requirements
+            {t.factsCta}
             <span class="material-icons text-sm ml-1">arrow_forward</span>
           </a>
         </div>
@@ -187,11 +317,10 @@ import Footer from "../components/Footer.astro";
         <h2
           class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
         >
-          Why Mexican Liability is Required by Law
+          {t.whyLawTitle}
         </h2>
         <p class="text-slate-600 dark:text-slate-400">
-          Driving in Mexico without proper insurance isn't just risky—it's
-          illegal. Here is what you need to know about the Federal Law.
+          {t.whyLawSubtitle}
         </p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
@@ -205,12 +334,10 @@ import Footer from "../components/Footer.astro";
             <span class="material-icons text-3xl text-primary">gavel</span>
           </div>
           <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
-            Federal Requirement
+            {t.whyLawCard1Title}
           </h3>
           <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-            Since 2019, federal law requires all vehicles on federal highways
-            and bridges to have third-party liability insurance issued by a
-            Mexican company.
+            {t.whyLawCard1Desc}
           </p>
         </div>
         <!-- Card 2 -->
@@ -225,12 +352,10 @@ import Footer from "../components/Footer.astro";
             >
           </div>
           <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
-            Financial Responsibility
+            {t.whyLawCard2Title}
           </h3>
           <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-            In the event of an accident, you must demonstrate the ability to pay
-            for damages immediately. A valid policy acts as your proof of
-            solvency.
+            {t.whyLawCard2Desc}
           </p>
         </div>
         <!-- Card 3 -->
@@ -243,11 +368,10 @@ import Footer from "../components/Footer.astro";
             <span class="material-icons text-3xl text-primary">lock</span>
           </div>
           <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
-            Avoiding Detention
+            {t.whyLawCard3Title}
           </h3>
           <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-            Under Mexico's Law, you are "guilty until proven innocent."
-            Accidents can lead to detention until ability to pay is proven.
+            {t.whyLawCard3Desc}
           </p>
         </div>
       </div>
@@ -265,18 +389,16 @@ import Footer from "../components/Footer.astro";
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <h2 class="text-3xl md:text-4xl font-bold mb-6">
-            What Happens in an Accident?
+            {t.accidentTitle}
           </h2>
           <p class="text-blue-100 mb-8 text-lg">
-            We hope you never need it, but if the unexpected happens, Integrity
-            Mexico ensures you aren't alone. Our streamlined process gets you
-            help fast.
+            {t.accidentSubtitle}
           </p>
           <a
             class="inline-flex items-center gap-2 bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors"
-            href="/how-it-works"
+            href={l("/how-it-works")}
           >
-            View Claims Process
+            {t.accidentCta}
             <span class="material-icons">arrow_forward</span>
           </a>
         </div>
@@ -293,10 +415,9 @@ import Footer from "../components/Footer.astro";
             <div
               class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 flex-1"
             >
-              <h4 class="font-bold text-lg mb-2">Call the Hotline</h4>
+              <h4 class="font-bold text-lg mb-2">{t.accidentStep1Title}</h4>
               <p class="text-blue-100 text-sm">
-                Dial the 24/7 bilingual claims number on your policy. Dispatch
-                is available immediately to guide you.
+                {t.accidentStep1Desc}
               </p>
             </div>
           </div>
@@ -312,10 +433,9 @@ import Footer from "../components/Footer.astro";
             <div
               class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 flex-1"
             >
-              <h4 class="font-bold text-lg mb-2">Adjuster Dispatched</h4>
+              <h4 class="font-bold text-lg mb-2">{t.accidentStep2Title}</h4>
               <p class="text-blue-100 text-sm">
-                A certified adjuster will meet you at the scene to assess
-                damages and handle interactions with authorities.
+                {t.accidentStep2Desc}
               </p>
             </div>
           </div>
@@ -331,10 +451,9 @@ import Footer from "../components/Footer.astro";
             <div
               class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 flex-1"
             >
-              <h4 class="font-bold text-lg mb-2">Legal Assistance</h4>
+              <h4 class="font-bold text-lg mb-2">{t.accidentStep3Title}</h4>
               <p class="text-blue-100 text-sm">
-                If needed, legal representation is provided to secure your
-                release and resolve liability issues.
+                {t.accidentStep3Desc}
               </p>
             </div>
           </div>
@@ -350,11 +469,9 @@ import Footer from "../components/Footer.astro";
             <div
               class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 flex-1"
             >
-              <h4 class="font-bold text-lg mb-2">Notify Authorities</h4>
+              <h4 class="font-bold text-lg mb-2">{t.accidentStep4Title}</h4>
               <p class="text-blue-100 text-sm">
-                If the situation requires it, notify emergency services or local
-                authorities to ensure safety, document the incident, and support
-                the claims process properly.
+                {t.accidentStep4Desc}
               </p>
             </div>
           </div>
@@ -369,18 +486,16 @@ import Footer from "../components/Footer.astro";
       <div class="grid lg:grid-cols-5 gap-12">
         <div class="lg:col-span-2">
           <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">
-            Why Choose Integrity Mexico?
+            {t.whyChooseTitle}
           </h2>
           <p class="text-slate-600 dark:text-slate-400 mb-8 text-lg">
-            We don't just sell insurance; we provide peace of mind for your
-            journey across the border. We partner only with top-rated Mexican
-            carriers.
+            {t.whyChooseSubtitle}
           </p>
           <div
             class="aspect-video rounded-xl overflow-hidden shadow-2xl relative"
           >
             <img
-              alt="Happy travelers"
+              alt={lang === "es" ? "Viajeros felices" : "Happy travelers"}
               class="w-full h-full object-cover"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrxOwzmQY_P8olhxHPwi_xdASP8YvNp5AsdGTQFTkiuFqRtcd6GiQBygzjuS_T59uM2j0sd9YUQHB85M5YxctMG3L8Uu9aEuZMPlLMYhxVcrp5PKBsJD4i0dO7LI0hpTHF-3rU7p8M9AlmBYEF8hQPxm7fwOuJz_ifZwzzW42mtOkGR7ldfsnmaeJSK_xKDKQSN8XZ75UfFpWv-6dQ9_j3CtbaKAIuXVlZFcIwf_5yKZNAYjGjOU425_jTjih5oy0nVrMUHj3Qdzfe"
             />
@@ -395,11 +510,10 @@ import Footer from "../components/Footer.astro";
               >support_agent</span
             >
             <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">
-              24/7 Bilingual Support
+              {t.whyChooseCard1Title}
             </h3>
             <p class="text-sm text-slate-600 dark:text-slate-400">
-              English-speaking agents ready to help you anytime, anywhere in
-              Mexico.
+              {t.whyChooseCard1Desc}
             </p>
           </div>
           <div
@@ -409,10 +523,10 @@ import Footer from "../components/Footer.astro";
               >handshake</span
             >
             <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">
-              ANA SEGUROS
+              {t.whyChooseCard2Title}
             </h3>
             <p class="text-sm text-slate-600 dark:text-slate-400">
-              Policies backed by ANA SEGUROS, one of the top insurers in Mexico.
+              {t.whyChooseCard2Desc}
             </p>
           </div>
           <div
@@ -422,11 +536,10 @@ import Footer from "../components/Footer.astro";
               >devices</span
             >
             <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">
-              Instant Online Quotes
+              {t.whyChooseCard3Title}
             </h3>
             <p class="text-sm text-slate-600 dark:text-slate-400">
-              Get covered in less than 5 minutes. Print your policy instantly or
-              save it to your phone.
+              {t.whyChooseCard3Desc}
             </p>
           </div>
           <div
@@ -434,11 +547,10 @@ import Footer from "../components/Footer.astro";
           >
             <span class="material-icons text-primary text-3xl mb-4">build</span>
             <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">
-              Repair in USA
+              {t.whyChooseCard4Title}
             </h3>
             <p class="text-sm text-slate-600 dark:text-slate-400">
-              Options available to have your vehicle repaired in the U.S. if
-              damaged in Mexico.
+              {t.whyChooseCard4Desc}
             </p>
           </div>
         </div>
@@ -457,35 +569,19 @@ import Footer from "../components/Footer.astro";
     </div>
     <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
       <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-        Ready for your trip?
+        {t.finalCtaTitle}
       </h2>
       <p class="text-slate-300 text-lg mb-10">
-        Don't risk your vehicle or your freedom.
+        {t.finalCtaDesc}
       </p>
       <a
         class="inline-block bg-cta-green hover:bg-cta-green-hover text-white text-xl px-10 py-5 rounded-full font-bold transition-transform hover:scale-105 shadow-2xl"
-        href="/get-a-quote"
+        href={l("/get-a-quote")}
       >
-        Get a Free Quote Now
+        {t.finalCtaButton}
       </a>
     </div>
   </section>
 
   <Footer />
 </BaseLayout>
-
-<style>
-  /* Custom green CTA colors */
-  :global(.bg-cta-green) {
-    background-color: #16a34a;
-  }
-  :global(.bg-cta-green-hover):hover {
-    background-color: #15803d;
-  }
-  :global(.hover\:bg-cta-green-hover):hover {
-    background-color: #15803d;
-  }
-  :global(.shadow-cta-green\/30) {
-    box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.3);
-  }
-</style>

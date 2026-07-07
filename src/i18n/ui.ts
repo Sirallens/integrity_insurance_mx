@@ -3,7 +3,7 @@ export const languages = {
   es: 'Español',
 };
 
-export const defaultLang = 'en';
+export const defaultLang = 'es';
 
 export const ui = {
   en: {
@@ -13,7 +13,7 @@ export const ui = {
     'nav.faq': 'FAQ',
     'nav.consultation': 'Request Consultation',
     'nav.getQuote': 'Get a Free Quote',
-    
+
     'footer.companyDescription': 'Providing trustworthy, independent insurance advice to protect what matters most to you and your family.',
     'footer.quickLinks': 'Quick Links',
     'footer.about': 'About Us',
@@ -60,7 +60,7 @@ export const ui = {
     'nav.faq': 'Preguntas Frecuentes',
     'nav.consultation': 'Solicitar Asesoría',
     'nav.getQuote': 'Cotizar Gratis',
-    
+
     'footer.companyDescription': 'Brindando asesoría de seguros confiable e independiente para proteger lo que más le importa a usted y su familia.',
     'footer.quickLinks': 'Enlaces Rápidos',
     'footer.about': 'Sobre nosotros',

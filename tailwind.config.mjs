@@ -7,6 +7,8 @@ export default {
             colors: {
                 primary: '#1d2e81', // Deep Blue from logo
                 secondary: '#2e7d32', // Green from logo
+                'cta-green': '#15803d', // Green-700
+                'cta-green-hover': '#166534', // Green-800
                 'background-light': '#f8f9fa',
                 'background-dark': '#121212',
                 'surface-light': '#ffffff',

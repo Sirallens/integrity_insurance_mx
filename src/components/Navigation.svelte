@@ -1,9 +1,13 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { useTranslations, getRelativeLocaleUrl } from "../i18n/utils";
+  import { defaultLang, languages } from "../i18n/ui";
   import type { ui } from "../i18n/ui";
 
-  let { lang = "en" }: { lang?: keyof typeof ui } = $props();
+  let {
+    lang = defaultLang,
+    pathname = "/",
+  }: { lang?: keyof typeof ui; pathname?: string } = $props();
 
   let t = $derived(useTranslations(lang));
 
@@ -13,11 +17,20 @@
   let isMenuOpen = $state(false);
   let isDarkMode = $state(false);
   let isLangOpen = $state(false);
-  let currentPath = $state("/");
 
-  // Derived URLs for language switching
-  let enHref = $derived(currentPath);
-  let esHref = $derived(currentPath === "/" ? "/es/" : `/es${currentPath}`);
+  // Strip any known locale prefix to get the bare path
+  let basePath = $derived.by(() => {
+    const clean = pathname;
+    for (const key of Object.keys(languages)) {
+      if (clean.startsWith(`/${key}/`)) return clean.substring(key.length + 1);
+      if (clean === `/${key}`) return "/";
+    }
+    return clean;
+  });
+
+  // Derived URLs for language switching — respects defaultLang
+  let enHref = $derived(getRelativeLocaleUrl("en", basePath));
+  let esHref = $derived(getRelativeLocaleUrl("es", basePath));
 
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
@@ -40,13 +53,10 @@
   }
 
   onMount(() => {
-    // Compute current path without locale prefix
-    const path = window.location.pathname;
-    const clean = path.replace(/^\/es(\/|$)/, "/");
-    currentPath = clean || "/";
-
     // Close language dropdown on click outside
-    const handleClickOutside = () => { isLangOpen = false; };
+    const handleClickOutside = () => {
+      isLangOpen = false;
+    };
     document.addEventListener("click", handleClickOutside);
 
     // Dark mode is disabled by default
@@ -120,8 +130,8 @@
             {lang.toUpperCase()}
             <span
               class="material-icons-outlined text-sm transition-transform duration-200"
-              class:rotate-180={isLangOpen}
-            >expand_more</span>
+              class:rotate-180={isLangOpen}>expand_more</span
+            >
           </button>
           {#if isLangOpen}
             <div
