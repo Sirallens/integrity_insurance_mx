@@ -20,11 +20,15 @@ const tGlobal = useTranslations(lang);
 const content = {
   en: {
     title: "Contact & Bilingual Support - Integrity Mexico Insurance",
-    description: "We're here to help in English & Spanish. Whether you have a question about your policy or need immediate assistance on the road, our bilingual team of licensed advisors is ready to support you.",
-    heroTitleHtml: 'We\'re Here to Help — <br class="hidden md:block" /> <span class="text-primary">In English & Spanish</span>',
-    heroSubtitle: "Whether you have a question about your policy or need immediate assistance on the road, our bilingual team of licensed advisors is ready to support you.",
+    description:
+      "We're here to help in English & Spanish. Whether you have a question about your policy or need immediate assistance on the road, our bilingual team of licensed advisors is ready to support you.",
+    heroTitleHtml:
+      'We\'re Here to Help — <br class="hidden md:block" /> <span class="text-primary">In English & Spanish</span>',
+    heroSubtitle:
+      "Whether you have a question about your policy or need immediate assistance on the road, our bilingual team of licensed advisors is ready to support you.",
     accidentTitle: "In Case of an Accident",
-    accidentDesc: "Your safety is our priority. Stay calm and follow these immediate steps if you are involved in an incident in Mexico.",
+    accidentDesc:
+      "Your safety is our priority. Stay calm and follow these immediate steps if you are involved in an incident in Mexico.",
     accidentStep1: "Call 911 immediately if there are injuries.",
     accidentStep2: "Do not leave the scene or accept liability.",
     accidentStep3: "Have your policy number ready.",
@@ -33,15 +37,19 @@ const content = {
     emailTitle: "Email Support",
     emailSpeed: "Typically replies in 2 hrs",
     mapAlt: "Overhead view of Mexico City streets and urban landscape",
-    mapBadge: "Serving US Drivers in Mexico"
+    mapBadge: "Serving US Drivers in Mexico",
   },
   es: {
     title: "Contacto y Soporte Bilingüe - Integrity Mexico Seguros",
-    description: "Estamos aquí para ayudarle en inglés y español. Ya sea que tenga una pregunta sobre su póliza o necesite asistencia inmediata en la carretera, nuestro equipo bilingüe de asesores está listo para apoyarle.",
-    heroTitleHtml: 'Estamos Aquí para Ayudarle — <br class="hidden md:block" /> <span class="text-primary">En Inglés y Español</span>',
-    heroSubtitle: "Ya sea que tenga una pregunta sobre su póliza o necesite asistencia inmediata en la carretera, nuestro equipo bilingüe de asesores con licencia está listo para apoyarle.",
+    description:
+      "Estamos aquí para ayudarle en inglés y español. Ya sea que tenga una pregunta sobre su póliza o necesite asistencia inmediata en la carretera, nuestro equipo bilingüe de asesores está listo para apoyarle.",
+    heroTitleHtml:
+      'Estamos Aquí para Ayudarle — <br class="hidden md:block" /> <span class="text-primary">En Inglés y Español</span>',
+    heroSubtitle:
+      "Ya sea que tenga una pregunta sobre su póliza o necesite asistencia inmediata en la carretera, nuestro equipo bilingüe de asesores con licencia está listo para apoyarle.",
     accidentTitle: "En Caso de Accidente",
-    accidentDesc: "Su seguridad es nuestra prioridad. Mantenga la calma y siga estos pasos inmediatos si está involucrado en un incidente en México.",
+    accidentDesc:
+      "Su seguridad es nuestra prioridad. Mantenga la calma y siga estos pasos inmediatos si está involucrado en un incidente en México.",
     accidentStep1: "Llame al 911 de inmediato si hay lesionados.",
     accidentStep2: "No abandone el lugar ni acepte responsabilidad.",
     accidentStep3: "Tenga listo el número de su póliza.",
@@ -50,8 +58,8 @@ const content = {
     emailTitle: "Soporte por Correo",
     emailSpeed: "Responde en aprox. 2 horas",
     mapAlt: "Vista aérea de las calles y el paisaje urbano de Ciudad de México",
-    mapBadge: "Atendiendo a Conductores de EE. UU. en México"
-  }
+    mapBadge: "Atendiendo a Conductores de EE. UU. en México",
+  },
 };
 
 const t = content[lang];
@@ -63,7 +71,10 @@ const t = content[lang];
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Header Section -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight" set:html={t.heroTitleHtml} />
+      <h1
+        class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight"
+        set:html={t.heroTitleHtml}
+      />
       <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
         {t.heroSubtitle}
       </p>
@@ -73,37 +84,61 @@ const t = content[lang];
       <!-- Left Column: Contact Info & Emergency -->
       <div class="lg:col-span-5 space-y-8">
         <!-- Emergency Highlight Box -->
-        <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-sm">
+        <div
+          class="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-sm"
+        >
           <!-- Decorative element -->
-          <div class="absolute -right-6 -top-6 w-24 h-24 bg-blue-100 dark:bg-blue-800 rounded-full opacity-50 blur-xl"></div>
+          <div
+            class="absolute -right-6 -top-6 w-24 h-24 bg-blue-100 dark:bg-blue-800 rounded-full opacity-50 blur-xl"
+          >
+          </div>
           <div class="relative z-10">
             <div class="flex items-center gap-3 mb-4">
-              <div class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 p-2 rounded-lg">
+              <div
+                class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 p-2 rounded-lg"
+              >
                 <span class="material-icons-outlined text-2xl">warning</span>
               </div>
               <h2 class="text-xl font-bold text-slate-900 dark:text-white">
                 {t.accidentTitle}
               </h2>
             </div>
-            <p class="text-slate-700 dark:text-slate-300 mb-6 text-sm leading-relaxed">
+            <p
+              class="text-slate-700 dark:text-slate-300 mb-6 text-sm leading-relaxed"
+            >
               {t.accidentDesc}
             </p>
             <div class="space-y-4 mb-8">
               <div class="flex gap-3">
-                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-200 dark:bg-blue-700 text-blue-700 dark:text-blue-200 flex items-center justify-center text-xs font-bold">1</span>
-                <p class="text-sm text-slate-700 dark:text-slate-300 font-medium">
+                <span
+                  class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-200 dark:bg-blue-700 text-blue-700 dark:text-blue-200 flex items-center justify-center text-xs font-bold"
+                  >1</span
+                >
+                <p
+                  class="text-sm text-slate-700 dark:text-slate-300 font-medium"
+                >
                   {t.accidentStep1}
                 </p>
               </div>
               <div class="flex gap-3">
-                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-200 dark:bg-blue-700 text-blue-700 dark:text-blue-200 flex items-center justify-center text-xs font-bold">2</span>
-                <p class="text-sm text-slate-700 dark:text-slate-300 font-medium">
+                <span
+                  class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-200 dark:bg-blue-700 text-blue-700 dark:text-blue-200 flex items-center justify-center text-xs font-bold"
+                  >2</span
+                >
+                <p
+                  class="text-sm text-slate-700 dark:text-slate-300 font-medium"
+                >
                   {t.accidentStep2}
                 </p>
               </div>
               <div class="flex gap-3">
-                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-200 dark:bg-blue-700 text-blue-700 dark:text-blue-200 flex items-center justify-center text-xs font-bold">3</span>
-                <p class="text-sm text-slate-700 dark:text-slate-300 font-medium">
+                <span
+                  class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-200 dark:bg-blue-700 text-blue-700 dark:text-blue-200 flex items-center justify-center text-xs font-bold"
+                  >3</span
+                >
+                <p
+                  class="text-sm text-slate-700 dark:text-slate-300 font-medium"
+                >
                   {t.accidentStep3}
                 </p>
               </div>
@@ -114,8 +149,12 @@ const t = content[lang];
         <!-- Direct Contact Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <!-- Phone Card -->
-          <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
-            <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+          <div
+            class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
+          >
+            <div
+              class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors"
+            >
               <span class="material-icons-outlined">headset_mic</span>
             </div>
             <h3 class="font-semibold text-slate-900 dark:text-white mb-1">
@@ -124,14 +163,21 @@ const t = content[lang];
             <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">
               {t.phoneHours}
             </p>
-            <a class="text-primary font-bold hover:underline text-lg flex items-center" href={`tel:${SITE_INFO.phone}`}>
+            <a
+              class="text-primary font-bold hover:underline text-lg flex items-center"
+              href={`tel:${SITE_INFO.phone}`}
+            >
               {SITE_INFO.phoneFormatted}
             </a>
           </div>
 
           <!-- Email Card -->
-          <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
-            <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+          <div
+            class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group cursor-pointer hidden"
+          >
+            <div
+              class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors"
+            >
               <span class="material-icons-outlined">mail</span>
             </div>
             <h3 class="font-semibold text-slate-900 dark:text-white mb-1">
@@ -140,7 +186,10 @@ const t = content[lang];
             <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">
               {t.emailSpeed}
             </p>
-            <a class="text-primary font-bold hover:underline text-sm break-all flex items-center" href={`mailto:${SITE_INFO.email}`}>
+            <a
+              class="text-primary font-bold hover:underline text-sm break-all flex items-center"
+              href={`mailto:${SITE_INFO.email}`}
+            >
               {SITE_INFO.email}
             </a>
           </div>
@@ -152,32 +201,32 @@ const t = content[lang];
         <ContactForm
           client:load
           translations={{
-            title:              tGlobal('contact.form.title'),
-            subtitle:           tGlobal('contact.form.subtitle'),
-            name:               tGlobal('contact.form.name'),
-            email:              tGlobal('contact.form.email'),
-            phone:              tGlobal('contact.form.phone'),
-            policy:             tGlobal('contact.form.policy'),
-            policyHint:         tGlobal('contact.form.policyHint'),
-            topic:              tGlobal('contact.form.topic'),
-            topicGeneral:       tGlobal('contact.form.topicGeneral'),
-            topicCoverage:      tGlobal('contact.form.topicCoverage'),
-            topicModify:        tGlobal('contact.form.topicModify'),
-            topicClaims:        tGlobal('contact.form.topicClaims'),
-            topicOther:         tGlobal('contact.form.topicOther'),
-            message:            tGlobal('contact.form.message'),
-            messagePlaceholder: tGlobal('contact.form.messagePlaceholder'),
-            submit:             tGlobal('contact.form.submit'),
-            submitting:         tGlobal('contact.form.submitting'),
-            successTitle:       tGlobal('contact.form.successTitle'),
-            successBody:        tGlobal('contact.form.successBody'),
-            sendAnother:        tGlobal('contact.form.sendAnother'),
-            errorGeneral:       tGlobal('contact.form.errorGeneral'),
-            errorTimeout:       tGlobal('contact.form.errorTimeout'),
-            errRequired:        tGlobal('contact.form.errRequired'),
-            errEmail:           tGlobal('contact.form.errEmail'),
-            errNameMin:         tGlobal('contact.form.errNameMin'),
-            errMsgMin:          tGlobal('contact.form.errMsgMin'),
+            title: tGlobal("contact.form.title"),
+            subtitle: tGlobal("contact.form.subtitle"),
+            name: tGlobal("contact.form.name"),
+            email: tGlobal("contact.form.email"),
+            phone: tGlobal("contact.form.phone"),
+            policy: tGlobal("contact.form.policy"),
+            policyHint: tGlobal("contact.form.policyHint"),
+            topic: tGlobal("contact.form.topic"),
+            topicGeneral: tGlobal("contact.form.topicGeneral"),
+            topicCoverage: tGlobal("contact.form.topicCoverage"),
+            topicModify: tGlobal("contact.form.topicModify"),
+            topicClaims: tGlobal("contact.form.topicClaims"),
+            topicOther: tGlobal("contact.form.topicOther"),
+            message: tGlobal("contact.form.message"),
+            messagePlaceholder: tGlobal("contact.form.messagePlaceholder"),
+            submit: tGlobal("contact.form.submit"),
+            submitting: tGlobal("contact.form.submitting"),
+            successTitle: tGlobal("contact.form.successTitle"),
+            successBody: tGlobal("contact.form.successBody"),
+            sendAnother: tGlobal("contact.form.sendAnother"),
+            errorGeneral: tGlobal("contact.form.errorGeneral"),
+            errorTimeout: tGlobal("contact.form.errorTimeout"),
+            errRequired: tGlobal("contact.form.errRequired"),
+            errEmail: tGlobal("contact.form.errEmail"),
+            errNameMin: tGlobal("contact.form.errNameMin"),
+            errMsgMin: tGlobal("contact.form.errMsgMin"),
           }}
         />
       </div>
@@ -185,17 +234,26 @@ const t = content[lang];
   </main>
 
   <!-- Map & Location Section -->
-  <div class="w-full h-80 relative mt-16 bg-slate-100 dark:bg-slate-800 overflow-hidden">
+  <div
+    class="w-full h-80 relative mt-16 bg-slate-100 dark:bg-slate-800 overflow-hidden"
+  >
     <img
       alt={t.mapAlt}
       class="w-full h-full object-cover opacity-80"
       src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjMfaG3GjS5vudSB5DV8VFSmm59BOw2HgxchEdYZgXbwAwlKg5pOePVk9krVGtrhiFZL67-zglFhWvOzcnmzW_7EhumoB6Xc_rW9HaYOXsVT8hJHGwrxA-3UGLizW4mjTOdX6Yg1aF_RptrCzxWoY3yZonn1N3sdnS7i9GoDzENvekhWI855pZhXk0LWL_Pu8CXTe6pvjrfI-5W9haGNBDba69MiaCPJb5aGiOpKkU7r4Ot1Gy2I5xI_3KQSZrKBhQbILgqdt6hBYc"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent"
+    >
+    </div>
     <div class="absolute bottom-0 left-0 right-0 p-8 text-center pb-12">
-      <div class="inline-flex items-center gap-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-5 py-2 rounded-full shadow-sm border border-white/50 dark:border-slate-700">
+      <div
+        class="inline-flex items-center gap-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-5 py-2 rounded-full shadow-sm border border-white/50 dark:border-slate-700"
+      >
         <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-        <span class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">
+        <span
+          class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide"
+        >
           {t.mapBadge}
         </span>
       </div>

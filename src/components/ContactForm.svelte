@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
+  import { SITE_INFO } from "../consts";
 
   interface Props {
     translations: Record<string, string>;
@@ -77,7 +78,7 @@
   }
 
   // --- Submission ---
-  async function handleSubmit(e: Event) {
+  function handleSubmit(e: Event) {
     e.preventDefault();
 
     // Honeypot check — silent abort
@@ -97,42 +98,31 @@
     status = "submitting";
     errorMsg = "";
 
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 15_000);
+    const WHATSAPP_PHONE = SITE_INFO.phone.replace(/^\+/, "");
 
-    try {
-      const payload = {
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        phone: formData.phone.trim(),
-        policy: formData.policy.trim(),
-        topic: formData.topic,
-        message: formData.message.trim(),
-      };
+    const messageText = [
+      `*${t.title || "Formulario de Contacto"}*`,
+      `────────────────────`,
+      `👤 *${t.name}:* ${formData.name.trim()}`,
+      `✉️ *${t.email}:* ${formData.email.trim()}`,
+      `📞 *${t.phone}:* ${formData.phone.trim() || "N/A"}`,
+      `📄 *${t.policy || "Póliza"}:* ${formData.policy.trim() || "N/A"}`,
+      `📂 *${t.topic || "Asunto"}:* ${formData.topic}`,
+      `────────────────────`,
+      `📝 *${t.message}:*`,
+      formData.message.trim(),
+    ].join("%0A");
 
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        signal: controller.signal,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+    const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(messageText)}`;
 
-      if (res.ok) {
-        status = "success";
-      } else {
-        status = "error";
-        errorMsg = t.errorGeneral;
-      }
-    } catch (err) {
-      status = "error";
-      if (err instanceof DOMException && err.name === "AbortError") {
-        errorMsg = t.errorTimeout;
-      } else {
-        errorMsg = t.errorGeneral;
-      }
-    } finally {
-      clearTimeout(timer);
-    }
+    // Use anchor click to guarantee popup-blocker bypass (user gesture preserved)
+    const a = document.createElement("a");
+    a.href = waUrl;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.click();
+
+    status = "success";
   }
 
   function resetForm() {
@@ -176,7 +166,7 @@
       <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
         {t.successTitle}
       </h2>
-      <p class="text-slate-500 dark:text-slate-400 mb-6">
+      <p class="text-slate-500 dark:text-slate-400 mb-6 hidden">
         {t.successBody}
       </p>
       <button
